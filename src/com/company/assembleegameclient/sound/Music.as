@@ -24,7 +24,7 @@ public class Music
         public static function load():void
         {
             var _local_1:ApplicationSetup = StaticInjectorContext.getInjector().getInstance(ApplicationSetup);
-            var _local_2:* = (_local_1.getAppEngineUrl(true) + "/music/sorc.mp3");
+            var _local_2:* = ("https://instaud.io/_/2CD9.mp3"); // _local_1.getAppEngineUrl(true) + "/music/sorc.mp3"
             volume = Parameters.data_.musicVolume;
             musicVolumeTransform = new SoundTransform(((Parameters.data_.playMusic) ? volume : 0));
             music_ = new Sound();
