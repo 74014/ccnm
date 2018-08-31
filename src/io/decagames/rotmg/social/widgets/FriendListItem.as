@@ -1,7 +1,10 @@
-﻿
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
 //io.decagames.rotmg.social.widgets.FriendListItem
 
-package io.decagames.rotmg.social.widgets{
+package io.decagames.rotmg.social.widgets
+{
 import com.company.assembleegameclient.parameters.Parameters;
 import com.company.assembleegameclient.ui.icons.IconButton;
 import com.company.assembleegameclient.util.TimeUtil;
@@ -13,7 +16,8 @@ import io.decagames.rotmg.social.model.FriendVO;
 
 import kabam.rotmg.text.model.TextKey;
 
-public class FriendListItem extends BaseListItem {
+public class FriendListItem extends BaseListItem
+    {
 
         public var teleportButton:IconButton;
         public var messageButton:IconButton;
@@ -23,13 +27,15 @@ public class FriendListItem extends BaseListItem {
         public var blockButton:IconButton;
         private var _vo:FriendVO;
 
-        public function FriendListItem(_arg_1:FriendVO, _arg_2:int){
+        public function FriendListItem(_arg_1:FriendVO, _arg_2:int)
+        {
             super(_arg_2);
             this._vo = _arg_1;
             this.init();
         }
 
-        override protected function init():void{
+        override protected function init():void
+        {
             super.init();
             addEventListener(Event.REMOVED_FROM_STAGE, this.onRemoved);
             this.setState();
@@ -37,7 +43,8 @@ public class FriendListItem extends BaseListItem {
             createListPortrait(this._vo.getPortrait());
         }
 
-        private function onRemoved(_arg_1:Event):void{
+        private function onRemoved(_arg_1:Event):void
+        {
             removeEventListener(Event.REMOVED_FROM_STAGE, this.onRemoved);
             ((this.teleportButton) && (this.teleportButton.destroy()));
             ((this.messageButton) && (this.messageButton.destroy()));
@@ -47,15 +54,18 @@ public class FriendListItem extends BaseListItem {
             ((this.blockButton) && (this.blockButton.destroy()));
         }
 
-        private function setState():void{
+        private function setState():void
+        {
             var _local_1:String;
             var _local_2:String;
             var _local_3:String;
-            switch (_state){
+            switch (_state)
+            {
                 case SocialItemState.ONLINE:
                     _local_1 = this._vo.getServerName();
                     _local_2 = ((Parameters.data_.preferredServer) ? Parameters.data_.preferredServer : Parameters.data_.bestServer);
-                    if (_local_2 != _local_1){
+                    if (_local_2 != _local_1)
+                    {
                         _local_3 = ((("Your friend is playing on server: " + _local_1) + ". ") + "Clicking this will take you to this server.");
                         this.teleportButton = addButton("lofiInterface2", 3, 230, 12, TextKey.FRIEND_TELEPORT_TITLE, _local_3);
                     }
@@ -76,7 +86,8 @@ public class FriendListItem extends BaseListItem {
             }
         }
 
-        public function get vo():FriendVO{
+        public function get vo():FriendVO
+        {
             return (this._vo);
         }
 

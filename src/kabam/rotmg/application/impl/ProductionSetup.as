@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.application.impl.ProductionSetup
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.application.impl.ProductionSetup
 
 package kabam.rotmg.application.impl
 {
@@ -9,15 +12,21 @@ import kabam.rotmg.application.api.ApplicationSetup;
 public class ProductionSetup implements ApplicationSetup
     {
 
-        private const SERVER:String = "realmofthemadgodhrd.appspot.com";
+        private const SERVER:String = "www.realmofthemadgod.com";
         private const UNENCRYPTED:String = ("http://" + SERVER);
         private const ENCRYPTED:String = ("https://" + SERVER);
+        private const ANALYTICS:String = "UA-101960510-3";
         private const BUILD_LABEL:String = "RotMG #{VERSION}.{MINOR}";
 
 
         public function getAppEngineUrl(_arg_1:Boolean=false):String
         {
-            return ((_arg_1) ? this.UNENCRYPTED : this.ENCRYPTED);
+            return (this.ENCRYPTED);
+        }
+
+        public function getAnalyticsCode():String
+        {
+            return (this.ANALYTICS);
         }
 
         public function getBuildLabel():String
@@ -40,7 +49,8 @@ public class ProductionSetup implements ApplicationSetup
             return (false);
         }
 
-        public function isServerLocal():Boolean{
+        public function isServerLocal():Boolean
+        {
             return (false);
         }
 
@@ -64,7 +74,8 @@ public class ProductionSetup implements ApplicationSetup
             return (false);
         }
 
-        public function getServerDomain():String{
+        public function getServerDomain():String
+        {
             return (this.SERVER);
         }
 

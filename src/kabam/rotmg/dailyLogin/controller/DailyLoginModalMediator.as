@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.dailyLogin.controller.DailyLoginModalMediator
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.dailyLogin.controller.DailyLoginModalMediator
 
 package kabam.rotmg.dailyLogin.controller
 {
@@ -11,6 +14,7 @@ import flash.globalization.DateTimeFormatter;
 import kabam.rotmg.dailyLogin.model.DailyLoginModel;
 import kabam.rotmg.dailyLogin.view.DailyLoginModal;
 import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.dialogs.control.FlushPopupStartupQueueSignal;
 import kabam.rotmg.game.signals.ExitGameSignal;
 import kabam.rotmg.pets.view.components.DialogCloseButton;
 import kabam.rotmg.ui.model.HUDModel;
@@ -32,13 +36,14 @@ public class DailyLoginModalMediator extends Mediator
         public var exitGameSignal:ExitGameSignal;
         [Inject]
         public var closeDialog:CloseDialogsSignal;
+        [Inject]
+        public var flushStartupQueue:FlushPopupStartupQueueSignal;
 
 
         override public function initialize():void
         {
             this.view.init(this.dailyLoginModel);
             this.view.addTitle("Login Rewards");
-            this.view.addCloseButton();
             var _local_1:DateTimeFormatter = new DateTimeFormatter("en-US");
             _local_1.setDateTimePattern("yyyy-MM-dd hh:mm:ssa");
             var _local_2:Date = new Date();
@@ -54,13 +59,14 @@ public class DailyLoginModalMediator extends Mediator
             Parameters.data_.calendarShowOnDay = this.dailyLoginModel.getTimestampDay();
             Parameters.save();
             this.dailyLoginModel.shouldDisplayCalendarAtStartup = false;
+            this.view.addCloseButton();
             this.view.closeButton.clicked.add(this.onCloseButtonClicked);
         }
 
-        public function onCloseButtonClicked():*
+        public function onCloseButtonClicked():void
         {
             this.view.closeButton.clicked.remove(this.onCloseButtonClicked);
-            this.closeDialogs.dispatch();
+            this.flushStartupQueue.dispatch();
         }
 
         override public function destroy():void
@@ -70,7 +76,6 @@ public class DailyLoginModalMediator extends Mediator
                 this.view.claimButton.removeEventListener(MouseEvent.CLICK, this.onClaimClickHandler);
                 this.view.removeEventListener(MouseEvent.CLICK, this.onPopupClickHandler);
             }
-            this.view.closeButton.clicked.remove(this.onCloseButtonClicked);
             super.destroy();
         }
 

@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.dailyQuests.view.DailyQuestWindowMediator
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.dailyQuests.view.DailyQuestWindowMediator
 
 package io.decagames.rotmg.dailyQuests.view
 {
@@ -114,23 +117,25 @@ public class DailyQuestWindowMediator extends Mediator
             this.hoverTooltipDelegate = null;
         }
 
-        private function onRedeemComplete(_arg_1:QuestRedeemResponse):void
-        {
+        private function onRedeemComplete(_arg_1:QuestRedeemResponse):void{
             var _local_2:String;
-            if (_arg_1.ok)
-            {
+            var _local_3:int;
+            if (_arg_1.ok){
                 _local_2 = this.dailyQuestsModel.currentQuest.id;
                 this.redeemPopup = new DailyQuestRedeemPopup(this.dailyQuestsModel.getQuestById(_local_2), this.dailyQuestsModel.selectedItem);
                 this.dailyQuestsModel.markAsCompleted(this.dailyQuestsModel.currentQuest.id);
-                this.dailyQuestsModel.currentQuest.completed = true;
+                _local_3 = this.dailyQuestsModel.numberOfCompletedQuests;
+                if (!this.dailyQuestsModel.currentQuest.repeatable){
+                    this.dailyQuestsModel.currentQuest.completed = true;
+                }
+                _local_3++;
                 this.view.renderList();
                 this.view.renderQuestInfo();
                 this.view.hideFade();
-                this.view.showFade(0x151515, (this.dailyQuestsModel.numberOfCompletedQuests == this.dailyQuestsModel.numberOfActiveQuests));
+                this.view.showFade(0x151515, (_local_3 == this.dailyQuestsModel.numberOfActiveQuests));
                 this.showPopupSignal.dispatch(this.redeemPopup);
             }
         }
-
         private function onLockScreen():void
         {
             this.view.showFade();

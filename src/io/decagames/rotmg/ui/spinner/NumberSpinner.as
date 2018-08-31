@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.ui.spinner.NumberSpinner
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.ui.spinner.NumberSpinner
 
 package io.decagames.rotmg.ui.spinner
 {
@@ -12,7 +15,7 @@ import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
 
 import org.osflash.signals.Signal;
 
-public class NumberSpinner extends Sprite 
+public class NumberSpinner extends Sprite
     {
 
         private var _upArrow:SliceScalingButton;

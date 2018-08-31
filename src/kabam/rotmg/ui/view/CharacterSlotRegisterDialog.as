@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.ui.view.CharacterSlotRegisterDialog
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.ui.view.CharacterSlotRegisterDialog
 
 package kabam.rotmg.ui.view
 {
@@ -9,13 +12,14 @@ import flash.display.Sprite;
 import org.osflash.signals.Signal;
 import org.osflash.signals.natives.NativeMappedSignal;
 
-public class CharacterSlotRegisterDialog extends Sprite
+public class CharacterSlotRegisterDialog extends Sprite 
     {
 
         private static const TEXT:String = "In order to have more than one character slot, you must be a registered user.";
         private static const TITLE:String = "Not Registered";
         private static const CANCEL:String = "Cancel";
         private static const REGISTER:String = "Register";
+        private static const ANALYTICS_PAGE:String = "/charSlotNeedRegister";
 
         public var cancel:Signal;
         public var register:Signal;
@@ -29,7 +33,7 @@ public class CharacterSlotRegisterDialog extends Sprite
 
         private function makeDialog():void
         {
-            this.dialog = new Dialog(TITLE, TEXT, CANCEL, REGISTER);
+            this.dialog = new Dialog(TITLE, TEXT, CANCEL, REGISTER, ANALYTICS_PAGE);
             addChild(this.dialog);
         }
 

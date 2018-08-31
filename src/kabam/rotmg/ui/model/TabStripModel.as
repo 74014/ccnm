@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.ui.model.TabStripModel
+﻿// Decompiled by AS3 Sorcerer 5.92
+// www.as3sorcerer.com
+
+//kabam.rotmg.ui.model.TabStripModel
 
 package kabam.rotmg.ui.model
 {

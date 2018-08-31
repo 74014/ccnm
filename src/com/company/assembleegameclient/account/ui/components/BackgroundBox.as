@@ -1,4 +1,7 @@
-﻿//com.company.assembleegameclient.account.ui.components.BackgroundBox
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//com.company.assembleegameclient.account.ui.components.BackgroundBox
 
 package com.company.assembleegameclient.account.ui.components
 {

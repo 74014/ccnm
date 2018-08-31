@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.account.web.view.WebAccountInfoView
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.account.web.view.WebAccountInfoView
 
 package kabam.rotmg.account.web.view
 {
@@ -145,12 +148,12 @@ public class WebAccountInfoView extends Sprite implements AccountInfoView
 
         private function showUIForRegisteredAccount():void
         {
-            this.accountText.setStringBuilder(new LineBuilder().setParams("logged in", ""));
+            this.accountText.setStringBuilder(new LineBuilder().setParams(TextKey.LOGGED_IN_TEXT, {"userName":this.userName}));
             var _local_1:BuildData = StaticInjectorContext.getInjector().getInstance(BuildData);
             this.loginButton.setTextKey(TextKey.LOG_OUT);
             if (((_local_1.getEnvironment() == BuildEnvironment.TESTING) || (_local_1.getEnvironment() == BuildEnvironment.LOCALHOST)))
             {
-                this.addAndAlignHorizontally(this.accountText, this.makeDividerText(), this.resetButton, this.makeDividerText(), this.loginButton);
+                this.addAndAlignHorizontally(this.accountText, this.makeDividerText(), this.loginButton);
             }
             else
             {

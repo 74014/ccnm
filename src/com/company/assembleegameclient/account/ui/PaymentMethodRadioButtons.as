@@ -1,4 +1,7 @@
-﻿//com.company.assembleegameclient.account.ui.PaymentMethodRadioButtons
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//com.company.assembleegameclient.account.ui.PaymentMethodRadioButtons
 
 package com.company.assembleegameclient.account.ui
 {
@@ -14,7 +17,7 @@ import kabam.lib.ui.api.Layout;
 import kabam.lib.ui.impl.HorizontalLayout;
 import kabam.rotmg.ui.view.SignalWaiter;
 
-public class PaymentMethodRadioButtons extends Sprite 
+public class PaymentMethodRadioButtons extends Sprite
     {
 
         private const waiter:SignalWaiter = new SignalWaiter();
@@ -44,13 +47,13 @@ public class PaymentMethodRadioButtons extends Sprite
 
         private function makeRadioButtons():void
         {
-            var _local_1:int;
-            var _local_2:int = this.labels.length;
-            this.boxes = new Vector.<PaymentMethodRadioButton>(_local_2, true);
-            while (_local_1 < _local_2)
+            var _local_1:int = this.labels.length;
+            this.boxes = new Vector.<PaymentMethodRadioButton>(_local_1, true);
+            var _local_2:int;
+            while (_local_2 < _local_1)
             {
-                this.boxes[_local_1] = this.makeRadioButton(this.labels[_local_1]);
-                _local_1++;
+                this.boxes[_local_2] = this.makeRadioButton(this.labels[_local_2]);
+                _local_2++;
             }
         }
 
@@ -79,15 +82,15 @@ public class PaymentMethodRadioButtons extends Sprite
 
         private function castBoxesToDisplayObjects():Vector.<DisplayObject>
         {
-            var _local_1:int;
-            var _local_2:int = this.boxes.length;
-            var _local_3:Vector.<DisplayObject> = new Vector.<DisplayObject>(0);
-            while (_local_1 < _local_2)
+            var _local_1:int = this.boxes.length;
+            var _local_2:Vector.<DisplayObject> = new Vector.<DisplayObject>(0);
+            var _local_3:int;
+            while (_local_3 < _local_1)
             {
-                _local_3[_local_1] = this.boxes[_local_1];
-                _local_1++;
+                _local_2[_local_3] = this.boxes[_local_3];
+                _local_3++;
             }
-            return (_local_3);
+            return (_local_2);
         }
 
         private function makeSelectionGroup():void
@@ -99,15 +102,15 @@ public class PaymentMethodRadioButtons extends Sprite
 
         private function castBoxesToSelectables():Vector.<Selectable>
         {
-            var _local_1:int;
-            var _local_2:int = this.boxes.length;
-            var _local_3:Vector.<Selectable> = new Vector.<Selectable>(0);
-            while (_local_1 < _local_2)
+            var _local_1:int = this.boxes.length;
+            var _local_2:Vector.<Selectable> = new Vector.<Selectable>(0);
+            var _local_3:int;
+            while (_local_3 < _local_1)
             {
-                _local_3[_local_1] = this.boxes[_local_1];
-                _local_1++;
+                _local_2[_local_3] = this.boxes[_local_3];
+                _local_3++;
             }
-            return (_local_3);
+            return (_local_2);
         }
 
 

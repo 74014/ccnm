@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.shop.mysteryBox.contentPopup.JackpotContainer
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.shop.mysteryBox.contentPopup.JackpotContainer
 
 package io.decagames.rotmg.shop.mysteryBox.contentPopup
 {
@@ -8,7 +11,7 @@ import io.decagames.rotmg.ui.gird.UIGrid;
 import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
 import io.decagames.rotmg.ui.texture.TextureParser;
 
-public class JackpotContainer extends Sprite 
+public class JackpotContainer extends Sprite
     {
 
         private var background:SliceScalingBitmap;

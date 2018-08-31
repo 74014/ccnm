@@ -1,4 +1,4 @@
-package kabam.rotmg.news.view
+﻿package kabam.rotmg.news.view
 {
 import mx.core.*;
 
@@ -7,8 +7,6 @@ import mx.core.*;
 	{
 		public function NewsCell_DefaultGraphicLarge()
 		{
-			super();
-
 		}
 	}
 }

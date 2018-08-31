@@ -1,10 +1,13 @@
-﻿//kabam.rotmg.account.web.view.DateFieldValidator
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.account.web.view.DateFieldValidator
 
 package kabam.rotmg.account.web.view
 {
 import kabam.rotmg.account.ui.components.DateField;
 
-public class DateFieldValidator 
+public class DateFieldValidator
     {
 
 

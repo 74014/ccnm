@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.news.NewsConfig
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.news.NewsConfig
 
 package kabam.rotmg.news
 {
@@ -25,7 +28,7 @@ import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
 import robotlegs.bender.framework.api.IConfig;
 import robotlegs.bender.framework.api.IContext;
 
-public class NewsConfig implements IConfig
+public class NewsConfig implements IConfig 
     {
 
         [Inject]

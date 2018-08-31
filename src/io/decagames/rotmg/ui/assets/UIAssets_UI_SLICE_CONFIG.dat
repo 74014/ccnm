@@ -117,6 +117,24 @@
         "h": 31
       }
     },
+    "content_divider_white.png": {
+      "type": "3grid",
+      "rectangle": {
+        "y": 0,
+        "w": 1,
+        "x": 9,
+        "h": 10
+      }
+    },
+    "content_divider_smalltitle_white.png": {
+      "type": "3grid",
+      "rectangle": {
+        "y": 0,
+        "w": 1,
+        "x": 9,
+        "h": 16
+      }
+    },
     "tab_button_left_open.png": {
       "type": "3grid",
       "rectangle": {

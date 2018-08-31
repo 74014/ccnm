@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.dailyQuests.view.info.DailyQuestInfoMediator
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.dailyQuests.view.info.DailyQuestInfoMediator
 
 package io.decagames.rotmg.dailyQuests.view.info
 {
@@ -65,15 +68,18 @@ public class DailyQuestInfoMediator extends Mediator
             this.selectedItemSlotsSignal.add(this.itemSelectedHandler);
         }
 
-        private function itemSelectedHandler(_arg_1:int):void{
+        private function itemSelectedHandler(_arg_1:int):void
+        {
             this.view.completeButton.disabled = ((this.model.currentQuest.completed) ? true : ((this.model.selectedItem == -1) ? true : (!(DailyQuestInfo.hasAllItems(this.model.currentQuest.requirements, this.model.playerItemsFromInventory)))));
-            if (this.model.selectedItem == -1){
+            if (this.model.selectedItem == -1)
+            {
                 this.hoverTooltipDelegate.setDisplayObject(this.view.completeButton);
-            } else {
+            }
+            else
+            {
                 this.hoverTooltipDelegate.removeDisplayObject();
             }
         }
-
 
         override public function destroy():void
         {
@@ -88,7 +94,8 @@ public class DailyQuestInfoMediator extends Mediator
             this.view.clear();
             this.model.currentQuest = this.model.getQuestById(_arg_1);
             this.view.show(this.model.currentQuest, this.model.playerItemsFromInventory);
-            if (((!(this.view.completeButton.completed)) && (this.model.currentQuest.itemOfChoice))){
+            if (((!(this.view.completeButton.completed)) && (this.model.currentQuest.itemOfChoice)))
+            {
                 this.view.completeButton.disabled = true;
                 this.hoverTooltipDelegate.setDisplayObject(this.view.completeButton);
             }
@@ -103,7 +110,8 @@ public class DailyQuestInfoMediator extends Mediator
             return (_local_2);
         }
 
-        private function onCompleteButtonClickHandler(_arg_1:MouseEvent):void {
+        private function onCompleteButtonClickHandler(_arg_1:MouseEvent):void
+        {
             var _local_2:Vector.<SlotObjectData>;
             var _local_3:BackpackTabContent;
             var _local_4:InventoryTabContent;
@@ -111,34 +119,41 @@ public class DailyQuestInfoMediator extends Mediator
             var _local_6:Vector.<InventoryTile>;
             var _local_7:int;
             var _local_8:InventoryTile;
-            if (((!(this.view.completeButton.disabled)) && (!(this.view.completeButton.completed)))) {
+            if (((!(this.view.completeButton.disabled)) && (!(this.view.completeButton.completed))))
+            {
+                _local_2 = new Vector.<SlotObjectData>();
+                _local_3 = this.hud.gameSprite.hudView.tabStrip.getTabView(BackpackTabContent);
+                _local_4 = this.hud.gameSprite.hudView.tabStrip.getTabView(InventoryTabContent);
+                _local_5 = this.model.currentQuest.requirements.concat();
+                _local_6 = new Vector.<InventoryTile>();
+                if (_local_3)
                 {
-                    _local_2 = new Vector.<SlotObjectData>();
-                    _local_3 = this.hud.gameSprite.hudView.tabStrip.getTabView(BackpackTabContent);
-                    _local_4 = this.hud.gameSprite.hudView.tabStrip.getTabView(InventoryTabContent);
-                    _local_5 = this.model.currentQuest.requirements.concat();
-                    _local_6 = new Vector.<InventoryTile>();
-                    if (_local_3) {
-                        _local_6 = _local_6.concat(_local_3.backpack.tiles);
-                    }
-                    if (_local_4) {
-                        _local_6 = _local_6.concat(_local_4.storage.tiles);
-                    }
-                    for each (_local_7 in _local_5) {
-                        for each (_local_8 in _local_6) {
-                            if (_local_8.getItemId() == _local_7) {
-                                _local_6.splice(_local_6.indexOf(_local_8), 1);
-                                _local_2.push(this.tileToSlot(_local_8));
-                                break;
-                            }
+                    _local_6 = _local_6.concat(_local_3.backpack.tiles);
+                }
+                if (_local_4)
+                {
+                    _local_6 = _local_6.concat(_local_4.storage.tiles);
+                }
+                for each (_local_7 in _local_5)
+                {
+                    for each (_local_8 in _local_6)
+                    {
+                        if (_local_8.getItemId() == _local_7)
+                        {
+                            _local_6.splice(_local_6.indexOf(_local_8), 1);
+                            _local_2.push(this.tileToSlot(_local_8));
+                            break;
                         }
                     }
-                    this.lockScreen.dispatch();
-                    this.hud.gameSprite.gsc_.questRedeem(this.model.currentQuest.id, _local_2, this.model.selectedItem);
-                    this.model.currentQuest.completed = true;
-                    this.view.completeButton.completed = true;
-                    this.view.completeButton.disabled = true;
                 }
+                this.lockScreen.dispatch();
+                this.hud.gameSprite.gsc_.questRedeem(this.model.currentQuest.id, _local_2, this.model.selectedItem);
+                this.model.currentQuest.completed = true;
+                if (!this.model.currentQuest.repeatable){
+                    this.model.currentQuest.completed = true;
+                }
+                this.view.completeButton.completed = true;
+                this.view.completeButton.disabled = true;
             }
         }
 

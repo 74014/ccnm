@@ -1,10 +1,13 @@
-﻿//io.decagames.rotmg.characterMetrics.data.CharacterMetricsData
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.characterMetrics.data.CharacterMetricsData
 
 package io.decagames.rotmg.characterMetrics.data
 {
 import flash.utils.Dictionary;
 
-public class CharacterMetricsData 
+public class CharacterMetricsData
     {
 
         private var stats:Dictionary;

@@ -1,18 +1,22 @@
-﻿//io.decagames.rotmg.shop.genericBox.SalePriceTag
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.shop.genericBox.SalePriceTag
 
 package io.decagames.rotmg.shop.genericBox
 {
+import com.company.assembleegameclient.util.Currency;
+
 import flash.display.Bitmap;
 import flash.display.BitmapData;
 import flash.display.Sprite;
 
-import io.decagames.rotmg.shop.ShopBuyButton;
 import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
 import io.decagames.rotmg.ui.labels.UILabel;
 
 import kabam.rotmg.assets.services.IconFactory;
 
-public class SalePriceTag extends Sprite 
+public class SalePriceTag extends Sprite
     {
 
         private var coinBitmap:Bitmap;
@@ -25,7 +29,7 @@ public class SalePriceTag extends Sprite
             DefaultLabelFormat.originalPriceButtonLabel(_local_3);
             _local_3.text = _arg_1.toString();
             _local_4 = new Sprite();
-            var _local_5:BitmapData = ((_arg_2 == ShopBuyButton.CURRENCY_GOLD) ? IconFactory.makeCoin(35) : IconFactory.makeFame(35));
+            var _local_5:BitmapData = ((_arg_2 == Currency.GOLD) ? IconFactory.makeCoin(35) : IconFactory.makeFame(35));
             this.coinBitmap = new Bitmap(_local_5);
             this.coinBitmap.y = 0;
             addChild(this.coinBitmap);

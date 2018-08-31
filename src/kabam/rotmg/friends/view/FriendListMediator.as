@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.friends.view.FriendListMediator
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.friends.view.FriendListMediator
 
 package kabam.rotmg.friends.view
 {
@@ -87,15 +90,15 @@ public class FriendListMediator extends Mediator
 
         private function onFriendActed(_arg_1:String, _arg_2:String):void
         {
-            var _local_3:String;
             var _local_4:String;
-            var _local_5:FriendRequestVO = new FriendRequestVO(_arg_1, _arg_2);
+            var _local_5:String;
+            var _local_3:FriendRequestVO = new FriendRequestVO(_arg_1, _arg_2);
             switch (_arg_1)
             {
                 case FriendsActions.SEARCH:
                     if (((!(_arg_2 == null)) && (!(_arg_2 == ""))))
                     {
-                        this.view.updateFriendTab(this.model.friendsList, this.model.getCurrentServerName());
+                        this.view.updateFriendTab(this.model.getFilterFriends(_arg_2), this.model.getCurrentServerName());
                     }
                     else
                     {
@@ -111,25 +114,25 @@ public class FriendListMediator extends Mediator
                         this.view.updateInput(TextKey.FRIEND_REACH_CAPACITY);
                         return;
                     }
-                    _local_5.callback = this.inviteFriendCallback;
+                    _local_3.callback = this.inviteFriendCallback;
                     break;
                 case FriendsActions.REMOVE:
-                    _local_5.callback = this.removeFriendCallback;
-                    _local_3 = TextKey.FRIEND_REMOVE_TITLE;
-                    _local_4 = TextKey.FRIEND_REMOVE_TEXT;
-                    this.openDialog.dispatch(new FriendUpdateConfirmDialog(_local_3, _local_4, TextKey.FRAME_CANCEL, TextKey.FRIEND_REMOVE_BUTTON, _local_5, {"name":_local_5.target}));
+                    _local_3.callback = this.removeFriendCallback;
+                    _local_4 = TextKey.FRIEND_REMOVE_TITLE;
+                    _local_5 = TextKey.FRIEND_REMOVE_TEXT;
+                    this.openDialog.dispatch(new FriendUpdateConfirmDialog(_local_4, _local_5, TextKey.FRAME_CANCEL, TextKey.FRIEND_REMOVE_BUTTON, _local_3, {"name":_local_3.target}));
                     return;
                 case FriendsActions.ACCEPT:
-                    _local_5.callback = this.acceptInvitationCallback;
+                    _local_3.callback = this.acceptInvitationCallback;
                     break;
                 case FriendsActions.REJECT:
-                    _local_5.callback = this.rejectInvitationCallback;
+                    _local_3.callback = this.rejectInvitationCallback;
                     break;
                 case FriendsActions.BLOCK:
-                    _local_5.callback = this.blockInvitationCallback;
-                    _local_3 = TextKey.FRIEND_BLOCK_TITLE;
-                    _local_4 = TextKey.FRIEND_BLOCK_TEXT;
-                    this.openDialog.dispatch(new FriendUpdateConfirmDialog(_local_3, _local_4, TextKey.FRAME_CANCEL, TextKey.FRIEND_BLOCK_BUTTON, _local_5, {"name":_local_5.target}));
+                    _local_3.callback = this.blockInvitationCallback;
+                    _local_4 = TextKey.FRIEND_BLOCK_TITLE;
+                    _local_5 = TextKey.FRIEND_BLOCK_TEXT;
+                    this.openDialog.dispatch(new FriendUpdateConfirmDialog(_local_4, _local_5, TextKey.FRAME_CANCEL, TextKey.FRIEND_BLOCK_BUTTON, _local_3, {"name":_local_3.target}));
                     return;
                 case FriendsActions.WHISPER:
                     this.whisperCallback(_arg_2);
@@ -138,7 +141,7 @@ public class FriendListMediator extends Mediator
                     this.jumpCallback(_arg_2);
                     return;
             }
-            this.actionSignal.dispatch(_local_5);
+            this.actionSignal.dispatch(_local_3);
         }
 
         private function inviteFriendCallback(_arg_1:Boolean, _arg_2:String, _arg_3:String):void

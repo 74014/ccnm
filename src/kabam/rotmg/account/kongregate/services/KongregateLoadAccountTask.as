@@ -1,14 +1,17 @@
-﻿//kabam.rotmg.account.kongregate.services.KongregateLoadAccountTask
+﻿// Decompiled by AS3 Sorcerer 5.94
+// www.as3sorcerer.com
+
+//kabam.rotmg.account.kongregate.services.KongregateLoadAccountTask
 
 package kabam.rotmg.account.kongregate.services
 {
-import kabam.lib.tasks.BaseTask;
-import kabam.lib.tasks.Task;
-import kabam.lib.tasks.TaskMonitor;
-import kabam.lib.tasks.TaskSequence;
-import kabam.rotmg.account.core.services.LoadAccountTask;
+    import kabam.lib.tasks.BaseTask;
+    import kabam.rotmg.account.core.services.LoadAccountTask;
+    import kabam.lib.tasks.TaskMonitor;
+    import kabam.lib.tasks.TaskSequence;
+    import kabam.lib.tasks.Task;
 
-public class KongregateLoadAccountTask extends BaseTask implements LoadAccountTask
+    public class KongregateLoadAccountTask extends BaseTask implements LoadAccountTask 
     {
 
         [Inject]

@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.ui.popups.modal.ModalPopupMediator
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.ui.popups.modal.ModalPopupMediator
 
 package io.decagames.rotmg.ui.popups.modal
 {
@@ -6,7 +9,7 @@ import flash.events.Event;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class ModalPopupMediator extends Mediator 
+public class ModalPopupMediator extends Mediator
     {
 
         [Inject]

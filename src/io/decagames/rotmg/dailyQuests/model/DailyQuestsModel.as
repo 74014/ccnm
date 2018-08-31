@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.dailyQuests.model.DailyQuestsModel
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.dailyQuests.model.DailyQuestsModel
 
 package io.decagames.rotmg.dailyQuests.model
 {
@@ -21,21 +24,27 @@ public class DailyQuestsModel
         public var hud:HUDModel;
 
 
-        public function registerSelectableSlot(_arg_1:DailyQuestItemSlot):void{
+        public function registerSelectableSlot(_arg_1:DailyQuestItemSlot):void
+        {
             this.slots.push(_arg_1);
         }
 
-        public function unregisterSelectableSlot(_arg_1:DailyQuestItemSlot):void{
+        public function unregisterSelectableSlot(_arg_1:DailyQuestItemSlot):void
+        {
             var _local_2:int = this.slots.indexOf(_arg_1);
-            if (_local_2 != -1){
+            if (_local_2 != -1)
+            {
                 this.slots.splice(_local_2, 1);
             }
         }
 
-        public function unselectAllSlots(_arg_1:int):void{
+        public function unselectAllSlots(_arg_1:int):void
+        {
             var _local_2:DailyQuestItemSlot;
-            for each (_local_2 in this.slots) {
-                if (_local_2.itemID != _arg_1){
+            for each (_local_2 in this.slots)
+            {
+                if (_local_2.itemID != _arg_1)
+                {
                     _local_2.selected = false;
                 }
             }
@@ -51,13 +60,10 @@ public class DailyQuestsModel
             this._questsList.push(_arg_1);
         }
 
-        public function markAsCompleted(_arg_1:String):void
-        {
+        public function markAsCompleted(_arg_1:String):void{
             var _local_2:DailyQuest;
-            for each (_local_2 in this._questsList)
-            {
-                if (_local_2.id == _arg_1)
-                {
+            for each (_local_2 in this._questsList) {
+                if ((((_local_2.id == _arg_1)) && (!(_local_2.repeatable)))){
                     _local_2.completed = true;
                 }
             }

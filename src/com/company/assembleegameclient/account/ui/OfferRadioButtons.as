@@ -1,4 +1,7 @@
-﻿//com.company.assembleegameclient.account.ui.OfferRadioButtons
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//com.company.assembleegameclient.account.ui.OfferRadioButtons
 
 package com.company.assembleegameclient.account.ui
 {
@@ -15,7 +18,7 @@ import kabam.lib.ui.api.Layout;
 import kabam.lib.ui.impl.VerticalLayout;
 import kabam.rotmg.account.core.model.MoneyConfig;
 
-public class OfferRadioButtons extends Sprite 
+public class OfferRadioButtons extends Sprite
     {
 
         private var offers:Offers;
@@ -39,13 +42,13 @@ public class OfferRadioButtons extends Sprite
 
         private function makeGoldChoices():void
         {
-            var _local_1:int;
-            var _local_2:int = this.offers.offerList.length;
-            this.choices = new Vector.<OfferRadioButton>(_local_2, true);
-            while (_local_1 < _local_2)
+            var _local_1:int = this.offers.offerList.length;
+            this.choices = new Vector.<OfferRadioButton>(_local_1, true);
+            var _local_2:int;
+            while (_local_2 < _local_1)
             {
-                this.choices[_local_1] = this.makeGoldChoice(this.offers.offerList[_local_1]);
-                _local_1++;
+                this.choices[_local_2] = this.makeGoldChoice(this.offers.offerList[_local_2]);
+                _local_2++;
             }
         }
 
@@ -73,15 +76,15 @@ public class OfferRadioButtons extends Sprite
 
         private function castChoicesToDisplayList():Vector.<DisplayObject>
         {
-            var _local_1:int;
-            var _local_2:int = this.choices.length;
-            var _local_3:Vector.<DisplayObject> = new Vector.<DisplayObject>(0);
-            while (_local_1 < _local_2)
+            var _local_1:int = this.choices.length;
+            var _local_2:Vector.<DisplayObject> = new Vector.<DisplayObject>(0);
+            var _local_3:int;
+            while (_local_3 < _local_1)
             {
-                _local_3[_local_1] = this.choices[_local_1];
-                _local_1++;
+                _local_2[_local_3] = this.choices[_local_3];
+                _local_3++;
             }
-            return (_local_3);
+            return (_local_2);
         }
 
         private function makeSelectionGroup():void
@@ -93,15 +96,15 @@ public class OfferRadioButtons extends Sprite
 
         private function castBoxesToSelectables():Vector.<Selectable>
         {
-            var _local_1:int;
-            var _local_2:int = this.choices.length;
-            var _local_3:Vector.<Selectable> = new Vector.<Selectable>(0);
-            while (_local_1 < _local_2)
+            var _local_1:int = this.choices.length;
+            var _local_2:Vector.<Selectable> = new Vector.<Selectable>(0);
+            var _local_3:int;
+            while (_local_3 < _local_1)
             {
-                _local_3[_local_1] = this.choices[_local_1];
-                _local_1++;
+                _local_2[_local_3] = this.choices[_local_3];
+                _local_3++;
             }
-            return (_local_3);
+            return (_local_2);
         }
 
         public function showBonuses(_arg_1:Boolean):void

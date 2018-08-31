@@ -1,7 +1,10 @@
-﻿
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
 //kabam.rotmg.account.web.services.WebRegisterAccountTask
 
-package kabam.rotmg.account.web.services{
+package kabam.rotmg.account.web.services
+{
 import kabam.lib.tasks.BaseTask;
 import kabam.rotmg.account.core.Account;
 import kabam.rotmg.account.core.services.RegisterAccountTask;
@@ -9,7 +12,8 @@ import kabam.rotmg.account.web.model.AccountData;
 import kabam.rotmg.appengine.api.AppEngineClient;
 import kabam.rotmg.core.model.PlayerModel;
 
-public class WebRegisterAccountTask extends BaseTask implements RegisterAccountTask {
+public class WebRegisterAccountTask extends BaseTask implements RegisterAccountTask
+{
 
     [Inject]
     public var data:AccountData;
@@ -21,12 +25,14 @@ public class WebRegisterAccountTask extends BaseTask implements RegisterAccountT
     public var client:AppEngineClient;
 
 
-    override protected function startTask():void{
+    override protected function startTask():void
+    {
         this.client.complete.addOnce(this.onComplete);
         this.client.sendRequest("/account/register", this.makeDataPacket());
     }
 
-    private function makeDataPacket():Object{
+    private function makeDataPacket():Object
+    {
         var _local_1:Object = {};
         _local_1.guid = this.account.getUserId();
         _local_1.newGUID = this.data.username;
@@ -37,18 +43,23 @@ public class WebRegisterAccountTask extends BaseTask implements RegisterAccountT
         return (_local_1);
     }
 
-    private function onComplete(_arg_1:Boolean, _arg_2:*):void{
+    private function onComplete(_arg_1:Boolean, _arg_2:*):void
+    {
         ((_arg_1) && (this.onRegisterDone(_arg_2)));
         completeTask(_arg_1, _arg_2);
     }
 
-    private function onRegisterDone(_arg_1:String):void{
+    private function onRegisterDone(_arg_1:String):void
+    {
         this.model.setIsAgeVerified(true);
         var _local_2:XML = new XML(_arg_1);
-        if (("token" in _local_2)){
+        if (("token" in _local_2))
+        {
             this.data.token = _local_2.token;
             this.account.updateUser(this.data.username, this.data.password, _local_2.token, "");
-        } else {
+        }
+        else
+        {
             this.account.updateUser(this.data.username, this.data.password, "", "");
         }
     }

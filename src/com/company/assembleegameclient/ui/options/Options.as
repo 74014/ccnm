@@ -186,7 +186,7 @@ public class Options extends Sprite
 
         private static function makeCursorSelectLabels():Vector.<StringBuilder>
         {
-            return (new <StringBuilder>[new StaticStringBuilder("Off"), new StaticStringBuilder("ProX"), new StaticStringBuilder("X2"), new StaticStringBuilder("X3"), new StaticStringBuilder("X4"), new StaticStringBuilder("Corner1"), new StaticStringBuilder("Corner2"), new StaticStringBuilder("Symb"), new StaticStringBuilder("Alien"), new StaticStringBuilder("Xhair"), new StaticStringBuilder("Dystopia+")]);
+            return (new <StringBuilder>[new StaticStringBuilder("Off"), new StaticStringBuilder("ProX"), new StaticStringBuilder("X2"), new StaticStringBuilder("X3"), new StaticStringBuilder("X4"), new StaticStringBuilder("Corner1"), new StaticStringBuilder("Corner2"), new StaticStringBuilder("Symb"), new StaticStringBuilder("Alien"), new StaticStringBuilder("Xhair"), new StaticStringBuilder("Chusto1"), new StaticStringBuilder("Chusto2")]);
         }
 
         private static function onToMaxTextToggle():void
@@ -881,11 +881,13 @@ public class Options extends Sprite
 
         private function addExtraOptions():void
         {
-            this.addOptionAndPosition(new ChoiceOption("etheriteDisable", makeOnOffLabels(), [true, false], "Offset Etherite", "Offsets your firing angle if you have an Etherite equipped to make it so your shots are in a straight line", null));
-            this.addOptionAndPosition(new ChoiceOption("tombHack", makeOnOffLabels(), [true, false], "Tomb Hack", "Tomb hack allows you to only damage the selected boss, leaving others unharmed even if you shoot them.", this.tombDeactivate));
-            this.addOptionAndPosition(new ChoiceOption("cultistStaffDisable", makeOnOffLabels(), [true, false], "Reverse Cultist Staff", "Reverses the angle of the Staff of Unholy Sacrifice (which normally shoots backwards) to make it so you shoot forwards", null));
-            this.addOptionAndPosition(new ChoiceOption("curBoss", this.bossNames(), [3368, 3366, 3367], "Current Boss", "You will only be able to hit the current boss.", null));
+            this.addOptionAndPosition(new ChoiceOption("voidbowDisable", makeOnOffLabels(), [true, false], "Offset Void Bow", "Offsets your firing angle if you have an Void Bow equipped to make it so your shots are in a straight line", null));
             this.addOptionAndPosition(new ChoiceOption("offsetColossus", makeOnOffLabels(), [true, false], "Offset Colossus Sword", "Attempts to shoot straight, try /colo 0.4 and /colo 0.2", null));
+            this.addOptionAndPosition(new ChoiceOption("etheriteDisable", makeOnOffLabels(), [true, false], "Offset Etherite", "Offsets your firing angle if you have an Etherite equipped to make it so your shots are in a straight line", null));
+            this.addOptionAndPosition(new ChoiceOption("cultistStaffDisable", makeOnOffLabels(), [true, false], "Reverse Cultist Staff", "Reverses the angle of the Staff of Unholy Sacrifice (which normally shoots backwards) to make it so you shoot forwards", null));
+            this.addOptionAndPosition(new ChoiceOption("spiritdaggerDisable", makeOnOffLabels(), [true, false], "Offset Spiritdagger", "Offsets your firing angle if you have an Spirit Dagger equipped to make it so your shots are in a straight line", null));
+            this.addOptionAndPosition(new ChoiceOption("tombHack", makeOnOffLabels(), [true, false], "Tomb Hack", "Tomb hack allows you to only damage the selected boss, leaving others unharmed even if you shoot them.", this.tombDeactivate));
+            this.addOptionAndPosition(new ChoiceOption("curBoss", this.bossNames(), [3368, 3366, 3367], "Current Boss", "You will only be able to hit the current boss.", null));
             this.addOptionAndPosition(new KeyMapper("tombCycle", "Next Boss", "Selects the next boss.", (!(Parameters.data_.tombHack))));
             this.addOptionAndPosition(new ChoiceOption("SafeWalk", makeOnOffLabels(), [true, false], "Safe Walk", "Block movement onto tiles that cause damage. Click and hold left mouse to walk over these tiles.", null));
             this.addOptionAndPosition(new KeyMapper("SafeWalkKey", "Safe Walk Key", "Block movement onto tiles that cause damage. Click and hold left mouse to walk over these tiles."));
@@ -893,6 +895,11 @@ public class Options extends Sprite
             this.addOptionAndPosition(new ChoiceOption("showDamageOnEnemy", makeOnOffLabels(), [true, false], "Show Dealt %", "Shows the % of damage you've done to an enemy, below that enemy (note, only counts projectile damage, it does not include damage from poison, trap, scepter, etc)", null));
             this.addOptionAndPosition(new ChoiceOption("rightClickOption", makeRightClickOptions(), ["Off", "Ability", "Camera"], "Right Click Option", "Select the functionality you want on right click: none, spellbomb/ability assist (uses your ability at the enemy closest to your cursor), camera (rotates your camera when holding right click)", null));
             this.addOptionAndPosition(new ChoiceOption("tiltCam", makeOnOffLabels(), [true, false], "Tilt Camera X Axis", "Allows the Right Click Option, when on Camera, to rotate the X Axis of the Camera's perspective", null));
+            this.addOptionAndPosition(new ChoiceOption("blockAbil", makeOnOffLabels(), [true, false], "Mundane", "Block all ability usage (25% Famebonus)", null, 11379776));
+            this.addOptionAndPosition(new ChoiceOption("blockCubes", makeOnOffLabels(), [true, false], "Friend of cubes", "Block all cubes from being hit by you (10% Famebonus)", null, 11379776));
+            this.addOptionAndPosition(new ChoiceOption("onlyGods", makeOnOffLabels(), [true, false], "Slayer of the Gods", "Have shots only hit Gods (10% Famebonus)", null, 11379776));
+            this.addOptionAndPosition(new ChoiceOption("blockTP", makeOnOffLabels(), [true, false], "Boots on Ground", "Blocks all teleporting      WARNING: IT DOESN\'T BLOCK KRELAY\'S FAMEBOT TP (25% Famebonus)", null, 11379776));
+            this.addOptionAndPosition(new ChoiceOption("blockPots", makeOnOffLabels(), [true, false], "Thirsty", "Blocks all potions from being drunk, except from bags (25% Famebonus)", null, 11379776));
             this.tombDeactivate();
             this.addOptionAndPosition(new NullOption());
         }

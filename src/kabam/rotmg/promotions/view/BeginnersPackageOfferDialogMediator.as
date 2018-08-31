@@ -1,8 +1,14 @@
-﻿//kabam.rotmg.promotions.view.BeginnersPackageOfferDialogMediator
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.promotions.view.BeginnersPackageOfferDialogMediator
 
 package kabam.rotmg.promotions.view
 {
+import kabam.rotmg.dailyLogin.model.DailyLoginModel;
 import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.dialogs.control.FlushPopupStartupQueueSignal;
+import kabam.rotmg.dialogs.control.OpenDialogSignal;
 import kabam.rotmg.game.signals.SetWorldInteractionSignal;
 import kabam.rotmg.promotions.model.BeginnersPackageModel;
 import kabam.rotmg.promotions.signals.BuyBeginnersPackageSignal;
@@ -19,16 +25,21 @@ public class BeginnersPackageOfferDialogMediator extends Mediator
         [Inject]
         public var closeDialog:CloseDialogsSignal;
         [Inject]
+        public var openDialog:OpenDialogSignal;
+        [Inject]
         public var buyPackage:BuyBeginnersPackageSignal;
         [Inject]
         public var setWorldInteraction:SetWorldInteractionSignal;
+        [Inject]
+        public var dailyLoginModel:DailyLoginModel;
+        [Inject]
+        public var flushStartupQueue:FlushPopupStartupQueueSignal;
 
 
         override public function initialize():void
         {
             this.view.buy.add(this.onBuy);
             this.view.close.add(this.onClose);
-            this.view.setTimeRemaining(this.model.getDaysRemaining());
             this.view.centerOnScreen();
             this.setWorldInteraction.dispatch(false);
         }
@@ -49,6 +60,7 @@ public class BeginnersPackageOfferDialogMediator extends Mediator
         private function onClose():void
         {
             this.closeDialog.dispatch();
+            this.flushStartupQueue.dispatch();
         }
 
 

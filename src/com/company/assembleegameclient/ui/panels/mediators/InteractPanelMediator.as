@@ -7,7 +7,7 @@ import com.company.assembleegameclient.objects.Pet;
 import com.company.assembleegameclient.ui.panels.InteractPanel;
 
 import kabam.rotmg.core.model.MapModel;
-import kabam.rotmg.pets.data.PetsModel;
+import io.decagames.rotmg.pets.data.PetsModel;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 

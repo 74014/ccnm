@@ -2,6 +2,10 @@
 
 package kabam.rotmg.minimap
 {
+import io.decagames.rotmg.classes.NewClassUnlockNotification;
+import io.decagames.rotmg.classes.NewClassUnlockNotificationMediator;
+import io.decagames.rotmg.classes.NewClassUnlockSignal;
+
 import kabam.rotmg.minimap.control.MiniMapZoomSignal;
 import kabam.rotmg.minimap.control.SetMiniMapMapSignal;
 import kabam.rotmg.minimap.control.UpdateGameObjectTileSignal;
@@ -32,7 +36,9 @@ public class MiniMapConfig implements IConfig
             this.injector.map(SetMiniMapMapSignal).asSingleton();
             this.injector.map(UpdateGameObjectTileSignal).asSingleton();
             this.injector.map(UpdateGroundTileSignal).asSingleton();
+            this.injector.map(NewClassUnlockSignal).asSingleton();
             this.mediatorMap.map(MiniMap).toMediator(MiniMapMediator);
+            this.mediatorMap.map(NewClassUnlockNotification).toMediator(NewClassUnlockNotificationMediator);
         }
 
 

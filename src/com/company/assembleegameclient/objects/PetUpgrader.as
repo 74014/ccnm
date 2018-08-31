@@ -7,7 +7,7 @@ import com.company.assembleegameclient.ui.panels.Panel;
 import com.company.assembleegameclient.ui.tooltip.TextToolTip;
 import com.company.assembleegameclient.ui.tooltip.ToolTip;
 
-import kabam.rotmg.pets.view.components.PetInteractionPanel;
+import io.decagames.rotmg.pets.panels.PetInteractionPanel;
 import kabam.rotmg.text.model.TextKey;
 
 public class PetUpgrader extends GameObject implements IInteractiveObject

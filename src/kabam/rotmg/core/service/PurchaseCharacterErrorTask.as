@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.core.service.PurchaseCharacterErrorTask
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.core.service.PurchaseCharacterErrorTask
 
 package kabam.rotmg.core.service
 {
@@ -8,7 +11,7 @@ import kabam.lib.tasks.BaseTask;
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
 import kabam.rotmg.ui.view.NotEnoughGoldDialog;
 
-public class PurchaseCharacterErrorTask extends BaseTask 
+public class PurchaseCharacterErrorTask extends BaseTask
     {
 
         [Inject]

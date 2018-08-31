@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.dailyLogin.controller.DailyLoginPanelMediator
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.dailyLogin.controller.DailyLoginPanelMediator
 
 package kabam.rotmg.dailyLogin.controller
 {
@@ -15,7 +18,7 @@ import kabam.rotmg.dialogs.control.OpenDialogSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class DailyLoginPanelMediator extends Mediator
+public class DailyLoginPanelMediator extends Mediator 
     {
 
         [Inject]

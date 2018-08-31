@@ -1,4 +1,7 @@
-﻿//com.company.assembleegameclient.account.ui.NewChooseNameFrameMediator
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//com.company.assembleegameclient.account.ui.NewChooseNameFrameMediator
 
 package com.company.assembleegameclient.account.ui
 {
@@ -13,7 +16,7 @@ import kabam.rotmg.ui.signals.NameChangedSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class NewChooseNameFrameMediator extends Mediator 
+public class NewChooseNameFrameMediator extends Mediator
     {
 
         [Inject]

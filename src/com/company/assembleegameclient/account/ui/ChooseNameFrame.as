@@ -1,4 +1,7 @@
-﻿//com.company.assembleegameclient.account.ui.ChooseNameFrame
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//com.company.assembleegameclient.account.ui.ChooseNameFrame
 
 package com.company.assembleegameclient.account.ui
 {
@@ -10,7 +13,7 @@ import kabam.rotmg.text.model.TextKey;
 
 import org.osflash.signals.Signal;
 
-public class ChooseNameFrame extends Frame 
+public class ChooseNameFrame extends Frame
     {
 
         public const cancel:Signal = new Signal();
@@ -22,7 +25,7 @@ public class ChooseNameFrame extends Frame
 
         public function ChooseNameFrame(_arg_1:AGameSprite, _arg_2:Boolean)
         {
-            super(TextKey.CHOOSE_NAME_TITLE, TextKey.FRAME_CANCEL, TextKey.CHOOSE_NAME_CHOOSE);
+            super(TextKey.CHOOSE_NAME_TITLE, TextKey.FRAME_CANCEL, TextKey.CHOOSE_NAME_CHOOSE, "/chooseName");
             this.gameSprite = _arg_1;
             this.isPurchase = _arg_2;
             this.nameInput = new TextInputField(TextKey.CHOOSE_NAME_NAME, false);

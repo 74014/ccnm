@@ -1,7 +1,12 @@
-﻿//kabam.rotmg.dailyLogin.config.DailyLoginConfig
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.dailyLogin.config.DailyLoginConfig
 
 package kabam.rotmg.dailyLogin.config
 {
+import io.decagames.rotmg.pets.tasks.GetOwnedPetSkinsTask;
+
 import kabam.rotmg.dailyLogin.commands.ShowDailyCalendarPopupCommand;
 import kabam.rotmg.dailyLogin.controller.CalendarDayBoxMediator;
 import kabam.rotmg.dailyLogin.controller.CalendarTabsViewMediator;
@@ -43,6 +48,7 @@ public class DailyLoginConfig implements IConfig
             this.mediatorMap.map(CalendarDayBox).toMediator(CalendarDayBoxMediator);
             this.mediatorMap.map(CalendarTabsView).toMediator(CalendarTabsViewMediator);
             this.injector.map(FetchPlayerCalendarTask);
+            this.injector.map(GetOwnedPetSkinsTask);
             this.injector.map(DailyLoginModel).asSingleton();
             this.injector.map(ClaimDailyRewardResponseSignal).asSingleton();
             this.commandMap.map(ShowDailyCalendarPopupSignal).toCommand(ShowDailyCalendarPopupCommand);

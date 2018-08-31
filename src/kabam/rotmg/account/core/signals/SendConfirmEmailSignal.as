@@ -1,10 +1,13 @@
-﻿//kabam.rotmg.account.core.signals.SendConfirmEmailSignal
+﻿// Decompiled by AS3 Sorcerer 5.94
+// www.as3sorcerer.com
+
+//kabam.rotmg.account.core.signals.SendConfirmEmailSignal
 
 package kabam.rotmg.account.core.signals
 {
-import org.osflash.signals.Signal;
+    import org.osflash.signals.Signal;
 
-public class SendConfirmEmailSignal extends Signal
+    public class SendConfirmEmailSignal extends Signal 
     {
 
 

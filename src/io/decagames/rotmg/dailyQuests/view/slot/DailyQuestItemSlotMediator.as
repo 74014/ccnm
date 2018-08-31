@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.dailyQuests.view.slot.DailyQuestItemSlotMediator
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.dailyQuests.view.slot.DailyQuestItemSlotMediator
 
 package io.decagames.rotmg.dailyQuests.view.slot
 {
@@ -43,33 +46,42 @@ public class DailyQuestItemSlotMediator extends Mediator
             var _local_2:int = ObjectLibrary.idToType_[this.view.itemID];
             this.tooltip = new EquipmentToolTip(this.view.itemID, ((this.view.type == DailyQuestItemSlotType.REQUIREMENT) ? null : _local_1), _local_2, InventoryOwnerTypes.CURRENT_PLAYER);
             this.view.addEventListener(MouseEvent.ROLL_OVER, this.onRollOverHandler);
-            if (this.view.isSlotsSelectable){
+            if (this.view.isSlotsSelectable)
+            {
                 this.unselectAllSignal.add(this.unselectHandler);
                 this.view.addEventListener(MouseEvent.CLICK, this.onSlotSelected);
             }
         }
 
-        private function unselectHandler(_arg_1:int):void{
-            if (this.view.itemID != _arg_1){
+        private function unselectHandler(_arg_1:int):void
+        {
+            if (this.view.itemID != _arg_1)
+            {
                 this.view.selected = false;
             }
         }
 
-        override public function destroy():void{
+        override public function destroy():void
+        {
             this.view.removeEventListener(MouseEvent.ROLL_OVER, this.onRollOverHandler);
-            if (this.view.isSlotsSelectable){
+            if (this.view.isSlotsSelectable)
+            {
                 this.unselectAllSignal.remove(this.unselectHandler);
                 this.view.removeEventListener(MouseEvent.CLICK, this.onSlotSelected);
             }
             this.view.dispose();
         }
 
-        private function onSlotSelected(_arg_1:MouseEvent):void{
+        private function onSlotSelected(_arg_1:MouseEvent):void
+        {
             this.view.selected = (!(this.view.selected));
             this.unselectAllSignal.dispatch(this.view.itemID);
-            if (this.view.selected){
+            if (this.view.selected)
+            {
                 this.model.selectedItem = this.view.itemID;
-            } else {
+            }
+            else
+            {
                 this.model.selectedItem = -1;
             }
             this.selectedItemSlotsSignal.dispatch(this.model.selectedItem);

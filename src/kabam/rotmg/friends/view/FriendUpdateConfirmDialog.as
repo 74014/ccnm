@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.friends.view.FriendUpdateConfirmDialog
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.friends.view.FriendUpdateConfirmDialog
 
 package kabam.rotmg.friends.view
 {
@@ -16,7 +19,7 @@ import kabam.rotmg.core.StaticInjectorContext;
 import org.osflash.signals.Signal;
 import org.swiftsuspenders.Injector;
 
-public class FriendUpdateConfirmDialog extends Dialog implements DialogCloser
+public class FriendUpdateConfirmDialog extends Dialog implements DialogCloser 
     {
 
         private const closeDialogComponent:CloseDialogComponent = new CloseDialogComponent();
@@ -25,7 +28,7 @@ public class FriendUpdateConfirmDialog extends Dialog implements DialogCloser
 
         public function FriendUpdateConfirmDialog(_arg_1:String, _arg_2:String, _arg_3:String, _arg_4:String, _arg_5:FriendRequestVO, _arg_6:Object=null)
         {
-            super(_arg_1, _arg_2, _arg_3, _arg_4, _arg_6);
+            super(_arg_1, _arg_2, _arg_3, _arg_4, null, _arg_6);
             this._friendRequestVO = _arg_5;
             this.closeDialogComponent.add(this, Dialog.RIGHT_BUTTON);
             this.closeDialogComponent.add(this, Dialog.LEFT_BUTTON);

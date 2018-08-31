@@ -140,28 +140,39 @@
          <path-element>F:/Programação/IntelliJ/FlexSDK/frameworks/libs/osmf.swc</path-element>
          <path-element>F:/Programação/IntelliJ/FlexSDK/frameworks/libs/textLayout.swc</path-element>
          <path-element>F:/Programação/IntelliJ/FlexSDK/frameworks/libs/authoringsupport.swc</path-element>
-         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/CrazyClient-dev/libs/as3-signals.swc</path-element>
-         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/CrazyClient-dev/libs/as3core.swc</path-element>
-         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/CrazyClient-dev/libs/as3crypto.swc</path-element>
-         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/CrazyClient-dev/libs/Console.swc</path-element>
-         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/CrazyClient-dev/libs/GTween-v2.01.swc</path-element>
-         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/CrazyClient-dev/libs/hamcrest-as3-flex-1.1.3.swc</path-element>
-         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/CrazyClient-dev/libs/Hi-Res-Stats.swc</path-element>
-         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/CrazyClient-dev/libs/ionel.swc</path-element>
-         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/CrazyClient-dev/libs/robotlegs.swc</path-element>
-         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/CrazyClient-dev/libs/starling.swc</path-element>
-         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/CrazyClient-dev/libs/Swiftsuspenders-v2.0.0rc1.swc</path-element>
-         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/CrazyClient-dev/libs/as3-signals.swc</path-element>
-         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/CrazyClient-dev/libs/as3core.swc</path-element>
-         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/CrazyClient-dev/libs/as3crypto.swc</path-element>
-         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/CrazyClient-dev/libs/Console.swc</path-element>
-         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/CrazyClient-dev/libs/GTween-v2.01.swc</path-element>
-         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/CrazyClient-dev/libs/hamcrest-as3-flex-1.1.3.swc</path-element>
-         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/CrazyClient-dev/libs/Hi-Res-Stats.swc</path-element>
-         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/CrazyClient-dev/libs/ionel.swc</path-element>
-         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/CrazyClient-dev/libs/robotlegs.swc</path-element>
-         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/CrazyClient-dev/libs/starling.swc</path-element>
-         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/CrazyClient-dev/libs/Swiftsuspenders-v2.0.0rc1.swc</path-element>
+         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/ccnm/libs/as3-signals.swc</path-element>
+         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/ccnm/libs/as3core.swc</path-element>
+         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/ccnm/libs/as3crypto.swc</path-element>
+         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/ccnm/libs/Console.swc</path-element>
+         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/ccnm/libs/GTween-v2.01.swc</path-element>
+         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/ccnm/libs/hamcrest-as3-flex-1.1.3.swc</path-element>
+         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/ccnm/libs/Hi-Res-Stats.swc</path-element>
+         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/ccnm/libs/ionel.swc</path-element>
+         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/ccnm/libs/robotlegs.swc</path-element>
+         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/ccnm/libs/starling.swc</path-element>
+         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/ccnm/libs/Swiftsuspenders-v2.0.0rc1.swc</path-element>
+         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/ccnm/libs/as3-signals.swc</path-element>
+         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/ccnm/libs/as3core.swc</path-element>
+         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/ccnm/libs/as3crypto.swc</path-element>
+         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/ccnm/libs/Console.swc</path-element>
+         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/ccnm/libs/GTween-v2.01.swc</path-element>
+         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/ccnm/libs/hamcrest-as3-flex-1.1.3.swc</path-element>
+         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/ccnm/libs/Hi-Res-Stats.swc</path-element>
+         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/ccnm/libs/ionel.swc</path-element>
+         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/ccnm/libs/robotlegs.swc</path-element>
+         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/ccnm/libs/starling.swc</path-element>
+         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/ccnm/libs/Swiftsuspenders-v2.0.0rc1.swc</path-element>
+         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/ccnm/libs/Console.swc</path-element>
+         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/ccnm/libs/GTween-v2.01.swc</path-element>
+         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/ccnm/libs/as3core.swc</path-element>
+         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/ccnm/libs/as3crypto.swc</path-element>
+         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/ccnm/libs/as3-signals.swc</path-element>
+         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/ccnm/libs/hamcrest-as3-flex-1.1.3.swc</path-element>
+         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/ccnm/libs/Hi-Res-Stats.swc</path-element>
+         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/ccnm/libs/ionel.swc</path-element>
+         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/ccnm/libs/starling.swc</path-element>
+         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/ccnm/libs/robotlegs.swc</path-element>
+         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/ccnm/libs/Swiftsuspenders-v2.0.0rc1.swc</path-element>
       </library-path>
       <!-- compiler.locale: specifies the locale for internationalization-->
       <locale>
@@ -229,7 +240,7 @@
       -->
       <!-- compiler.source-path: list of path elements that form the roots of ActionScript class hierarchies-->
       <source-path>
-         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/CrazyClient-dev/src</path-element>
+         <path-element>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/ccnm/src</path-element>
       </source-path>
       <!-- compiler.strict: runs the AS3 compiler in strict error checking mode.-->
       <strict>true</strict>
@@ -438,7 +449,7 @@
    <link-report>filename</link-report>
    -->
    <!-- load-config: load a file containing configuration options-->
-   <load-config>C:\Users\Milton Jr\.IntelliJIdea2018.1\system\compile-server\webmain_b4fe5fb9\_temp_\IntelliJ_IDEA\idea-B4771DE8-99187B52.xml</load-config>
+   <load-config>C:\Users\Milton Jr\.IntelliJIdea2018.1\system\compile-server\crazy_client_a01dcc9c\_temp_\IntelliJ_IDEA\idea-FC09A87F-11380A07.xml</load-config>
    <!-- load-externs: an XML file containing <def>, <pre>, and <ext> symbols to omit from linking when building a SWF-->
    <!-- load-externs usage:
    <load-externs>filename</load-externs>
@@ -490,7 +501,7 @@
       -->
    </metadata>
    <!-- output: the filename of the SWF movie to create-->
-   <output>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/CrazyClient-dev/out/WebMain.swf</output>
+   <output>F:/Programação/IntelliJ/Atualizar Client/CC source/CrazyClient-dev 03-08-2018 Atualizado/ccnm/out/Crazy Client.swf</output>
    <!-- raw-metadata: XML text to store in the SWF metadata (overrides metadata.* configuration)-->
    <!-- raw-metadata usage:
    <raw-metadata>text</raw-metadata>

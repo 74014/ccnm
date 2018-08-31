@@ -614,7 +614,7 @@ public class EquipmentToolTip extends ToolTip
                             }));
                             break;
                         case ActivationType.MAGIC_NOVA:
-                            this.effects.push(new Effect(TextKey.FILL_PARTY_MAGIC, (((activateXML.@amount + " MP at ") + activateXML.@range) + " sqrs")));
+                            this.effects.push(new Effect(TextKey.PARTY_FILL, (((activateXML.@amount + " MP at ") + activateXML.@range) + " sqrs")));
                             break;
                         case ActivationType.TELEPORT:
                             this.effects.push(new Effect(TextKey.BLANK, {"data":new LineBuilder().setParams(TextKey.TELEPORT_TO_TARGET)}));
@@ -622,6 +622,8 @@ public class EquipmentToolTip extends ToolTip
                         case ActivationType.BULLET_NOVA:
                             this.getSpell(activateXML, compareXML);
                             break;
+                        case ActivationType.BULLET_CREATE:
+                            this.getBulletCreate(activateXML, compareXML);
                         case ActivationType.VAMPIRE_BLAST:
                             this.getSkull(activateXML, compareXML);
                             break;
@@ -753,6 +755,25 @@ public class EquipmentToolTip extends ToolTip
             var _local_4:String = this.colorUntiered("Spell: ");
             _local_4 = (_local_4 + "{numShots} Shots");
             this.effects.push(new Effect(_local_4, {"numShots":TooltipHelper.compare(_local_3.a, _local_3.b)}));
+        }
+
+        private function getBulletCreate(_arg_1:XML, _arg_2:XML=null):void{
+            var _local_3:ComPair = new ComPair(_arg_1, _arg_2, "numShots", 3);
+            var _local_4:ComPair = new ComPair(_arg_1, _arg_2, "offsetAngle", 90);
+            var _local_5:ComPair = new ComPair(_arg_1, _arg_2, "minDistance", 0);
+            var _local_6:ComPair = new ComPair(_arg_1, _arg_2, "maxDistance", 4.4);
+            var _local_7:String = this.colorUntiered("Wakizashi: ");
+            _local_7 = (_local_7 + "{numShots} shots at {angle}\n");
+            if (_local_5.a){
+                _local_7 = (_local_7 + "Min Cast Range: {minDistance}\n");
+            }
+            _local_7 = (_local_7 + "Max Cast Range: {maxDistance}");
+            this.effects.push(new Effect(_local_7, {
+                "numShots":TooltipHelper.compare(_local_3.a, _local_3.b),
+                "angle":TooltipHelper.getPlural(_local_4.a, "degree"),
+                "minDistance":TooltipHelper.compareAndGetPlural(_local_5.a, _local_5.b, "square", false),
+                "maxDistance":TooltipHelper.compareAndGetPlural(_local_6.a, _local_6.b, "square")
+            }));
         }
 
         private function getSkull(_arg_1:XML, _arg_2:XML=null):void{

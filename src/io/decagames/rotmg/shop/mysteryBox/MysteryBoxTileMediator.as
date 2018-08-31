@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.shop.mysteryBox.MysteryBoxTileMediator
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.shop.mysteryBox.MysteryBoxTileMediator
 
 package io.decagames.rotmg.shop.mysteryBox
 {
@@ -22,7 +25,7 @@ import kabam.rotmg.tooltips.HoverTooltipDelegate;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class MysteryBoxTileMediator extends Mediator 
+public class MysteryBoxTileMediator extends Mediator
     {
 
         [Inject]

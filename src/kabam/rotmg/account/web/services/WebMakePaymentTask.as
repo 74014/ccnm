@@ -1,19 +1,20 @@
-﻿//kabam.rotmg.account.web.services.WebMakePaymentTask
+﻿// Decompiled by AS3 Sorcerer 5.94
+// www.as3sorcerer.com
+
+//kabam.rotmg.account.web.services.WebMakePaymentTask
 
 package kabam.rotmg.account.web.services
 {
-import com.company.assembleegameclient.parameters.Parameters;
-import com.company.assembleegameclient.util.PaymentMethod;
+    import kabam.lib.tasks.BaseTask;
+    import kabam.rotmg.account.core.services.MakePaymentTask;
+    import kabam.rotmg.account.core.PaymentData;
+    import kabam.rotmg.account.core.model.OfferModel;
+    import com.company.assembleegameclient.parameters.Parameters;
+    import com.company.assembleegameclient.util.PaymentMethod;
+    import flash.net.navigateToURL;
+    import flash.net.URLRequest;
 
-import flash.net.URLRequest;
-import flash.net.navigateToURL;
-
-import kabam.lib.tasks.BaseTask;
-import kabam.rotmg.account.core.PaymentData;
-import kabam.rotmg.account.core.model.OfferModel;
-import kabam.rotmg.account.core.services.MakePaymentTask;
-
-public class WebMakePaymentTask extends BaseTask implements MakePaymentTask
+    public class WebMakePaymentTask extends BaseTask implements MakePaymentTask 
     {
 
         [Inject]

@@ -7,8 +7,6 @@ import mx.core.*;
 	{
 		public function WebChoosePaymentTypeDialog_hifiBeginnerOfferMoneyFrameEmbed()
 		{
-			super();
-
 		}
 	}
 }

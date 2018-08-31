@@ -1,12 +1,15 @@
-﻿//kabam.rotmg.account.web.services.WebSendPasswordReminderTask
+﻿// Decompiled by AS3 Sorcerer 5.94
+// www.as3sorcerer.com
+
+//kabam.rotmg.account.web.services.WebSendPasswordReminderTask
 
 package kabam.rotmg.account.web.services
 {
-import kabam.lib.tasks.BaseTask;
-import kabam.rotmg.account.core.services.SendPasswordReminderTask;
-import kabam.rotmg.appengine.api.AppEngineClient;
+    import kabam.lib.tasks.BaseTask;
+    import kabam.rotmg.account.core.services.SendPasswordReminderTask;
+    import kabam.rotmg.appengine.api.AppEngineClient;
 
-public class WebSendPasswordReminderTask extends BaseTask implements SendPasswordReminderTask
+    public class WebSendPasswordReminderTask extends BaseTask implements SendPasswordReminderTask 
     {
 
         [Inject]

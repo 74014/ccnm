@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.news.view.NewsCell
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.news.view.NewsCell
 
 package kabam.rotmg.news.view
 {
@@ -24,8 +27,8 @@ import org.swiftsuspenders.Injector;
 public class NewsCell extends Sprite 
     {
 
-        private static var DefaultGraphicLarge:Class = NewsCell_DefaultGraphicLarge;
-        private static var DefaultGraphicSmall:Class = NewsCell_DefaultGraphicSmall;
+        internal static var DefaultGraphicLarge:Class = NewsCell_DefaultGraphicLarge;
+        internal static var DefaultGraphicSmall:Class = NewsCell_DefaultGraphicSmall;
         private static const BOX_HEIGHT:uint = 30;
         private static const LARGE:String = "LARGE";
         private static const SMALL:String = "SMALL";

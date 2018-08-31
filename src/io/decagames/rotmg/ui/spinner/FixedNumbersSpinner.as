@@ -1,10 +1,13 @@
-﻿//io.decagames.rotmg.ui.spinner.FixedNumbersSpinner
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.ui.spinner.FixedNumbersSpinner
 
 package io.decagames.rotmg.ui.spinner
 {
 import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
 
-public class FixedNumbersSpinner extends NumberSpinner 
+public class FixedNumbersSpinner extends NumberSpinner
     {
 
         private var _numbers:Vector.<int>;

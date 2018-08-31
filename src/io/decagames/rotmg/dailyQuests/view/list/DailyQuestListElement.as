@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.dailyQuests.view.list.DailyQuestListElement
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.dailyQuests.view.list.DailyQuestListElement
 
 package io.decagames.rotmg.dailyQuests.view.list
 {
@@ -62,26 +65,39 @@ public class DailyQuestListElement extends Sprite
             this.draw();
         }
 
-        private function draw():void{
+        private function draw():void
+        {
             removeChild(this.icon);
             removeChild(this.background);
-            if (this._completed){
+            if (this._completed)
+            {
                 this.icon = TextureParser.instance.getTexture("UI", "daily_quest_list_element_complete_icon");
-            } else {
-                if (this.ready){
+            }
+            else
+            {
+                if (this.ready)
+                {
                     this.icon = TextureParser.instance.getTexture("UI", "daily_quest_list_element_ready_icon");
-                } else {
+                }
+                else
+                {
                     this.icon = TextureParser.instance.getTexture("UI", "daily_quest_list_element_available_icon");
                 }
             }
             this.icon.x = 5;
             this.icon.y = 5;
-            if (this._isSelected){
+            if (this._isSelected)
+            {
                 this.background = TextureParser.instance.getSliceScalingBitmap("UI", "daily_quest_list_element_orange", 190);
-            } else {
-                if (this._completed){
+            }
+            else
+            {
+                if (this._completed)
+                {
                     this.background = TextureParser.instance.getSliceScalingBitmap("UI", "daily_quest_list_element_green", 190);
-                } else {
+                }
+                else
+                {
                     this.background = TextureParser.instance.getSliceScalingBitmap("UI", "daily_quest_list_element_grey", 190);
                 }
             }

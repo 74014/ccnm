@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.promotions.view.WebChoosePaymentTypeDialog
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.promotions.view.WebChoosePaymentTypeDialog
 
 package kabam.rotmg.promotions.view
 {

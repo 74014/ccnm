@@ -1,4 +1,7 @@
-﻿//com.company.assembleegameclient.account.ui.PaymentMethodRadioButton
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//com.company.assembleegameclient.account.ui.PaymentMethodRadioButton
 
 package com.company.assembleegameclient.account.ui
 {
@@ -14,7 +17,7 @@ import kabam.rotmg.util.components.RadioButton;
 
 import org.osflash.signals.Signal;
 
-public class PaymentMethodRadioButton extends Sprite implements Selectable 
+public class PaymentMethodRadioButton extends Sprite implements Selectable
     {
 
         public static const HEIGHT:int = 28;

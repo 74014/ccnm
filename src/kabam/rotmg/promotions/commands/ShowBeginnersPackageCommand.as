@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.promotions.commands.ShowBeginnersPackageCommand
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.promotions.commands.ShowBeginnersPackageCommand
 
 package kabam.rotmg.promotions.commands
 {
@@ -11,7 +14,7 @@ import kabam.rotmg.account.core.Account;
 import kabam.rotmg.account.core.services.GetOffersTask;
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
 import kabam.rotmg.promotions.model.BeginnersPackageModel;
-import kabam.rotmg.promotions.service.GetDaysRemainingTask;
+import kabam.rotmg.promotions.service.GetPackageStatusTask;
 import kabam.rotmg.promotions.view.AlreadyPurchasedBeginnersPackageDialog;
 import kabam.rotmg.promotions.view.BeginnersPackageOfferDialog;
 
@@ -25,7 +28,7 @@ public class ShowBeginnersPackageCommand
         [Inject]
         public var openDialog:OpenDialogSignal;
         [Inject]
-        public var getDaysRemaining:GetDaysRemainingTask;
+        public var getPackageStatusTask:GetPackageStatusTask;
         [Inject]
         public var getOffers:GetOffersTask;
         [Inject]
@@ -34,7 +37,7 @@ public class ShowBeginnersPackageCommand
 
         public function execute():void
         {
-            var _local_1:BranchingTask = new BranchingTask(this.getDaysRemaining, this.makeSuccessTask(), this.makeFailureTask());
+            var _local_1:BranchingTask = new BranchingTask(this.getPackageStatusTask, this.makeSuccessTask(), this.makeFailureTask());
             this.monitor.add(_local_1);
             _local_1.start();
         }

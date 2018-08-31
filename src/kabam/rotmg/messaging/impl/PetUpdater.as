@@ -7,9 +7,9 @@ import com.company.assembleegameclient.objects.Pet;
 import com.company.assembleegameclient.util.ConditionEffect;
 
 import kabam.rotmg.messaging.impl.data.StatData;
-import kabam.rotmg.pets.data.AbilityVO;
-import kabam.rotmg.pets.data.PetVO;
-import kabam.rotmg.pets.data.PetsModel;
+import io.decagames.rotmg.pets.data.vo.AbilityVO;
+import io.decagames.rotmg.pets.data.vo.PetVO;
+import io.decagames.rotmg.pets.data.PetsModel;
 
 public class PetUpdater
     {

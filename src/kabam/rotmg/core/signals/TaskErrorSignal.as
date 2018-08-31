@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.core.signals.TaskErrorSignal
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.core.signals.TaskErrorSignal
 
 package kabam.rotmg.core.signals
 {

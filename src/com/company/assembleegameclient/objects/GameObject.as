@@ -48,8 +48,8 @@ import flash.utils.getTimer;
 
 import kabam.rotmg.core.StaticInjectorContext;
 import kabam.rotmg.messaging.impl.data.WorldPosData;
-import kabam.rotmg.pets.data.PetVO;
-import kabam.rotmg.pets.data.PetsModel;
+import io.decagames.rotmg.pets.data.PetsModel;
+import io.decagames.rotmg.pets.data.vo.PetVO;
 import kabam.rotmg.stage3D.GraphicsFillExtra;
 import kabam.rotmg.stage3D.Object3D.Object3DStage3D;
 import kabam.rotmg.text.model.TextKey;
@@ -105,6 +105,7 @@ public class GameObject extends BasicObject
         public var defense_:int = 0;
         public var slotTypes_:Vector.<int> = null;
         public var equipment_:Vector.<int> = null;
+        public var lockedSlot:Vector.<int> = null;
         public var condition_:Vector.<uint> = new <uint>[0, 0];
         protected var tex1Id_:int = 0;
         protected var tex2Id_:int = 0;
@@ -210,6 +211,7 @@ public class GameObject extends BasicObject
                     this.equipment_[_local_2] = -1;
                     _local_2++;
                 }
+                this.lockedSlot = new Vector.<int>(this.slotTypes_.length);
             }
             if (_arg_1.hasOwnProperty("Tex1"))
             {
@@ -251,6 +253,10 @@ public class GameObject extends BasicObject
                 {
                     _local_5 = (_local_5 * 2);
                 }
+            }
+            if ((_arg_4[ConditionEffect.CE_SECOND_BATCH] & ConditionEffect.EXPOSED_BIT) != 0)
+            {
+                _local_5 = (_local_5 - 20);
             }
             var _local_6:int = int(((_arg_1 * 3) / 20));
             var _local_7:int = Math.max(_local_6, (_arg_1 - _local_5));
@@ -439,6 +445,7 @@ public class GameObject extends BasicObject
             }
             this.slotTypes_ = null;
             this.equipment_ = null;
+            this.lockedSlot = null;
             if (this.nameBitmapData_ != null)
             {
                 this.nameBitmapData_.dispose();
@@ -682,6 +689,11 @@ public class GameObject extends BasicObject
         public function isSilenced():Boolean
         {
             return (!((this.condition_[ConditionEffect.CE_SECOND_BATCH] & ConditionEffect.SILENCED_BIT) == 0));
+        }
+
+        public function isExposed():Boolean
+        {
+            return (!((this.condition_[ConditionEffect.CE_SECOND_BATCH] & ConditionEffect.EXPOSED_BIT) == 0));
         }
 
         public function isSafe(_arg_1:int=20):Boolean

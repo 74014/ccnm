@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.dailyQuests.view.panel.DailyQuestsPanel
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.dailyQuests.view.panel.DailyQuestsPanel
 
 package io.decagames.rotmg.dailyQuests.view.panel
 {
@@ -9,13 +12,13 @@ import com.company.assembleegameclient.ui.panels.Panel;
 import flash.display.Bitmap;
 
 import io.decagames.rotmg.dailyQuests.model.DailyQuestsModel;
+import io.decagames.rotmg.pets.utils.PetsViewAssetFactory;
 
 import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.pets.util.PetsViewAssetFactory;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
-public class DailyQuestsPanel extends Panel 
+public class DailyQuestsPanel extends Panel
     {
 
         private static var questDataExists:Boolean = false;

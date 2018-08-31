@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.dailyQuests.command.QuestFetchCompleteCommand
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.dailyQuests.command.QuestFetchCompleteCommand
 
 package io.decagames.rotmg.dailyQuests.command
 {
@@ -34,6 +37,7 @@ public class QuestFetchCompleteCommand extends Command
                 _local_2.completed = _local_1.completed;
                 _local_2.category = _local_1.category;
                 _local_2.itemOfChoice = _local_1.itemOfChoice;
+                _local_2.repeatable = _local_1.repeatable;
                 this.model.addQuest(_local_2);
             }
         }

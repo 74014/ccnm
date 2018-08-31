@@ -1,10 +1,13 @@
-﻿//kabam.rotmg.core.signals.InvalidateDataSignal
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.core.signals.InvalidateDataSignal
 
 package kabam.rotmg.core.signals
 {
 import org.osflash.signals.Signal;
 
-public class InvalidateDataSignal extends Signal 
+public class InvalidateDataSignal extends Signal
     {
 
 

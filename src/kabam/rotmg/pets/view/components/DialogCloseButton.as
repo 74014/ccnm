@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.pets.view.components.DialogCloseButton
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.pets.view.components.DialogCloseButton
 
 package kabam.rotmg.pets.view.components
 {
@@ -15,6 +18,7 @@ public class DialogCloseButton extends Sprite
         public static var CloseButtonLargeAsset:Class = DialogCloseButton_CloseButtonLargeAsset;
 
         public const clicked:Signal = new Signal();
+        public const closeClicked:Signal = new Signal();
 
         public var disabled:Boolean = false;
 
@@ -60,8 +64,9 @@ public class DialogCloseButton extends Sprite
         {
             if (!this.disabled)
             {
-                this.clicked.dispatch();
                 removeEventListener(MouseEvent.CLICK, this.onClicked);
+                this.closeClicked.dispatch();
+                this.clicked.dispatch();
             }
         }
 

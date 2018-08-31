@@ -1,22 +1,25 @@
-﻿//kabam.rotmg.dailyLogin.view.CalendarTabsView
+﻿// Decompiled by AS3 Sorcerer 5.94
+// www.as3sorcerer.com
+
+//kabam.rotmg.dailyLogin.view.CalendarTabsView
 
 package kabam.rotmg.dailyLogin.view
 {
-import com.company.util.GraphicsUtil;
+    import flash.display.Sprite;
+    import flash.display.GraphicsSolidFill;
+    import flash.display.GraphicsStroke;
+    import kabam.rotmg.dailyLogin.config.CalendarSettings;
+    import flash.display.LineScaleMode;
+    import flash.display.CapsStyle;
+    import flash.display.JointStyle;
+    import flash.display.GraphicsPath;
+    import __AS3__.vec.Vector;
+    import flash.display.IGraphicsData;
+    import com.company.util.GraphicsUtil;
+    import flash.geom.Rectangle;
+    import __AS3__.vec.*;
 
-import flash.display.CapsStyle;
-import flash.display.GraphicsPath;
-import flash.display.GraphicsSolidFill;
-import flash.display.GraphicsStroke;
-import flash.display.IGraphicsData;
-import flash.display.JointStyle;
-import flash.display.LineScaleMode;
-import flash.display.Sprite;
-import flash.geom.Rectangle;
-
-import kabam.rotmg.dailyLogin.config.CalendarSettings;
-
-public class CalendarTabsView extends Sprite
+    public class CalendarTabsView extends Sprite 
     {
 
         private var fill_:GraphicsSolidFill = new GraphicsSolidFill(0x363636, 1);
@@ -56,12 +59,12 @@ public class CalendarTabsView extends Sprite
                 else
                 {
                     _local_2.state = CalendarTabButton.STATE_IDLE;
-                }
-            }
+                };
+            };
             if (this.calendar)
             {
                 removeChild(this.calendar);
-            }
+            };
             this.calendar = new CalendarView();
             addChild(this.calendar);
             this.calendar.x = CalendarSettings.DAILY_LOGIN_TABS_PADDING;

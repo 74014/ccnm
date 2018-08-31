@@ -1,14 +1,16 @@
-﻿//kabam.rotmg.account.core.view.AccountInfoMediator
+﻿// Decompiled by AS3 Sorcerer 5.94
+// www.as3sorcerer.com
+
+//kabam.rotmg.account.core.view.AccountInfoMediator
 
 package kabam.rotmg.account.core.view
 {
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.account.core.signals.UpdateAccountInfoSignal;
-import kabam.rotmg.account.web.WebAccount;
+    import robotlegs.bender.bundles.mvcs.Mediator;
+    import kabam.rotmg.account.core.Account;
+    import kabam.rotmg.account.core.signals.UpdateAccountInfoSignal;
+    import kabam.rotmg.account.web.WebAccount;
 
-import robotlegs.bender.bundles.mvcs.Mediator;
-
-public class AccountInfoMediator extends Mediator 
+    public class AccountInfoMediator extends Mediator 
     {
 
         [Inject]

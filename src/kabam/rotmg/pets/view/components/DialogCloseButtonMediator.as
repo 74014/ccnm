@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.pets.view.components.DialogCloseButtonMediator
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.pets.view.components.DialogCloseButtonMediator
 
 package kabam.rotmg.pets.view.components
 {
@@ -17,7 +20,7 @@ public class DialogCloseButtonMediator extends Mediator
 
         override public function initialize():void
         {
-            this.view.clicked.addOnce(this.closeDialog);
+            this.view.closeClicked.addOnce(this.closeDialog);
         }
 
         private function closeDialog():void

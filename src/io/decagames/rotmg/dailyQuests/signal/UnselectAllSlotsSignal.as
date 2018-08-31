@@ -1,12 +1,17 @@
-﻿
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
 //io.decagames.rotmg.dailyQuests.signal.UnselectAllSlotsSignal
 
-package io.decagames.rotmg.dailyQuests.signal{
+package io.decagames.rotmg.dailyQuests.signal
+{
 import org.osflash.signals.Signal;
 
-public class UnselectAllSlotsSignal extends Signal {
+public class UnselectAllSlotsSignal extends Signal 
+    {
 
-        public function UnselectAllSlotsSignal(){
+        public function UnselectAllSlotsSignal()
+        {
             super(int);
         }
 

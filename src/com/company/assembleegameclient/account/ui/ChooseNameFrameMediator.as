@@ -1,22 +1,30 @@
-﻿//com.company.assembleegameclient.account.ui.ChooseNameFrameMediator
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//com.company.assembleegameclient.account.ui.ChooseNameFrameMediator
 
 package com.company.assembleegameclient.account.ui
 {
 import com.company.assembleegameclient.game.AGameSprite;
 import com.company.assembleegameclient.game.events.NameResultEvent;
+import com.company.assembleegameclient.parameters.Parameters;
 
+import kabam.rotmg.core.service.TrackingData;
+import kabam.rotmg.core.signals.TrackEventSignal;
 import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 import kabam.rotmg.ui.signals.NameChangedSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class ChooseNameFrameMediator extends Mediator 
+public class ChooseNameFrameMediator extends Mediator
     {
 
         [Inject]
         public var view:ChooseNameFrame;
         [Inject]
         public var closeDialogs:CloseDialogsSignal;
+        [Inject]
+        public var trackEvent:TrackEventSignal;
         [Inject]
         public var nameChanged:NameChangedSignal;
         private var gameSprite:AGameSprite;
@@ -60,10 +68,23 @@ public class ChooseNameFrameMediator extends Mediator
 
         private function handleSuccessfulNameChange():void
         {
+            if (this.view.isPurchase)
+            {
+                this.trackPurchase();
+            }
             this.gameSprite.model.setName(this.name);
             this.gameSprite.map.player_.name_ = this.name;
             this.closeDialogs.dispatch();
             this.nameChanged.dispatch(this.name);
+        }
+
+        private function trackPurchase():void
+        {
+            var _local_1:TrackingData = new TrackingData();
+            _local_1.category = "credits";
+            _local_1.action = ((this.gameSprite.model.getConverted()) ? "buyConverted" : "buy");
+            _local_1.label = "Name Change";
+            _local_1.value = Parameters.NAME_CHANGE_PRICE;
         }
 
         private function handleFailedNameChange(_arg_1:String):void

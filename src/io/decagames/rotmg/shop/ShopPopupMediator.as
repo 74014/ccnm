@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.shop.ShopPopupMediator
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.shop.ShopPopupMediator
 
 package io.decagames.rotmg.shop
 {
@@ -32,7 +35,7 @@ import kabam.rotmg.tooltips.HoverTooltipDelegate;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class ShopPopupMediator extends Mediator
+public class ShopPopupMediator extends Mediator 
     {
 
         [Inject]
@@ -59,6 +62,7 @@ public class ShopPopupMediator extends Mediator
         private var hoverTooltipDelegate:HoverTooltipDelegate;
         private var tabs:UITabs;
         private var packageTab:TabButton;
+
 
         private function createPackageBoxTab():UITab
         {
@@ -88,8 +92,10 @@ public class ShopPopupMediator extends Mediator
             this.mysteryBoxesGrid.decorBitmap = "tabs_tile_decor";
             this.mysteryBoxesGrid.x = 10;
             var _local_2:Vector.<MysteryBoxInfo> = this.mysteryBoxModel.getBoxesForGrid();
-            for each (_local_3 in _local_2) {
-                if (((!(_local_3 == null)) && ((!(_local_3.endTime)) || (_local_3.getSecondsToEnd() > 0)))){
+            for each (_local_3 in _local_2)
+            {
+                if (((!(_local_3 == null)) && ((!(_local_3.endTime)) || (_local_3.getSecondsToEnd() > 0))))
+                {
                     this.mysteryBoxesGrid.addGridElement(this.createBoxTile(_local_3, MysteryBoxTile));
                 }
             }

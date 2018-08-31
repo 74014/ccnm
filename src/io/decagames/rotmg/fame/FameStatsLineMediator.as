@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.fame.FameStatsLineMediator
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.fame.FameStatsLineMediator
 
 package io.decagames.rotmg.fame
 {
@@ -10,7 +13,7 @@ import kabam.rotmg.tooltips.HoverTooltipDelegate;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class FameStatsLineMediator extends Mediator
+public class FameStatsLineMediator extends Mediator 
     {
 
         [Inject]

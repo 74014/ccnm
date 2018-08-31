@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.shop.ShopBoxTag
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.shop.ShopBoxTag
 
 package io.decagames.rotmg.shop
 {
@@ -30,9 +33,12 @@ public class ShopBoxTag extends Sprite
             _local_4.autoSize = TextFieldAutoSize.LEFT;
             _local_4.text = _arg_2;
             _local_4.x = 4;
-            if (_arg_3){
+            if (_arg_3)
+            {
                 DefaultLabelFormat.popupTag(_local_4);
-            } else {
+            }
+            else
+            {
                 DefaultLabelFormat.shopTag(_local_4);
             }
             addChild(_local_4);

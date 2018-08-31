@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.shop.packages.contentPopup.PackageBoxContentPopup
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.shop.packages.contentPopup.PackageBoxContentPopup
 
 package io.decagames.rotmg.shop.packages.contentPopup
 {
@@ -33,7 +36,8 @@ public class PackageBoxContentPopup extends ModalPopup
             return (this._info);
         }
 
-        public function get infoLabel():UILabel{
+        public function get infoLabel():UILabel
+        {
             return (this._infoLabel);
         }
 

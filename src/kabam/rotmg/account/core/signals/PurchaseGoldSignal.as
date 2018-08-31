@@ -1,12 +1,14 @@
-﻿//kabam.rotmg.account.core.signals.PurchaseGoldSignal
+﻿// Decompiled by AS3 Sorcerer 5.94
+// www.as3sorcerer.com
+
+//kabam.rotmg.account.core.signals.PurchaseGoldSignal
 
 package kabam.rotmg.account.core.signals
 {
-import com.company.assembleegameclient.util.offer.Offer;
+    import org.osflash.signals.Signal;
+    import com.company.assembleegameclient.util.offer.Offer;
 
-import org.osflash.signals.Signal;
-
-public class PurchaseGoldSignal extends Signal
+    public class PurchaseGoldSignal extends Signal 
     {
 
         public function PurchaseGoldSignal()

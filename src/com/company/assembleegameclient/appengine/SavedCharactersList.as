@@ -124,15 +124,13 @@ public class SavedCharactersList extends Event
             this.hasPlayerDied = true;
         }
 
-        private function parseBeginnersPackageData(_arg_1:XML):void
-        {
-            var _local_2:Number;
+        private function parseBeginnersPackageData(_arg_1:XML):void{
+            var _local_2:int;
             var _local_3:BeginnersPackageModel;
-            if (_arg_1.hasOwnProperty("BeginnerPackageTimeLeft"))
-            {
-                _local_2 = _arg_1.BeginnerPackageTimeLeft;
+            if (_arg_1.hasOwnProperty("BeginnerPackageStatus")){
+                _local_2 = _arg_1.BeginnerPackageStatus;
                 _local_3 = this.getBeginnerModel();
-                _local_3.setBeginnersOfferSecondsLeft(_local_2);
+                _local_3.status = _local_2;
             }
         }
 

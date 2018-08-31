@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.news.model.NewsModel
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.news.model.NewsModel
 
 package kabam.rotmg.news.model
 {
@@ -36,9 +39,9 @@ public class NewsModel
             this.sortNews();
         }
 
-        private function sortNews():*
+        private function sortNews():void
         {
-            this.inGameNews.sort(function (_arg_1:InGameNews, _arg_2:InGameNews):*
+            this.inGameNews.sort(function (_arg_1:InGameNews, _arg_2:InGameNews):int
             {
                 if (_arg_1.weight > _arg_2.weight)
                 {
@@ -83,8 +86,8 @@ public class NewsModel
 
         public function initNews():void
         {
-            var _local_1:int;
             this.news = new Vector.<NewsCellVO>(COUNT, true);
+            var _local_1:int;
             while (_local_1 < COUNT)
             {
                 this.news[_local_1] = new DefaultNewsCellVO(_local_1);
@@ -94,31 +97,31 @@ public class NewsModel
 
         public function updateNews(_arg_1:Vector.<NewsCellVO>):void
         {
-            var _local_2:NewsCellVO;
-            var _local_3:int;
+            var _local_3:NewsCellVO;
             var _local_4:int;
+            var _local_5:int;
             this.initNews();
-            var _local_5:Vector.<NewsCellVO> = new Vector.<NewsCellVO>();
+            var _local_2:Vector.<NewsCellVO> = new Vector.<NewsCellVO>();
             this.modalPageData = new Vector.<NewsCellVO>(4, true);
-            for each (_local_2 in _arg_1)
+            for each (_local_3 in _arg_1)
             {
-                if (_local_2.slot <= 3)
+                if (_local_3.slot <= 3)
                 {
-                    _local_5.push(_local_2);
+                    _local_2.push(_local_3);
                 }
                 else
                 {
-                    _local_3 = (_local_2.slot - 4);
-                    _local_4 = (_local_3 + 1);
-                    this.modalPageData[_local_3] = _local_2;
-                    if (Parameters.data_[("newsTimestamp" + _local_4)] != _local_2.endDate)
+                    _local_4 = (_local_3.slot - 4);
+                    _local_5 = (_local_4 + 1);
+                    this.modalPageData[_local_4] = _local_3;
+                    if (Parameters.data_[("newsTimestamp" + _local_5)] != _local_3.endDate)
                     {
-                        Parameters.data_[("newsTimestamp" + _local_4)] = _local_2.endDate;
-                        Parameters.data_[("hasNewsUpdate" + _local_4)] = true;
+                        Parameters.data_[("newsTimestamp" + _local_5)] = _local_3.endDate;
+                        Parameters.data_[("hasNewsUpdate" + _local_5)] = true;
                     }
                 }
             }
-            this.sortByPriority(_local_5);
+            this.sortByPriority(_local_2);
             this.update.dispatch(this.news);
             this.updateNoParams.dispatch();
         }

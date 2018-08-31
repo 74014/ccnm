@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.core.model.MapModel
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.core.model.MapModel
 
 package kabam.rotmg.core.model
 {

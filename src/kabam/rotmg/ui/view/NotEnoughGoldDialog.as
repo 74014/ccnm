@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.ui.view.NotEnoughGoldDialog
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.ui.view.NotEnoughGoldDialog
 
 package kabam.rotmg.ui.view
 {
@@ -10,18 +13,20 @@ import org.osflash.signals.Signal;
 import org.osflash.signals.natives.NativeMappedSignal;
 
 public class NotEnoughGoldDialog extends Dialog
+{
+
+    private static const TRACKING_TAG:String = "/notEnoughGold";
+
+    public var cancel:Signal;
+    public var buyGold:Signal;
+
+    public function NotEnoughGoldDialog()
     {
-
-        public var cancel:Signal;
-        public var buyGold:Signal;
-
-        public function NotEnoughGoldDialog()
-        {
-            super(TextKey.NOT_ENOUGH_GOLD, TextKey.GOLD_NOTENOUGHFORITEM, TextKey.FRAME_CANCEL, TextKey.BUY_GOLD);
-            this.cancel = new NativeMappedSignal(this, LEFT_BUTTON);
-            this.buyGold = new NativeMappedSignal(this, RIGHT_BUTTON);
-        }
-
+        super(TextKey.NOT_ENOUGH_GOLD, TextKey.GOLD_NOTENOUGHFORITEM, TextKey.FRAME_CANCEL, TextKey.BUY_GOLD, TRACKING_TAG);
+        this.cancel = new NativeMappedSignal(this, LEFT_BUTTON);
+        this.buyGold = new NativeMappedSignal(this, RIGHT_BUTTON);
     }
+
+}
 }//package kabam.rotmg.ui.view
 

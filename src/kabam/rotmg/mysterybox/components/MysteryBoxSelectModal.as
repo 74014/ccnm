@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.mysterybox.components.MysteryBoxSelectModal
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.mysterybox.components.MysteryBoxSelectModal
 
 package kabam.rotmg.mysterybox.components
 {
@@ -9,10 +12,11 @@ import flash.filters.DropShadowFilter;
 import flash.text.TextFieldAutoSize;
 import flash.text.TextFormatAlign;
 
+import io.decagames.rotmg.pets.utils.PetsViewAssetFactory;
+
 import kabam.rotmg.core.StaticInjectorContext;
 import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
 import kabam.rotmg.mysterybox.services.MysteryBoxModel;
-import kabam.rotmg.pets.util.PetsViewAssetFactory;
 import kabam.rotmg.pets.view.components.DialogCloseButton;
 import kabam.rotmg.pets.view.components.PopupWindowBackground;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
@@ -31,9 +35,9 @@ public class MysteryBoxSelectModal extends Sprite
         public static var backgroundImageEmbed:Class = MysteryBoxSelectModal_backgroundImageEmbed;
 
         private var closeButton:DialogCloseButton;
-        public var box_:Sprite = new Sprite();
+        private var box_:Sprite = new Sprite();
         private var mysteryData:Object;
-        private var titleString:String = "Mystery Boxes!";
+        private var titleString:String = "MysteryBoxSelectModal.titleString";
         private var selectEntries:Vector.<MysteryBoxSelectEntry>;
 
         public function MysteryBoxSelectModal():void
@@ -82,18 +86,17 @@ public class MysteryBoxSelectModal extends Sprite
 
         private function positionAndStuff():void
         {
-            this.box_.x = (300 - (modalWidth / 2));
-            this.box_.y = (300 - (modalHeight / 2));
+            this.box_.x = ((600 / 2) - (modalWidth / 2));
+            this.box_.y = ((WebMain.STAGE.stageHeight / 2) - (modalHeight / 2));
         }
 
         private function addBoxChildren():void
         {
             var _local_1:MysteryBoxInfo;
             var _local_2:DisplayObject;
-            var _local_3:Number;
-            var _local_4:int;
-            var _local_5:MysteryBoxSelectEntry;
-            var _local_6:Number;
+            var _local_4:Number;
+            var _local_5:int;
+            var _local_6:MysteryBoxSelectEntry;
             for each (_local_1 in this.mysteryData)
             {
                 modalHeight = (modalHeight + aMysteryBoxHeight);
@@ -108,19 +111,19 @@ public class MysteryBoxSelectModal extends Sprite
             this.closeButton = PetsViewAssetFactory.returnCloseButton(modalWidth);
             this.box_.addChild(this.closeButton);
             this.box_.addChild(this.getText(this.titleString, TEXT_MARGIN, 6).setSize(18));
-            _local_6 = 20;
-            _local_3 = 50;
-            _local_4 = 0;
+            var _local_3:Number = 20;
+            _local_4 = 50;
+            _local_5 = 0;
             for each (_local_1 in this.mysteryData)
             {
-                if (_local_4 == 6) break;
-                _local_5 = new MysteryBoxSelectEntry(_local_1);
-                _local_5.x = (x + _local_6);
-                _local_5.y = (y + _local_3);
-                _local_3 = (_local_3 + aMysteryBoxHeight);
-                this.box_.addChild(_local_5);
-                this.selectEntries.push(_local_5);
-                _local_4++;
+                if (_local_5 == 6) break;
+                _local_6 = new MysteryBoxSelectEntry(_local_1);
+                _local_6.x = (x + _local_3);
+                _local_6.y = (y + _local_4);
+                _local_4 = (_local_4 + aMysteryBoxHeight);
+                this.box_.addChild(_local_6);
+                this.selectEntries.push(_local_6);
+                _local_5++;
             }
         }
 

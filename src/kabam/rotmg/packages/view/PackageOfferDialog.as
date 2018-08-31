@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.packages.view.PackageOfferDialog
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.packages.view.PackageOfferDialog
 
 package kabam.rotmg.packages.view
 {
@@ -24,25 +27,25 @@ import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
 import org.osflash.signals.Signal;
 
-public class PackageOfferDialog extends Sprite implements Resizable
+public class PackageOfferDialog extends Sprite implements Resizable 
     {
 
-        private const paddingTop:Number = 6;
-        private const paddingRight:Number = 6;
-        private const paddingBottom:Number = 16;
-        private const fontSize:int = 27;
-        private const busyIndicator:DisplayObject = makeBusyIndicator();
-        private const buyNow:Sprite = makeBuyNow();
-        private const title:TextFieldDisplayConcrete = makeTitle();
-        private const closeButton:Sprite = makeCloseButton();
+        internal const paddingTop:Number = 6;
+        internal const paddingRight:Number = 6;
+        internal const paddingBottom:Number = 16;
+        internal const fontSize:int = 27;
+        internal var image:DisplayObject;
+        private var packageInfo:PackageInfo;
 
         public var ready:Signal = new Signal();
         public var buy:Signal = new Signal();
         public var close:Signal = new Signal();
-        private var loader:LoaderProxy = new LoaderProxyConcrete();
-        private var goldDisplay:GoldDisplay = new GoldDisplay();
-        private var image:DisplayObject;
-        private var packageInfo:PackageInfo;
+        internal var loader:LoaderProxy = new LoaderProxyConcrete();
+        internal var goldDisplay:GoldDisplay = new GoldDisplay();
+        private const busyIndicator:DisplayObject = makeBusyIndicator();
+        private const buyNow:Sprite = makeBuyNow();
+        private const title:TextFieldDisplayConcrete = makeTitle();
+        private const closeButton:DialogCloseButton = makeCloseButton();
         private var spaceAvailable:Rectangle = new Rectangle();
 
 
@@ -53,7 +56,7 @@ public class PackageOfferDialog extends Sprite implements Resizable
             return (_local_1);
         }
 
-        private function makeCloseButton():Sprite
+        private function makeCloseButton():DialogCloseButton
         {
             return (new DialogCloseButton());
         }
@@ -65,8 +68,7 @@ public class PackageOfferDialog extends Sprite implements Resizable
 
         private function makeTitle():TextFieldDisplayConcrete
         {
-            var _local_1:TextFieldDisplayConcrete;
-            _local_1 = new TextFieldDisplayConcrete().setSize(this.fontSize).setColor(0xB3B3B3);
+            var _local_1:TextFieldDisplayConcrete = new TextFieldDisplayConcrete().setSize(this.fontSize).setColor(0xB3B3B3);
             _local_1.y = (this.paddingTop + 5);
             _local_1.setAutoSize(TextFieldAutoSize.CENTER);
             return (_local_1);
@@ -86,6 +88,7 @@ public class PackageOfferDialog extends Sprite implements Resizable
 
         private function onMouseUp(_arg_1:MouseEvent):void
         {
+            this.closeButton.disabled = true;
             this.closeButton.removeEventListener(MouseEvent.MOUSE_UP, this.onMouseUp);
             this.close.dispatch();
         }

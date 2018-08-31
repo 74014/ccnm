@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.promotions.PromotionsConfig
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.promotions.PromotionsConfig
 
 package kabam.rotmg.promotions
 {
@@ -9,11 +12,14 @@ import kabam.rotmg.promotions.commands.ShowBeginnersPackageCommand;
 import kabam.rotmg.promotions.model.BeginnersPackageModel;
 import kabam.rotmg.promotions.signals.BuyBeginnersPackageSignal;
 import kabam.rotmg.promotions.signals.MakeBeginnersPackagePaymentSignal;
+import kabam.rotmg.promotions.signals.PackageStatusUpdateSignal;
 import kabam.rotmg.promotions.signals.ShowBeginnersPackageSignal;
 import kabam.rotmg.promotions.view.BeginnersPackageButton;
 import kabam.rotmg.promotions.view.BeginnersPackageButtonMediator;
 import kabam.rotmg.promotions.view.BeginnersPackageOfferDialog;
 import kabam.rotmg.promotions.view.BeginnersPackageOfferDialogMediator;
+import kabam.rotmg.promotions.view.SpecialOfferButton;
+import kabam.rotmg.promotions.view.SpecialOfferButtonMediator;
 import kabam.rotmg.promotions.view.WebChoosePaymentTypeDialog;
 import kabam.rotmg.promotions.view.WebChoosePaymentTypeDialogMediator;
 
@@ -38,7 +44,9 @@ public class PromotionsConfig implements IConfig
         {
             this.injector.map(BeginnersPackageModel).asSingleton();
             this.injector.map(BeginnersPackageAvailableSignal).asSingleton();
+            this.injector.map(PackageStatusUpdateSignal).asSingleton();
             this.mediatorMap.map(BeginnersPackageButton).toMediator(BeginnersPackageButtonMediator);
+            this.mediatorMap.map(SpecialOfferButton).toMediator(SpecialOfferButtonMediator);
             this.mediatorMap.map(BeginnersPackageOfferDialog).toMediator(BeginnersPackageOfferDialogMediator);
             this.mediatorMap.map(WebChoosePaymentTypeDialog).toMediator(WebChoosePaymentTypeDialogMediator);
             this.commandMap.map(ShowBeginnersPackageSignal).toCommand(ShowBeginnersPackageCommand);

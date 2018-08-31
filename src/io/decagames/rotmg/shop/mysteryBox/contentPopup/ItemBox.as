@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.shop.mysteryBox.contentPopup.ItemBox
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.shop.mysteryBox.contentPopup.ItemBox
 
 package io.decagames.rotmg.shop.mysteryBox.contentPopup
 {
@@ -15,7 +18,7 @@ import io.decagames.rotmg.ui.labels.UILabel;
 
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
-public class ItemBox extends UIGridElement 
+public class ItemBox extends UIGridElement
     {
 
         private var _itemId:String;

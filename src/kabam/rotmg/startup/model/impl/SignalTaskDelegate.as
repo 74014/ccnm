@@ -1,15 +1,17 @@
-﻿//kabam.rotmg.startup.model.impl.SignalTaskDelegate
+﻿// Decompiled by AS3 Sorcerer 5.94
+// www.as3sorcerer.com
+
+//kabam.rotmg.startup.model.impl.SignalTaskDelegate
 
 package kabam.rotmg.startup.model.impl
 {
-import kabam.lib.tasks.DispatchSignalTask;
-import kabam.lib.tasks.Task;
-import kabam.rotmg.startup.model.api.StartupDelegate;
+    import kabam.rotmg.startup.model.api.StartupDelegate;
+    import org.swiftsuspenders.Injector;
+    import org.osflash.signals.Signal;
+    import kabam.lib.tasks.DispatchSignalTask;
+    import kabam.lib.tasks.Task;
 
-import org.osflash.signals.Signal;
-import org.swiftsuspenders.Injector;
-
-public class SignalTaskDelegate implements StartupDelegate
+    public class SignalTaskDelegate implements StartupDelegate 
     {
 
         public var injector:Injector;

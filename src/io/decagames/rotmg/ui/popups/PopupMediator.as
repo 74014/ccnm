@@ -1,9 +1,13 @@
-﻿//io.decagames.rotmg.ui.popups.PopupMediator
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.ui.popups.PopupMediator
 
 package io.decagames.rotmg.ui.popups
 {
 import io.decagames.rotmg.ui.popups.signals.CloseAllPopupsSignal;
 import io.decagames.rotmg.ui.popups.signals.CloseCurrentPopupSignal;
+import io.decagames.rotmg.ui.popups.signals.ClosePopupByClassSignal;
 import io.decagames.rotmg.ui.popups.signals.ClosePopupSignal;
 import io.decagames.rotmg.ui.popups.signals.RemoveLockFade;
 import io.decagames.rotmg.ui.popups.signals.ShowLockFade;
@@ -11,7 +15,7 @@ import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class PopupMediator extends Mediator 
+public class PopupMediator extends Mediator
     {
 
         [Inject]
@@ -20,6 +24,8 @@ public class PopupMediator extends Mediator
         public var showPopupSignal:ShowPopupSignal;
         [Inject]
         public var closePopupSignal:ClosePopupSignal;
+        [Inject]
+        public var closePopupByClassSignal:ClosePopupByClassSignal;
         [Inject]
         public var closeCurrentPopupSignal:CloseCurrentPopupSignal;
         [Inject]
@@ -39,6 +45,7 @@ public class PopupMediator extends Mediator
         {
             this.showPopupSignal.add(this.showPopupHandler);
             this.closePopupSignal.add(this.closePopupHandler);
+            this.closePopupByClassSignal.add(this.closeByClassHandler);
             this.closeCurrentPopupSignal.add(this.closeCurrentPopupHandler);
             this.closeAllPopupsSignal.add(this.closeAllPopupsHandler);
             this.removeLockFade.add(this.onRemoveLock);
@@ -51,11 +58,13 @@ public class PopupMediator extends Mediator
             this.view.removeChild(_local_1);
         }
 
-        private function onShowLock():void{
+        private function onShowLock():void
+        {
             this.view.showFade();
         }
 
-        private function onRemoveLock():void{
+        private function onRemoveLock():void
+        {
             this.view.removeFade();
         }
 
@@ -99,6 +108,20 @@ public class PopupMediator extends Mediator
             }
         }
 
+        private function closeByClassHandler(_arg_1:Class):void
+        {
+            var _local_2:int = (this.popups.length - 1);
+            while (_local_2 >= 0)
+            {
+                if ((this.popups[_local_2] is _arg_1))
+                {
+                    this.view.removeChild(this.popups[_local_2]);
+                    this.popups.splice(_local_2, 1);
+                }
+                _local_2--;
+            }
+        }
+
         private function drawPopupBackground(_arg_1:BasePopup):void
         {
             _arg_1.graphics.beginFill(_arg_1.popupFadeColor, _arg_1.popupFadeAlpha);
@@ -110,6 +133,7 @@ public class PopupMediator extends Mediator
         {
             this.showPopupSignal.remove(this.showPopupHandler);
             this.closePopupSignal.remove(this.closePopupHandler);
+            this.closePopupByClassSignal.remove(this.closeByClassHandler);
             this.closeCurrentPopupSignal.remove(this.closeCurrentPopupHandler);
             this.removeLockFade.remove(this.onRemoveLock);
             this.showLockFade.remove(this.onShowLock);

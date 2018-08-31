@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.fame.data.FameTracker
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.fame.data.FameTracker
 
 package io.decagames.rotmg.fame.data
 {
@@ -13,7 +16,7 @@ import io.decagames.rotmg.fame.data.bonus.FameBonusID;
 import kabam.rotmg.core.model.PlayerModel;
 import kabam.rotmg.ui.model.HUDModel;
 
-public class FameTracker 
+public class FameTracker
     {
 
         [Inject]

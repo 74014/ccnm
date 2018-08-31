@@ -6,7 +6,7 @@ import flash.events.MouseEvent;
 
 import kabam.rotmg.account.core.Account;
 import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.pets.data.PetsModel;
+import io.decagames.rotmg.pets.data.PetsModel;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 

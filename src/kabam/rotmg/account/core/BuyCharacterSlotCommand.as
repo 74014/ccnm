@@ -1,25 +1,27 @@
-﻿//kabam.rotmg.account.core.BuyCharacterSlotCommand
+﻿// Decompiled by AS3 Sorcerer 5.94
+// www.as3sorcerer.com
+
+//kabam.rotmg.account.core.BuyCharacterSlotCommand
 
 package kabam.rotmg.account.core
 {
-import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
-import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
+    import kabam.rotmg.account.core.services.BuyCharacterSlotTask;
+    import kabam.lib.tasks.TaskMonitor;
+    import kabam.rotmg.core.signals.SetScreenSignal;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+    import kabam.rotmg.core.model.PlayerModel;
+    import kabam.rotmg.game.signals.AddTextLineSignal;
+    import kabam.rotmg.ui.view.CharacterSlotNeedGoldDialog;
+    import kabam.rotmg.account.core.view.BuyingDialog;
+    import kabam.lib.tasks.TaskSequence;
+    import kabam.lib.tasks.BranchingTask;
+    import kabam.lib.tasks.DispatchSignalTask;
+    import com.company.assembleegameclient.screens.CharacterSelectionAndNewsScreen;
+    import kabam.lib.tasks.Task;
+    import com.company.assembleegameclient.ui.dialogs.ErrorDialog;
 
-import kabam.lib.tasks.BranchingTask;
-import kabam.lib.tasks.DispatchSignalTask;
-import kabam.lib.tasks.Task;
-import kabam.lib.tasks.TaskMonitor;
-import kabam.lib.tasks.TaskSequence;
-import kabam.rotmg.account.core.services.BuyCharacterSlotTask;
-import kabam.rotmg.account.core.view.BuyingDialog;
-import kabam.rotmg.core.model.PlayerModel;
-import kabam.rotmg.core.signals.SetScreenSignal;
-import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.game.signals.AddTextLineSignal;
-import kabam.rotmg.ui.view.CharacterSlotNeedGoldDialog;
-
-public class BuyCharacterSlotCommand
+    public class BuyCharacterSlotCommand 
     {
 
         [Inject]

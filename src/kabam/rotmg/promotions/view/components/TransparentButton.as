@@ -1,10 +1,13 @@
-﻿//kabam.rotmg.promotions.view.components.TransparentButton
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.promotions.view.components.TransparentButton
 
 package kabam.rotmg.promotions.view.components
 {
 import flash.display.Sprite;
 
-public class TransparentButton extends Sprite 
+public class TransparentButton extends Sprite
     {
 
         public function TransparentButton(_arg_1:int, _arg_2:int, _arg_3:int, _arg_4:int)

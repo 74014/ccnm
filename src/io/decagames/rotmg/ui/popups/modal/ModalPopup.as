@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.ui.popups.modal.ModalPopup
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.ui.popups.modal.ModalPopup
 
 package io.decagames.rotmg.ui.popups.modal
 {
@@ -14,7 +17,7 @@ import io.decagames.rotmg.ui.scroll.UIScrollbar;
 import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
 import io.decagames.rotmg.ui.texture.TextureParser;
 
-public class ModalPopup extends BasePopup 
+public class ModalPopup extends BasePopup
     {
 
         protected var _contentContainer:Sprite;

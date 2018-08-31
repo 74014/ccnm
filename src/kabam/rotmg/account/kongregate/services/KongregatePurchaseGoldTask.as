@@ -1,15 +1,17 @@
-﻿//kabam.rotmg.account.kongregate.services.KongregatePurchaseGoldTask
+﻿// Decompiled by AS3 Sorcerer 5.94
+// www.as3sorcerer.com
+
+//kabam.rotmg.account.kongregate.services.KongregatePurchaseGoldTask
 
 package kabam.rotmg.account.kongregate.services
 {
-import com.company.assembleegameclient.util.offer.Offer;
+    import kabam.lib.tasks.BaseTask;
+    import kabam.rotmg.account.core.services.PurchaseGoldTask;
+    import com.company.assembleegameclient.util.offer.Offer;
+    import kabam.rotmg.account.kongregate.view.KongregateApi;
+    import kabam.rotmg.external.command.RequestPlayerCreditsSignal;
 
-import kabam.lib.tasks.BaseTask;
-import kabam.rotmg.account.core.services.PurchaseGoldTask;
-import kabam.rotmg.account.kongregate.view.KongregateApi;
-import kabam.rotmg.external.command.RequestPlayerCreditsSignal;
-
-public class KongregatePurchaseGoldTask extends BaseTask implements PurchaseGoldTask
+    public class KongregatePurchaseGoldTask extends BaseTask implements PurchaseGoldTask 
     {
 
         [Inject]

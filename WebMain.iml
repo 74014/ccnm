@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="Flex" version="4">
-  <component name="FlexBuildConfigurationManager" active="Crazy74014">
+  <component name="FlexBuildConfigurationManager" active="Crazy Client">
     <configurations>
-      <configuration name="Crazy74014" pure-as="true" main-class="WebMain" output-file="WebMain.swf" output-folder="$MODULE_DIR$/out">
+      <configuration name="Crazy Client" pure-as="true" main-class="WebMain" output-file="Crazy Client.swf" output-folder="$MODULE_DIR$/out">
         <dependencies target-player="11.1">
           <entries>
-            <entry library-id="8392eb51-d27a-490c-bc11-359bbd622c25">
+            <entry library-id="6611b219-494d-4a27-803a-6e6645605a83">
               <dependency linkage="Merged" />
             </entry>
             <entry library-name="as3-signals" library-level="project">
+              <dependency linkage="Merged" />
+            </entry>
+            <entry library-name="Console" library-level="project">
               <dependency linkage="Merged" />
             </entry>
           </entries>
@@ -37,7 +40,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library" exported="">
       <library type="flex">
-        <properties id="8392eb51-d27a-490c-bc11-359bbd622c25" />
+        <properties id="6611b219-494d-4a27-803a-6e6645605a83" />
         <CLASSES>
           <root url="file://$MODULE_DIR$/libs" />
         </CLASSES>
@@ -47,5 +50,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" exported="" name="as3-signals" level="project" />
+    <orderEntry type="library" exported="" name="Console" level="project" />
   </component>
 </module>

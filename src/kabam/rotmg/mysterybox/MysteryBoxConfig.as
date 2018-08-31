@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.mysterybox.MysteryBoxConfig
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.mysterybox.MysteryBoxConfig
 
 package kabam.rotmg.mysterybox
 {
@@ -12,7 +15,7 @@ import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
 import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
 import robotlegs.bender.framework.api.IConfig;
 
-public class MysteryBoxConfig implements IConfig
+public class MysteryBoxConfig implements IConfig 
     {
 
         [Inject]

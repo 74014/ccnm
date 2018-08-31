@@ -1,19 +1,22 @@
-﻿//kabam.rotmg.account.web.commands.WebChangePasswordCommand
+﻿// Decompiled by AS3 Sorcerer 5.94
+// www.as3sorcerer.com
+
+//kabam.rotmg.account.web.commands.WebChangePasswordCommand
 
 package kabam.rotmg.account.web.commands
 {
-import kabam.lib.tasks.BranchingTask;
-import kabam.lib.tasks.DispatchSignalTask;
-import kabam.lib.tasks.Task;
-import kabam.lib.tasks.TaskMonitor;
-import kabam.lib.tasks.TaskSequence;
-import kabam.rotmg.account.core.services.ChangePasswordTask;
-import kabam.rotmg.account.web.view.WebAccountDetailDialog;
-import kabam.rotmg.core.signals.TaskErrorSignal;
-import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.account.core.services.ChangePasswordTask;
+    import kabam.lib.tasks.TaskMonitor;
+    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.core.signals.TaskErrorSignal;
+    import kabam.lib.tasks.BranchingTask;
+    import kabam.lib.tasks.TaskSequence;
+    import kabam.lib.tasks.DispatchSignalTask;
+    import kabam.rotmg.account.web.view.WebAccountDetailDialog;
+    import kabam.lib.tasks.Task;
 
-public class WebChangePasswordCommand
+    public class WebChangePasswordCommand 
     {
 
         [Inject]

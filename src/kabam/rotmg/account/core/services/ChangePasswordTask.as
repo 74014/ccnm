@@ -1,10 +1,13 @@
-﻿//kabam.rotmg.account.core.services.ChangePasswordTask
+﻿// Decompiled by AS3 Sorcerer 5.94
+// www.as3sorcerer.com
+
+//kabam.rotmg.account.core.services.ChangePasswordTask
 
 package kabam.rotmg.account.core.services
 {
-import kabam.lib.tasks.Task;
+    import kabam.lib.tasks.Task;
 
-public interface ChangePasswordTask extends Task
+    public interface ChangePasswordTask extends Task 
     {
 
     }

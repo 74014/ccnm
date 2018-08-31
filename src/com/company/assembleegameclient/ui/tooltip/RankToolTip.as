@@ -1,4 +1,7 @@
-﻿//com.company.assembleegameclient.ui.tooltip.RankToolTip
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//com.company.assembleegameclient.ui.tooltip.RankToolTip
 
 package com.company.assembleegameclient.ui.tooltip
 {
@@ -16,77 +19,77 @@ import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.ui.view.SignalWaiter;
 
-public class RankToolTip extends ToolTip 
+public class RankToolTip extends ToolTip
+{
+
+    private static const PADDING_LEFT:int = 6;
+
+    private var earnedText_:TextFieldDisplayConcrete;
+    private var star_:StarGraphic;
+    private var howToText_:TextFieldDisplayConcrete;
+    private var lineBreak_:LineBreakDesign = new LineBreakDesign(100, 0x1C1C1C);
+
+    public function RankToolTip(_arg_1:int)
     {
-
-        private static const PADDING_LEFT:int = 6;
-
-        private var earnedText_:TextFieldDisplayConcrete;
-        private var star_:StarGraphic;
-        private var howToText_:TextFieldDisplayConcrete;
-        private var lineBreak_:LineBreakDesign = new LineBreakDesign(100, 0x1C1C1C);
-
-        public function RankToolTip(_arg_1:int)
-        {
-            super(0x363636, 1, 0xFFFFFF, 1);
-            this.earnedText_ = new TextFieldDisplayConcrete().setSize(13).setColor(0xB3B3B3).setBold(true);
-            this.earnedText_.setVerticalAlign(TextFieldDisplayConcrete.BOTTOM);
-            this.earnedText_.setStringBuilder(new LineBuilder().setParams(TextKey.RANK_TOOL_TIP_EARNED, {"numStars":_arg_1}));
-            this.earnedText_.filters = [new DropShadowFilter(0, 0, 0)];
-            this.earnedText_.x = PADDING_LEFT;
-            addChild(this.earnedText_);
-            this.howToText_ = new TextFieldDisplayConcrete().setSize(13).setColor(0xB3B3B3);
-            this.howToText_.setTextWidth(174);
-            this.howToText_.setMultiLine(true).setWordWrap(true);
-            this.howToText_.setStringBuilder(new LineBuilder().setParams(TextKey.RANK_TOOL_TIP_COMPLETING_CLASS_QUESTS));
-            this.howToText_.filters = [new DropShadowFilter(0, 0, 0)];
-            this.howToText_.x = PADDING_LEFT;
-            this.howToText_.y = 30;
-            addChild(this.howToText_);
-            var _local_2:SignalWaiter = new SignalWaiter().push(this.earnedText_.textChanged).push(this.howToText_.textChanged);
-            _local_2.complete.addOnce(this.textAdded);
-        }
-
-        private function textAdded():void
-        {
-            var _local_1:LegendLine;
-            var _local_2:int;
-            var _local_3:int;
-            this.earnedText_.y = (this.earnedText_.height + 2);
-            this.star_ = new StarGraphic();
-            this.star_.transform.colorTransform = new ColorTransform((179 / 0xFF), (179 / 0xFF), (179 / 0xFF));
-            var _local_4:Rectangle = this.earnedText_.getBounds(this);
-            this.star_.x = (_local_4.right + 7);
-            this.star_.y = (this.earnedText_.y - this.star_.height);
-            addChild(this.star_);
-            this.lineBreak_.x = PADDING_LEFT;
-            this.lineBreak_.y = (height + 10);
-            addChild(this.lineBreak_);
-            _local_2 = (this.lineBreak_.y + 4);
-            while (_local_3 < FameUtil.COLORS.length)
-            {
-                _local_1 = new LegendLine((_local_3 * ObjectLibrary.playerChars_.length), (((_local_3 + 1) * ObjectLibrary.playerChars_.length) - 1), FameUtil.COLORS[_local_3]);
-                _local_1.x = PADDING_LEFT;
-                _local_1.y = _local_2;
-                addChild(_local_1);
-                _local_2 = (_local_2 + _local_1.height);
-                _local_3++;
-            }
-            _local_1 = new LegendLine(FameUtil.maxStars(), FameUtil.maxStars(), new ColorTransform());
-            _local_1.x = PADDING_LEFT;
-            _local_1.y = _local_2;
-            addChild(_local_1);
-            this.draw();
-        }
-
-        override public function draw():void
-        {
-            this.lineBreak_.setWidthColor((width - 10), 0x1C1C1C);
-            super.draw();
-        }
-
-
+        super(0x363636, 1, 0xFFFFFF, 1);
+        this.earnedText_ = new TextFieldDisplayConcrete().setSize(13).setColor(0xB3B3B3).setBold(true);
+        this.earnedText_.setVerticalAlign(TextFieldDisplayConcrete.BOTTOM);
+        this.earnedText_.setStringBuilder(new LineBuilder().setParams(TextKey.RANK_TOOL_TIP_EARNED, {"numStars":_arg_1}));
+        this.earnedText_.filters = [new DropShadowFilter(0, 0, 0)];
+        this.earnedText_.x = PADDING_LEFT;
+        addChild(this.earnedText_);
+        this.howToText_ = new TextFieldDisplayConcrete().setSize(13).setColor(0xB3B3B3);
+        this.howToText_.setTextWidth(174);
+        this.howToText_.setMultiLine(true).setWordWrap(true);
+        this.howToText_.setStringBuilder(new LineBuilder().setParams(((_arg_1 >= FameUtil.MAX_STARS) ? TextKey.RANK_TOOL_TIP_COMPLETED_ALL_CLASS_QUESTS : TextKey.RANK_TOOL_TIP_COMPLETING_CLASS_QUESTS)));
+        this.howToText_.filters = [new DropShadowFilter(0, 0, 0)];
+        this.howToText_.x = PADDING_LEFT;
+        this.howToText_.y = 30;
+        addChild(this.howToText_);
+        var _local_2:SignalWaiter = new SignalWaiter().push(this.earnedText_.textChanged).push(this.howToText_.textChanged);
+        _local_2.complete.addOnce(this.textAdded);
     }
+
+    private function textAdded():void
+    {
+        var _local_2:LegendLine;
+        var _local_3:int;
+        this.earnedText_.y = (this.earnedText_.height + 2);
+        this.star_ = new StarGraphic();
+        this.star_.transform.colorTransform = new ColorTransform((179 / 0xFF), (179 / 0xFF), (179 / 0xFF));
+        var _local_1:Rectangle = this.earnedText_.getBounds(this);
+        this.star_.x = (_local_1.right + 7);
+        this.star_.y = (this.earnedText_.y - this.star_.height);
+        addChild(this.star_);
+        this.lineBreak_.x = PADDING_LEFT;
+        this.lineBreak_.y = (height + 10);
+        addChild(this.lineBreak_);
+        _local_3 = (this.lineBreak_.y + 4);
+        var _local_4:int;
+        while (_local_4 < FameUtil.COLORS.length)
+        {
+            _local_2 = new LegendLine((_local_4 * ObjectLibrary.playerChars_.length), (((_local_4 + 1) * ObjectLibrary.playerChars_.length) - 1), FameUtil.COLORS[_local_4]);
+            _local_2.x = PADDING_LEFT;
+            _local_2.y = _local_3;
+            addChild(_local_2);
+            _local_3 = (_local_3 + _local_2.height);
+            _local_4++;
+        }
+        _local_2 = new LegendLine(FameUtil.maxStars(), FameUtil.maxStars(), new ColorTransform());
+        _local_2.x = PADDING_LEFT;
+        _local_2.y = _local_3;
+        addChild(_local_2);
+        this.draw();
+    }
+
+    override public function draw():void
+    {
+        this.lineBreak_.setWidthColor((width - 10), 0x1C1C1C);
+        super.draw();
+    }
+
+
+}
 }//package com.company.assembleegameclient.ui.tooltip
 
 import com.company.rotmg.graphics.StarGraphic;
@@ -98,7 +101,7 @@ import flash.geom.ColorTransform;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
-class LegendLine extends Sprite 
+class LegendLine extends Sprite
 {
 
     private var coloredStar_:StarGraphic;

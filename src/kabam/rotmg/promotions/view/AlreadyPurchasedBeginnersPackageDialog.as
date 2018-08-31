@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.promotions.view.AlreadyPurchasedBeginnersPackageDialog
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.promotions.view.AlreadyPurchasedBeginnersPackageDialog
 
 package kabam.rotmg.promotions.view
 {
@@ -7,6 +10,9 @@ import flash.events.MouseEvent;
 import flash.geom.Rectangle;
 
 import kabam.lib.resizing.view.Resizable;
+import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+import kabam.rotmg.dialogs.control.FlushPopupStartupQueueSignal;
 
 public class AlreadyPurchasedBeginnersPackageDialog extends Sprite implements Resizable
     {
@@ -41,7 +47,11 @@ public class AlreadyPurchasedBeginnersPackageDialog extends Sprite implements Re
 
         private function onClose(_arg_1:MouseEvent):void
         {
-            parent.removeChild(this);
+            removeEventListener(MouseEvent.CLICK, this.onClose);
+            var _local_2:CloseDialogsSignal = StaticInjectorContext.getInjector().getInstance(CloseDialogsSignal);
+            _local_2.dispatch();
+            var _local_3:FlushPopupStartupQueueSignal = StaticInjectorContext.getInjector().getInstance(FlushPopupStartupQueueSignal);
+            _local_3.dispatch();
         }
 
         public function resize(_arg_1:Rectangle):void

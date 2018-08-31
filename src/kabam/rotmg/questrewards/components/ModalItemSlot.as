@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.questrewards.components.ModalItemSlot
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.questrewards.components.ModalItemSlot
 
 package kabam.rotmg.questrewards.components
 {
@@ -15,7 +18,7 @@ import flash.utils.getTimer;
 
 import kabam.rotmg.core.StaticInjectorContext;
 import kabam.rotmg.fortune.components.TimerCallback;
-import kabam.rotmg.pets.util.PetsViewAssetFactory;
+import io.decagames.rotmg.pets.utils.PetsViewAssetFactory;
 import kabam.rotmg.pets.view.components.slot.FoodFeedFuseSlot;
 import kabam.rotmg.text.model.FontModel;
 import kabam.rotmg.util.components.LegacyBuyButton;
@@ -205,26 +208,26 @@ public class ModalItemSlot extends FoodFeedFuseSlot
 
         private function onEnterFrame(_arg_1:Event):void
         {
-            var _local_2:ColorTransform;
-            var _local_3:int;
+            var _local_3:ColorTransform;
             var _local_4:int;
-            var _local_5:int = int(uint(((getTimer() / 500) % 3)));
-            if (_local_5 != this.curOutline)
+            var _local_5:int;
+            var _local_2:int = int(uint(((getTimer() / 500) % 3)));
+            if (_local_2 != this.curOutline)
             {
-                this.curOutline = _local_5;
-                _local_3 = 0;
-                while (_local_3 < this.animatedOutlines.length)
+                this.curOutline = _local_2;
+                _local_4 = 0;
+                while (_local_4 < this.animatedOutlines.length)
                 {
-                    _local_2 = this.animatedOutlines[_local_3].transform.colorTransform;
-                    _local_2.color = 0x545454;
-                    _local_2.alphaMultiplier = (1 - (_local_3 * 0.3));
-                    this.animatedOutlines[_local_3].transform.colorTransform = _local_2;
-                    _local_3++;
+                    _local_3 = this.animatedOutlines[_local_4].transform.colorTransform;
+                    _local_3.color = 0x545454;
+                    _local_3.alphaMultiplier = (1 - (_local_4 * 0.3));
+                    this.animatedOutlines[_local_4].transform.colorTransform = _local_3;
+                    _local_4++;
                 }
-                _local_4 = (this.animationStartIndex - (this.curOutline * this.animationDir));
-                _local_2 = this.animatedOutlines[_local_4].transform.colorTransform;
-                _local_2.color = 196098;
-                this.animatedOutlines[_local_4].transform.colorTransform = _local_2;
+                _local_5 = (this.animationStartIndex - (this.curOutline * this.animationDir));
+                _local_3 = this.animatedOutlines[_local_5].transform.colorTransform;
+                _local_3.color = 196098;
+                this.animatedOutlines[_local_5].transform.colorTransform = _local_3;
             }
             if (this.embeddedImage_)
             {
@@ -252,15 +255,15 @@ public class ModalItemSlot extends FoodFeedFuseSlot
 
         public function highLightAll(_arg_1:int):void
         {
-            var _local_2:ColorTransform;
-            var _local_3:int = (this.animatedOutlines.length - 1);
-            while (_local_3 >= 0)
+            var _local_3:ColorTransform;
+            var _local_2:int = (this.animatedOutlines.length - 1);
+            while (_local_2 >= 0)
             {
-                _local_2 = this.animatedOutlines[_local_3].transform.colorTransform;
-                _local_2.color = _arg_1;
-                _local_2.alphaMultiplier = (1 - (_local_3 * 0.3));
-                this.animatedOutlines[_local_3].transform.colorTransform = _local_2;
-                _local_3--;
+                _local_3 = this.animatedOutlines[_local_2].transform.colorTransform;
+                _local_3.color = _arg_1;
+                _local_3.alphaMultiplier = (1 - (_local_2 * 0.3));
+                this.animatedOutlines[_local_2].transform.colorTransform = _local_3;
+                _local_2--;
             }
         }
 

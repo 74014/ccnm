@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.account.core.control.IsAccountRegisteredToBuyGoldGuard
+﻿// Decompiled by AS3 Sorcerer 5.94
+// www.as3sorcerer.com
+
+//kabam.rotmg.account.core.control.IsAccountRegisteredToBuyGoldGuard
 
 package kabam.rotmg.account.core.control
 {

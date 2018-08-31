@@ -1,7 +1,12 @@
-﻿//kabam.rotmg.news.view.NewsTicker
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.news.view.NewsTicker
 
 package kabam.rotmg.news.view
 {
+import com.company.assembleegameclient.game.events.DisplayAreaChangedSignal;
+
 import flash.display.Sprite;
 import flash.events.TimerEvent;
 import flash.text.TextField;
@@ -51,6 +56,7 @@ public class NewsTicker extends Sprite
             if (this.visible == false)
             {
                 this.visible = true;
+                StaticInjectorContext.getInjector().getInstance(DisplayAreaChangedSignal).dispatch();
             }
             else
             {
@@ -87,6 +93,7 @@ public class NewsTicker extends Sprite
                     this.scrollText.scrollH = 0;
                     this.timer.removeEventListener(TimerEvent.TIMER, this.scrollAnimation);
                     this.visible = false;
+                    StaticInjectorContext.getInjector().getInstance(DisplayAreaChangedSignal).dispatch();
                 }
             }
         }

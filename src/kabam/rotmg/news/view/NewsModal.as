@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.news.view.NewsModal
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.news.view.NewsModal
 
 package kabam.rotmg.news.view
 {
@@ -23,12 +26,14 @@ import flash.text.TextFormatAlign;
 
 import kabam.rotmg.account.core.view.EmptyFrame;
 import kabam.rotmg.core.StaticInjectorContext;
+import kabam.rotmg.dialogs.control.FlushPopupStartupQueueSignal;
 import kabam.rotmg.news.model.NewsModel;
 import kabam.rotmg.pets.view.components.PopupWindowBackground;
 import kabam.rotmg.text.model.FontModel;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
+import kabam.rotmg.ui.model.HUDModel;
 
 public class NewsModal extends EmptyFrame
     {
@@ -101,17 +106,23 @@ public class NewsModal extends EmptyFrame
         }
 
 
-        public function onCloseButtonClicked():*
+        public function onCloseButtonClicked():void
         {
+            var _local_1:FlushPopupStartupQueueSignal = StaticInjectorContext.getInjector().getInstance(FlushPopupStartupQueueSignal);
+            closeButton.clicked.remove(this.onCloseButtonClicked);
+            if (this.triggeredOnStartup)
+            {
+                _local_1.dispatch();
+            }
         }
 
-        private function onAdded(_arg_1:Event):*
+        private function onAdded(_arg_1:Event):void
         {
             this.newsModel.markAsRead();
             this.refreshNewsButton();
         }
 
-        private function updateIndicator():*
+        private function updateIndicator():void
         {
             this.fontModel.apply(this.pageIndicator, 24, 0xFFFFFF, true);
             this.pageIndicator.text = ((this.currentPageNumber + " / ") + this.newsModel.numberOfNews);
@@ -149,6 +160,7 @@ public class NewsModal extends EmptyFrame
                     {
                         this.setPage((this.currentPageNumber - 1));
                     }
+                    return;
             }
         }
 
@@ -179,12 +191,16 @@ public class NewsModal extends EmptyFrame
 
         private function refreshNewsButton():void
         {
+            var _local_1:HUDModel = StaticInjectorContext.getInjector().getInstance(HUDModel);
+            if (((!(_local_1 == null)) && (!(_local_1.gameSprite == null))))
+            {
+                _local_1.gameSprite.refreshNewsUpdateButton();
+            }
         }
 
         override protected function makeModalBackground():Sprite
         {
-            var _local_1:Sprite;
-            _local_1 = new Sprite();
+            var _local_1:Sprite = new Sprite();
             var _local_2:DisplayObject = new backgroundImageEmbed();
             _local_2.width = (protected::modalWidth + 1);
             _local_2.height = (protected::modalHeight - 25);

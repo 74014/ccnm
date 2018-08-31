@@ -1,16 +1,19 @@
-﻿//kabam.rotmg.core.commands.UpdatePetsModelCommand
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.core.commands.UpdatePetsModelCommand
 
 package kabam.rotmg.core.commands
 {
 import com.company.assembleegameclient.objects.ObjectLibrary;
 
-import kabam.rotmg.pets.data.PetVO;
-import kabam.rotmg.pets.data.PetYardEnum;
-import kabam.rotmg.pets.data.PetsModel;
+import io.decagames.rotmg.pets.data.PetsModel;
+import io.decagames.rotmg.pets.data.vo.PetVO;
+import io.decagames.rotmg.pets.data.yard.PetYardEnum;
 
 import robotlegs.bender.bundles.mvcs.Command;
 
-public class UpdatePetsModelCommand extends Command 
+public class UpdatePetsModelCommand extends Command
     {
 
         [Inject]

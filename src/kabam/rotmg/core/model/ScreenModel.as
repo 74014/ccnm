@@ -1,10 +1,13 @@
-﻿//kabam.rotmg.core.model.ScreenModel
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.core.model.ScreenModel
 
 package kabam.rotmg.core.model
 {
 import com.company.assembleegameclient.screens.AccountLoadingScreen;
 
-public class ScreenModel 
+public class ScreenModel
     {
 
         private var currentType:Class;

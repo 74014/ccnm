@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.shop.genericBox.GenericBoxTile
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.shop.genericBox.GenericBoxTile
 
 package io.decagames.rotmg.shop.genericBox
 {
@@ -15,7 +18,7 @@ import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
 import io.decagames.rotmg.ui.spinner.FixedNumbersSpinner;
 import io.decagames.rotmg.ui.texture.TextureParser;
 
-public class GenericBoxTile extends UIGridElement 
+public class GenericBoxTile extends UIGridElement
     {
 
         protected var background:SliceScalingBitmap;
@@ -66,7 +69,7 @@ public class GenericBoxTile extends UIGridElement
             this._buyButton.width = 95;
             if (_arg_1.unitsLeft == 0)
             {
-                this._buyButton.disabled = true;
+                this._buyButton.soldOut = true;
             }
             this.tags = new Vector.<ShopBoxTag>(0);
             addChild(this.background);
@@ -101,25 +104,33 @@ public class GenericBoxTile extends UIGridElement
             this.updateTimeEndString();
         }
 
-        private function createEndTime():void{
+        private function createEndTime():void
+        {
             this._endTimeLabel = new UILabel();
             this._endTimeLabel.y = 28;
             addChild(this._endTimeLabel);
-            if (this._isPopup){
+            if (this._isPopup)
+            {
                 DefaultLabelFormat.popupEndsIn(this._endTimeLabel);
-            } else {
+            }
+            else
+            {
                 DefaultLabelFormat.mysteryBoxEndsIn(this._endTimeLabel);
             }
         }
 
-        private function createBoxTags():void{
+        private function createBoxTags():void
+        {
             var _local_2:String;
-            if (this._boxInfo.isNew()){
+            if (this._boxInfo.isNew())
+            {
                 this.addTag(new ShopBoxTag(ShopBoxTag.BLUE_TAG, "NEW", this._isPopup));
             }
             var _local_1:Array = this._boxInfo.tags.split(",");
-            for each (_local_2 in _local_1) {
-                switch (_local_2){
+            for each (_local_2 in _local_1)
+            {
+                switch (_local_2)
+                {
                     case "best_seller":
                         this.addTag(new ShopBoxTag(ShopBoxTag.GREEN_TAG, "BEST", this._isPopup));
                         break;
@@ -128,15 +139,18 @@ public class GenericBoxTile extends UIGridElement
                         break;
                 }
             }
-            if (this._boxInfo.isOnSale()){
+            if (this._boxInfo.isOnSale())
+            {
                 this.addTag(new ShopBoxTag(ShopBoxTag.RED_TAG, (this.calculateBoxPromotionPercent(this._boxInfo) + "% OFF"), this._isPopup));
             }
-            if (this._boxInfo.unitsLeft != -1){
+            if (this._boxInfo.unitsLeft != -1)
+            {
                 this.addTag(new ShopBoxTag(ShopBoxTag.PURPLE_TAG, (this._boxInfo.unitsLeft + " LEFT!"), this._isPopup));
             }
         }
 
-        private function calculateBoxPromotionPercent(_arg_1:GenericBoxInfo):int{
+        private function calculateBoxPromotionPercent(_arg_1:GenericBoxInfo):int
+        {
             return (((_arg_1.priceAmount - _arg_1.saleAmount) / _arg_1.priceAmount) * 100);
         }
 

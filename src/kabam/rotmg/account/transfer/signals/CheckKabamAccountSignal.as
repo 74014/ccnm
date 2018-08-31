@@ -1,12 +1,14 @@
-﻿//kabam.rotmg.account.transfer.signals.CheckKabamAccountSignal
+﻿// Decompiled by AS3 Sorcerer 5.94
+// www.as3sorcerer.com
+
+//kabam.rotmg.account.transfer.signals.CheckKabamAccountSignal
 
 package kabam.rotmg.account.transfer.signals
 {
-import kabam.rotmg.account.transfer.model.TransferAccountData;
+    import org.osflash.signals.Signal;
+    import kabam.rotmg.account.transfer.model.TransferAccountData;
 
-import org.osflash.signals.Signal;
-
-public class CheckKabamAccountSignal extends Signal
+    public class CheckKabamAccountSignal extends Signal 
     {
 
         public function CheckKabamAccountSignal()

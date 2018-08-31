@@ -1,4 +1,7 @@
-﻿//com.company.assembleegameclient.account.ui.CheckBoxField
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//com.company.assembleegameclient.account.ui.CheckBoxField
 
 package com.company.assembleegameclient.account.ui
 {
@@ -15,7 +18,7 @@ import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 import kabam.rotmg.text.view.stringBuilder.StringBuilder;
 
-public class CheckBoxField extends Sprite 
+public class CheckBoxField extends Sprite
     {
 
         private static const BOX_SIZE:int = 20;
@@ -100,33 +103,33 @@ public class CheckBoxField extends Sprite
 
         private function redrawCheckBox():void
         {
-            var _local_1:Number;
-            var _local_2:Graphics = this.checkBox_.graphics;
-            _local_2.clear();
-            _local_2.beginFill(0x333333, 1);
-            _local_2.drawRect(0, 0, BOX_SIZE, BOX_SIZE);
-            _local_2.endFill();
+            var _local_2:Number;
+            var _local_1:Graphics = this.checkBox_.graphics;
+            _local_1.clear();
+            _local_1.beginFill(0x333333, 1);
+            _local_1.drawRect(0, 0, BOX_SIZE, BOX_SIZE);
+            _local_1.endFill();
             if (this.checked_)
             {
-                _local_2.lineStyle(4, 0xB3B3B3, 1, false, LineScaleMode.NORMAL, CapsStyle.ROUND, JointStyle.ROUND);
-                _local_2.moveTo(2, 2);
-                _local_2.lineTo((BOX_SIZE - 2), (BOX_SIZE - 2));
-                _local_2.moveTo(2, (BOX_SIZE - 2));
-                _local_2.lineTo((BOX_SIZE - 2), 2);
-                _local_2.lineStyle();
+                _local_1.lineStyle(4, 0xB3B3B3, 1, false, LineScaleMode.NORMAL, CapsStyle.ROUND, JointStyle.ROUND);
+                _local_1.moveTo(2, 2);
+                _local_1.lineTo((BOX_SIZE - 2), (BOX_SIZE - 2));
+                _local_1.moveTo(2, (BOX_SIZE - 2));
+                _local_1.lineTo((BOX_SIZE - 2), 2);
+                _local_1.lineStyle();
                 this.hasError = false;
             }
             if (this.hasError)
             {
-                _local_1 = 16549442;
+                _local_2 = 16549442;
             }
             else
             {
-                _local_1 = 0x454545;
+                _local_2 = 0x454545;
             }
-            _local_2.lineStyle(2, _local_1, 1, false, LineScaleMode.NORMAL, CapsStyle.ROUND, JointStyle.ROUND);
-            _local_2.drawRect(0, 0, BOX_SIZE, BOX_SIZE);
-            _local_2.lineStyle();
+            _local_1.lineStyle(2, _local_2, 1, false, LineScaleMode.NORMAL, CapsStyle.ROUND, JointStyle.ROUND);
+            _local_1.drawRect(0, 0, BOX_SIZE, BOX_SIZE);
+            _local_1.lineStyle();
         }
 
 

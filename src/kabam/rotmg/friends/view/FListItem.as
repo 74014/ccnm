@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.friends.view.FListItem
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.friends.view.FListItem
 
 package kabam.rotmg.friends.view
 {

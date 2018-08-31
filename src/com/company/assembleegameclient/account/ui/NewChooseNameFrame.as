@@ -1,4 +1,7 @@
-﻿//com.company.assembleegameclient.account.ui.NewChooseNameFrame
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//com.company.assembleegameclient.account.ui.NewChooseNameFrame
 
 package com.company.assembleegameclient.account.ui
 {
@@ -8,7 +11,7 @@ import kabam.rotmg.text.model.TextKey;
 
 import org.osflash.signals.Signal;
 
-public class NewChooseNameFrame extends Frame 
+public class NewChooseNameFrame extends Frame
     {
 
         public const choose:Signal = new Signal();
@@ -18,7 +21,7 @@ public class NewChooseNameFrame extends Frame
 
         public function NewChooseNameFrame()
         {
-            super(TextKey.CHOOSE_NAME_TITLE, TextKey.FRAME_CANCEL, TextKey.CHOOSE_NAME_CHOOSE);
+            super(TextKey.CHOOSE_NAME_TITLE, TextKey.FRAME_CANCEL, TextKey.CHOOSE_NAME_CHOOSE, "/newChooseName");
             this.name_ = new TextInputField(TextKey.NEWCHOOSENAMEFRAME_NAME, false);
             this.name_.inputText_.restrict = "A-Za-z";
             var _local_1:int = 10;

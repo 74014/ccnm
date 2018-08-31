@@ -1,10 +1,14 @@
-﻿//kabam.rotmg.core.model.PlayerModel
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.core.model.PlayerModel
 
 package kabam.rotmg.core.model
 {
 import com.company.assembleegameclient.appengine.SavedCharacter;
 import com.company.assembleegameclient.appengine.SavedCharactersList;
 import com.company.assembleegameclient.appengine.SavedNewsItem;
+import com.company.assembleegameclient.parameters.Parameters;
 
 import kabam.rotmg.account.core.Account;
 import kabam.rotmg.account.kongregate.KongregateAccount;
@@ -14,6 +18,8 @@ import org.osflash.signals.Signal;
 
 public class PlayerModel
     {
+
+        public static const CHARACTER_SLOT_PRICES:Array = [600, 800, 1000];
 
         public const creditsChanged:Signal = new Signal(int);
         public const fameChanged:Signal = new Signal(int);
@@ -63,7 +69,7 @@ public class PlayerModel
 
         public function isNewPlayer():Boolean
         {
-            return (false);
+            return ((Parameters.data_.needsTutorial) && (this.charList.nextCharId_ == 1));
         }
 
         public function getMaxCharacters():int
@@ -177,7 +183,8 @@ public class PlayerModel
 
         public function getNextCharSlotPrice():int
         {
-            return (this.charList.nextCharSlotPrice_);
+            var _local_1:int = Math.min((CHARACTER_SLOT_PRICES.length - 1), (this.charList.maxNumChars_ - 1));
+            return (CHARACTER_SLOT_PRICES[_local_1]);
         }
 
         public function getTotalFame():int

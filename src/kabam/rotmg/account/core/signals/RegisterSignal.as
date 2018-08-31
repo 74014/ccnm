@@ -1,12 +1,14 @@
-﻿//kabam.rotmg.account.core.signals.RegisterSignal
+﻿// Decompiled by AS3 Sorcerer 5.94
+// www.as3sorcerer.com
+
+//kabam.rotmg.account.core.signals.RegisterSignal
 
 package kabam.rotmg.account.core.signals
 {
-import kabam.rotmg.account.web.model.AccountData;
+    import org.osflash.signals.Signal;
+    import kabam.rotmg.account.web.model.AccountData;
 
-import org.osflash.signals.Signal;
-
-public class RegisterSignal extends Signal
+    public class RegisterSignal extends Signal 
     {
 
         public function RegisterSignal()

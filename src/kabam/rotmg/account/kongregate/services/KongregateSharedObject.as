@@ -1,12 +1,14 @@
-﻿//kabam.rotmg.account.kongregate.services.KongregateSharedObject
+﻿// Decompiled by AS3 Sorcerer 5.94
+// www.as3sorcerer.com
+
+//kabam.rotmg.account.kongregate.services.KongregateSharedObject
 
 package kabam.rotmg.account.kongregate.services
 {
-import com.company.assembleegameclient.util.GUID;
+    import flash.net.SharedObject;
+    import com.company.assembleegameclient.util.GUID;
 
-import flash.net.SharedObject;
-
-public class KongregateSharedObject
+    public class KongregateSharedObject 
     {
 
         private var guid:String;

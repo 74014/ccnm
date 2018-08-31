@@ -1,4 +1,7 @@
-﻿//com.company.assembleegameclient.account.ui.OfferRadioButton
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//com.company.assembleegameclient.account.ui.OfferRadioButton
 
 package com.company.assembleegameclient.account.ui
 {
@@ -22,7 +25,7 @@ import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.ui.view.SignalWaiter;
 import kabam.rotmg.util.components.RadioButton;
 
-public class OfferRadioButton extends Sprite implements Selectable 
+public class OfferRadioButton extends Sprite implements Selectable
     {
 
         private static const SELECTED_COLOR:int = 0x777777;

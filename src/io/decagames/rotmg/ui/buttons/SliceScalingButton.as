@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.ui.buttons.SliceScalingButton
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.ui.buttons.SliceScalingButton
 
 package io.decagames.rotmg.ui.buttons
 {
@@ -209,13 +212,16 @@ public class SliceScalingButton extends BaseButton
             this._interactionEffects = _arg_1;
         }
 
-        public function get bitmapWidth():int{
+        public function get bitmapWidth():int
+        {
             return (this._bitmapWidth);
         }
 
-        public function get bitmap():SliceScalingBitmap{
+        public function get bitmap():SliceScalingBitmap
+        {
             return (this._bitmap);
         }
+
 
     }
 }//package io.decagames.rotmg.ui.buttons

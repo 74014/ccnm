@@ -13,7 +13,7 @@ import flash.geom.ColorTransform;
 
 public class FameUtil
     {
-
+        public static const MAX_STARS:int = 75;
         public static const STARS:Vector.<int> = new <int>[20, 150, 400, 800, 2000];
         private static const lightBlueCT:ColorTransform = new ColorTransform((138 / 0xFF), (152 / 0xFF), (222 / 0xFF));
         private static const darkBlueCT:ColorTransform = new ColorTransform((49 / 0xFF), (77 / 0xFF), (219 / 0xFF));

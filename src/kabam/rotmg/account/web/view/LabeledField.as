@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.account.web.view.LabeledField
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.account.web.view.LabeledField
 
 package kabam.rotmg.account.web.view
 {
@@ -11,7 +14,7 @@ import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
 import org.osflash.signals.Signal;
 
-public class LabeledField extends FormField 
+public class LabeledField extends FormField
     {
 
         public var nameText_:TextFieldDisplayConcrete;

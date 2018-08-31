@@ -1,4 +1,4 @@
-package kabam.rotmg.mysterybox.model
+﻿package kabam.rotmg.mysterybox.model
 {
 import mx.core.*;
 
@@ -7,8 +7,6 @@ import mx.core.*;
 	{
 		public function MysteryBoxInfo_chestImageEmbed()
 		{
-			super();
-
 		}
 	}
 }

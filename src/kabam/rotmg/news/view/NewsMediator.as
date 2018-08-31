@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.news.view.NewsMediator
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.news.view.NewsMediator
 
 package kabam.rotmg.news.view
 {

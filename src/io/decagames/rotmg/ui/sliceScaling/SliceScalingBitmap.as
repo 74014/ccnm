@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap
 
 package io.decagames.rotmg.ui.sliceScaling
 {
@@ -52,7 +55,8 @@ public class SliceScalingBitmap extends Bitmap
 
         override public function set width(_arg_1:Number):void
         {
-            if (((!(_arg_1 == this.currentWidth)) || (this._forceRenderInNextFrame))){
+            if (((!(_arg_1 == this.currentWidth)) || (this._forceRenderInNextFrame)))
+            {
                 this.currentWidth = _arg_1;
                 this.render();
             }
@@ -60,7 +64,8 @@ public class SliceScalingBitmap extends Bitmap
 
         override public function set height(_arg_1:Number):void
         {
-            if (_arg_1 != this.currentHeight){
+            if (_arg_1 != this.currentHeight)
+            {
                 this.currentHeight = _arg_1;
                 this.render();
             }
@@ -134,7 +139,8 @@ public class SliceScalingBitmap extends Bitmap
             }
         }
 
-        private function prepare9grid():void{
+        private function prepare9grid():void
+        {
             var _local_10:int;
             var _local_1:Rectangle = new Rectangle();
             var _local_2:Rectangle = new Rectangle();
@@ -145,9 +151,11 @@ public class SliceScalingBitmap extends Bitmap
             var _local_7:Array = [0, this.scaleGrid.top, (this.currentHeight - (this.bitmapDataToSlice.height - this.scaleGrid.bottom)), this.currentHeight];
             var _local_8:Array = [0, this.scaleGrid.left, (this.currentWidth - (this.bitmapDataToSlice.width - this.scaleGrid.right)), this.currentWidth];
             var _local_9:int;
-            while (_local_9 < 3) {
+            while (_local_9 < 3)
+            {
                 _local_10 = 0;
-                while (_local_10 < 3) {
+                while (_local_10 < 3)
+                {
                     _local_1.setTo(_local_6[_local_9], _local_5[_local_10], (_local_6[(_local_9 + 1)] - _local_6[_local_9]), (_local_5[(_local_10 + 1)] - _local_5[_local_10]));
                     _local_2.setTo(_local_8[_local_9], _local_7[_local_10], (_local_8[(_local_9 + 1)] - _local_8[_local_9]), (_local_7[(_local_10 + 1)] - _local_7[_local_10]));
                     _local_3.identity();

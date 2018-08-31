@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.shop.mysteryBox.rollModal.elements.Spinner
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.shop.mysteryBox.rollModal.elements.Spinner
 
 package io.decagames.rotmg.shop.mysteryBox.rollModal.elements
 {
@@ -13,7 +16,7 @@ import io.decagames.rotmg.utils.colors.Tint;
 
 import kabam.rotmg.assets.EmbeddedAssets;
 
-public class Spinner extends Sprite 
+public class Spinner extends Sprite
     {
 
         public const graphic:DisplayObject = new EmbeddedAssets.StarburstSpinner();

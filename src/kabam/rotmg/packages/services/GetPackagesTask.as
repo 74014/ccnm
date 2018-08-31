@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.packages.services.GetPackagesTask
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.packages.services.GetPackagesTask
 
 package kabam.rotmg.packages.services
 {
@@ -15,7 +18,7 @@ import kabam.rotmg.packages.model.PackageInfo;
 
 import robotlegs.bender.framework.api.ILogger;
 
-public class GetPackagesTask extends BaseTask
+public class GetPackagesTask extends BaseTask 
     {
 
         private static const HOUR:int = ((1000 * 60) * 60);//3600000
@@ -78,62 +81,67 @@ public class GetPackagesTask extends BaseTask
 
         private function parse(_arg_1:XMLList):void
         {
-            var _local_2:XML;
-            var _local_3:PackageInfo;
-            var _local_4:Array = [];
-            for each (_local_2 in _arg_1)
+            var _local_3:XML;
+            var _local_4:PackageInfo;
+            var _local_2:Array = [];
+            for each (_local_3 in _arg_1)
             {
-                _local_3 = new PackageInfo();
-                _local_3.id = _local_2.attribute("id").toString();
-                _local_3.title = _local_2.attribute("title").toString();
-                _local_3.weight = _local_2.attribute("weight").toString();
-                _local_3.description = _local_2.Description.toString();
-                _local_3.contents = _local_2.Contents.toString();
-                _local_3.priceAmount = int(_local_2.Price.attribute("amount").toString());
-                _local_3.priceCurrency = _local_2.Price.attribute("currency").toString();
-                if (_local_2.hasOwnProperty("Sale"))
+                _local_4 = new PackageInfo();
+                _local_4.id = _local_3.attribute("id").toString();
+                _local_4.title = _local_3.attribute("title").toString();
+                _local_4.weight = _local_3.attribute("weight").toString();
+                _local_4.description = _local_3.Description.toString();
+                _local_4.contents = _local_3.Contents.toString();
+                _local_4.priceAmount = int(_local_3.Price.attribute("amount").toString());
+                _local_4.priceCurrency = _local_3.Price.attribute("currency").toString();
+                if (_local_3.hasOwnProperty("Sale"))
                 {
-                    _local_3.saleAmount = int(_local_2.Sale.attribute("price").toString());
-                    _local_3.saleCurrency = int(_local_2.Sale.attribute("currency").toString());
-                    _local_3.saleEnd = TimeUtil.parseUTCDate(_local_2.Sale.End.toString());
+                    _local_4.saleAmount = int(_local_3.Sale.attribute("price").toString());
+                    _local_4.saleCurrency = int(_local_3.Sale.attribute("currency").toString());
+                    _local_4.saleEnd = TimeUtil.parseUTCDate(_local_3.Sale.End.toString());
                 }
-                if (_local_2.hasOwnProperty("Left"))
+                if (_local_3.hasOwnProperty("Left"))
                 {
-                    _local_3.unitsLeft = _local_2.Left;
+                    _local_4.unitsLeft = _local_3.Left;
                 }
-                if (_local_2.hasOwnProperty("Total"))
+                if (_local_3.hasOwnProperty("ShowOnLogin"))
                 {
-                    _local_3.totalUnits = _local_2.Total;
+                    _local_4.showOnLogin = (int(_local_3.ShowOnLogin) == 1);
                 }
-                if (_local_2.hasOwnProperty("Slot"))
+                if (_local_3.hasOwnProperty("Total"))
                 {
-                    _local_3.slot = _local_2.Slot;
+                    _local_4.totalUnits = _local_3.Total;
                 }
-                if (_local_2.hasOwnProperty("Tags"))
+                if (_local_3.hasOwnProperty("Slot"))
                 {
-                    _local_3.tags = _local_2.Tags;
+                    _local_4.slot = _local_3.Slot;
                 }
-                _local_3.startTime = TimeUtil.parseUTCDate(_local_2.StartTime.toString());
-                if (_local_2.EndTime.toString())
+                if (_local_3.hasOwnProperty("Tags"))
                 {
-                    _local_3.endTime = TimeUtil.parseUTCDate(_local_2.EndTime.toString());
+                    _local_4.tags = _local_3.Tags;
                 }
-                _local_3.image = _local_2.Image.toString();
-                if (_local_2.PopupImage.toString() != "")
+                _local_4.startTime = TimeUtil.parseUTCDate(_local_3.StartTime.toString());
+                if (_local_3.EndTime.toString())
                 {
-                    _local_3.popupImage = _local_2.PopupImage.toString();
+                    _local_4.endTime = TimeUtil.parseUTCDate(_local_3.EndTime.toString());
                 }
-                _local_4.push(_local_3);
+                _local_4.image = _local_3.Image.toString();
+                _local_4.charSlot = int(_local_3.CharSlot.toString());
+                _local_4.vaultSlot = int(_local_3.VaultSlot.toString());
+                _local_4.gold = int(_local_3.Gold.toString());
+                if (_local_3.PopupImage.toString() != "")
+                {
+                    _local_4.popupImage = _local_3.PopupImage.toString();
+                }
+                _local_2.push(_local_4);
             }
-            this.packageModel.setPackages(_local_4);
+            this.packageModel.setPackages(_local_2);
         }
 
-        private function getNumPurchased(param1:XML, param2:int):int
+        private function getNumPurchased(packagesXML:XML, packageID:int):int
         {
             var packageHistory:XMLList;
             var numPurchased:int;
-            var packagesXML:XML = param1;
-            var packageID:int = param2;
             var history:XMLList = packagesXML.History;
             if (history)
             {

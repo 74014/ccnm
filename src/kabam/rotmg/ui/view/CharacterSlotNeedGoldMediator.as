@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.ui.view.CharacterSlotNeedGoldMediator
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.ui.view.CharacterSlotNeedGoldMediator
 
 package kabam.rotmg.ui.view
 {
@@ -8,7 +11,7 @@ import kabam.rotmg.dialogs.control.CloseDialogsSignal;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class CharacterSlotNeedGoldMediator extends Mediator
+public class CharacterSlotNeedGoldMediator extends Mediator 
     {
 
         [Inject]

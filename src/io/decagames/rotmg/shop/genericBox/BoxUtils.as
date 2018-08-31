@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.shop.genericBox.BoxUtils
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.shop.genericBox.BoxUtils
 
 package io.decagames.rotmg.shop.genericBox
 {
@@ -12,7 +15,7 @@ import io.decagames.rotmg.ui.popups.signals.ShowPopupSignal;
 import kabam.rotmg.core.model.PlayerModel;
 import kabam.rotmg.game.model.GameModel;
 
-public class BoxUtils 
+public class BoxUtils
     {
 
 

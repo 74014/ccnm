@@ -1,10 +1,13 @@
-﻿//kabam.rotmg.account.core.signals.CharListDataSignal
+﻿// Decompiled by AS3 Sorcerer 5.94
+// www.as3sorcerer.com
+
+//kabam.rotmg.account.core.signals.CharListDataSignal
 
 package kabam.rotmg.account.core.signals
 {
-import org.osflash.signals.Signal;
+    import org.osflash.signals.Signal;
 
-public class CharListDataSignal extends Signal
+    public class CharListDataSignal extends Signal 
     {
 
         public function CharListDataSignal()

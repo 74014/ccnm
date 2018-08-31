@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.core.commands.UpdatePlayerModelCommand
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.core.commands.UpdatePlayerModelCommand
 
 package kabam.rotmg.core.commands
 {

@@ -220,16 +220,21 @@ public class ObjectLibrary
             return (xmlLibrary_[_local_2]);
         }
 
-        public static function getObjectFromType(_arg_1:int):GameObject
+        public static function getObjectFromType(objectType:int):GameObject
         {
-            var _local_2:XML = xmlLibrary_[_arg_1];
-            if (_local_2 == null)
+            var objectXML:XML;
+            var typeReference:String;
+            try
             {
-                return (null);
+                objectXML = xmlLibrary_[objectType];
+                typeReference = objectXML.Class;
             }
-            var _local_3:String = _local_2.Class;
-            var _local_4:Class = ((TYPE_MAP[_local_3]) || (makeClass(_local_3)));
-            return (new _local_4(_local_2));
+            catch(e:Error)
+            {
+                throw (new Error(("Type: 0x" + objectType.toString(16))));
+            }
+            var typeClass:Class = ((TYPE_MAP[typeReference]) || (makeClass(typeReference)));
+            return (new (typeClass)(objectXML));
         }
 
         private static function makeClass(_arg_1:String):Class
@@ -262,7 +267,7 @@ public class ObjectLibrary
         public static function getRedrawnTextureFromType(_arg_1:int, _arg_2:int, _arg_3:Boolean, _arg_4:Boolean=true, _arg_5:Number=5):BitmapData
         {
             var _local_6:BitmapData = getBitmapData(_arg_1);
-            if (Parameters.itemTypes16.indexOf(_arg_1) != -1)
+            if (((!(Parameters.itemTypes16.indexOf(_arg_1) == -1)) || (_local_6.height == 16)))
             {
                 _arg_2 = (_arg_2 * 0.5);
             }
@@ -276,7 +281,8 @@ public class ObjectLibrary
             var _local_10:int = ((_local_9.hasOwnProperty("Tex1")) ? int(_local_9.Tex1) : 0);
             var _local_11:int = ((_local_9.hasOwnProperty("Tex2")) ? int(_local_9.Tex2) : 0);
             _local_6 = TextureRedrawer.resize(_local_6, _local_8, _arg_2, _arg_3, _local_10, _local_11, _arg_5);
-            return (GlowRedrawer.outlineGlow(_local_6, 0));
+            _local_6 = GlowRedrawer.outlineGlow(_local_6, 0);
+            return (_local_6);
         }
 
         public static function getSizeFromType(_arg_1:int):int
@@ -301,20 +307,20 @@ public class ObjectLibrary
 
         public static function isEquippableByPlayer(_arg_1:int, _arg_2:Player):Boolean
         {
-            var _local_3:uint;
             if (_arg_1 == ItemConstants.NO_ITEM)
             {
                 return (false);
             }
-            var _local_4:XML = xmlLibrary_[_arg_1];
-            var _local_5:int = int(_local_4.SlotType.toString());
-            while (_local_3 < GeneralConstants.NUM_EQUIPMENT_SLOTS)
+            var _local_3:XML = xmlLibrary_[_arg_1];
+            var _local_4:int = int(_local_3.SlotType.toString());
+            var _local_5:uint;
+            while (_local_5 < GeneralConstants.NUM_EQUIPMENT_SLOTS)
             {
-                if (_arg_2.slotTypes_[_local_3] == _local_5)
+                if (_arg_2.slotTypes_[_local_5] == _local_4)
                 {
                     return (true);
                 }
-                _local_3++;
+                _local_5++;
             }
             return (false);
         }
@@ -343,28 +349,28 @@ public class ObjectLibrary
 
         public static function isUsableByPlayer(_arg_1:int, _arg_2:Player):Boolean
         {
-            var _local_3:int;
             if (((_arg_2 == null) || (_arg_2.slotTypes_ == null)))
             {
                 return (true);
             }
-            var _local_4:XML = xmlLibrary_[_arg_1];
-            if (((_local_4 == null) || (!(_local_4.hasOwnProperty("SlotType")))))
+            var _local_3:XML = xmlLibrary_[_arg_1];
+            if (((_local_3 == null) || (!(_local_3.hasOwnProperty("SlotType")))))
             {
                 return (false);
             }
-            var _local_5:int = _local_4.SlotType;
-            if (((_local_5 == ItemConstants.POTION_TYPE) || (_local_5 == ItemConstants.EGG_TYPE)))
+            var _local_4:int = _local_3.SlotType;
+            if (((_local_4 == ItemConstants.POTION_TYPE) || (_local_4 == ItemConstants.EGG_TYPE)))
             {
                 return (true);
             }
-            while (_local_3 < _arg_2.slotTypes_.length)
+            var _local_5:int;
+            while (_local_5 < _arg_2.slotTypes_.length)
             {
-                if (_arg_2.slotTypes_[_local_3] == _local_5)
+                if (_arg_2.slotTypes_[_local_5] == _local_4)
                 {
                     return (true);
                 }
-                _local_3++;
+                _local_5++;
             }
             return (false);
         }
@@ -383,48 +389,48 @@ public class ObjectLibrary
 
         public static function usableBy(_arg_1:int):Vector.<String>
         {
-            var _local_2:XML;
-            var _local_3:Vector.<int>;
-            var _local_4:int;
-            var _local_5:XML = xmlLibrary_[_arg_1];
-            if (((_local_5 == null) || (!(_local_5.hasOwnProperty("SlotType")))))
+            var _local_5:XML;
+            var _local_6:Vector.<int>;
+            var _local_7:int;
+            var _local_2:XML = xmlLibrary_[_arg_1];
+            if (((_local_2 == null) || (!(_local_2.hasOwnProperty("SlotType")))))
             {
                 return (null);
             }
-            var _local_6:int = _local_5.SlotType;
-            if ((((_local_6 == ItemConstants.POTION_TYPE) || (_local_6 == ItemConstants.RING_TYPE)) || (_local_6 == ItemConstants.EGG_TYPE)))
+            var _local_3:int = _local_2.SlotType;
+            if ((((_local_3 == ItemConstants.POTION_TYPE) || (_local_3 == ItemConstants.RING_TYPE)) || (_local_3 == ItemConstants.EGG_TYPE)))
             {
                 return (null);
             }
-            var _local_7:Vector.<String> = new Vector.<String>();
-            for each (_local_2 in playerChars_)
+            var _local_4:Vector.<String> = new Vector.<String>();
+            for each (_local_5 in playerChars_)
             {
-                _local_3 = ConversionUtil.toIntVector(_local_2.SlotTypes);
-                _local_4 = 0;
-                while (_local_4 < _local_3.length)
+                _local_6 = ConversionUtil.toIntVector(_local_5.SlotTypes);
+                _local_7 = 0;
+                while (_local_7 < _local_6.length)
                 {
-                    if (_local_3[_local_4] == _local_6)
+                    if (_local_6[_local_7] == _local_3)
                     {
-                        _local_7.push(typeToDisplayId_[int(_local_2.@type)]);
+                        _local_4.push(typeToDisplayId_[int(_local_5.@type)]);
                         break;
                     }
-                    _local_4++;
+                    _local_7++;
                 }
             }
-            return (_local_7);
+            return (_local_4);
         }
 
         public static function playerMeetsRequirements(_arg_1:int, _arg_2:Player):Boolean
         {
-            var _local_3:XML;
+            var _local_4:XML;
             if (_arg_2 == null)
             {
                 return (true);
             }
-            var _local_4:XML = xmlLibrary_[_arg_1];
-            for each (_local_3 in _local_4.EquipRequirement)
+            var _local_3:XML = xmlLibrary_[_arg_1];
+            for each (_local_4 in _local_3.EquipRequirement)
             {
-                if (!playerMeetsRequirement(_local_3, _arg_2))
+                if (!playerMeetsRequirement(_local_4, _arg_2))
                 {
                     return (false);
                 }

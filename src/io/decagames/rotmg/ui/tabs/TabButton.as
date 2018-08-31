@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.ui.tabs.TabButton
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.ui.tabs.TabButton
 
 package io.decagames.rotmg.ui.tabs
 {
@@ -11,7 +14,7 @@ import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
 import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
 import io.decagames.rotmg.ui.texture.TextureParser;
 
-public class TabButton extends SliceScalingButton 
+public class TabButton extends SliceScalingButton
     {
 
         public static const SELECTED_MARGIN:int = 3;
@@ -46,7 +49,6 @@ public class TabButton extends SliceScalingButton
                 case BORDERLESS:
                     this.defaultBitmap = "tab_button_borderless_idle";
                     this.selectedBitmap = "tab_button_borderless";
-                    break;
             }
             this.defaultBitmap = this.defaultBitmap;
             this.selectedBitmap = this.selectedBitmap;

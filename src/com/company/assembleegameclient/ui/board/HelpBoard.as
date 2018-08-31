@@ -29,7 +29,7 @@ public class HelpBoard extends Frame
 
         public function HelpBoard()
         {
-            super("");
+            super("", "", "");
             this.closeDialogs = StaticInjectorContext.getInjector().getInstance(CloseDialogsSignal);
             w_ = 700;
             h_ = 550;

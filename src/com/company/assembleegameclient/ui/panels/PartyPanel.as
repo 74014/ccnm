@@ -39,8 +39,8 @@ public class PartyPanel extends Panel
 
         private function createPartyMemberPanel(_arg_1:int, _arg_2:int):PlayerGameObjectListItem
         {
-            var _local_3:PlayerGameObjectListItem = new PlayerGameObjectListItem(0xFFFFFF, false, null);
-            addChild(_local_3);
+            var _local_3:PlayerGameObjectListItem;
+            _local_3 = new PlayerGameObjectListItem(0xFFFFFF, false, null);  addChild(_local_3);
             _local_3.x = _arg_1;
             _local_3.y = _arg_2;
             return (_local_3);

@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.promotions.commands.BuyBeginnersPackageCommand
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.promotions.commands.BuyBeginnersPackageCommand
 
 package kabam.rotmg.promotions.commands
 {

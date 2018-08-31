@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.packages.view.GoldDisplay
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.packages.view.GoldDisplay
 
 package kabam.rotmg.packages.view
 {
@@ -13,11 +16,11 @@ import flash.display.Sprite;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 
-public class GoldDisplay extends Sprite 
+public class GoldDisplay extends Sprite
     {
 
-        private var graphic:DisplayObject;
-        private var text:TextFieldDisplayConcrete = new TextFieldDisplayConcrete().setSize(18).setColor(0xFFFFFF);
+        internal var graphic:DisplayObject;
+        internal var text:TextFieldDisplayConcrete = new TextFieldDisplayConcrete().setSize(18).setColor(0xFFFFFF);
 
 
         public function init():void

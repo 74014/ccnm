@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.ui.view.NotEnoughGoldMediator
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.ui.view.NotEnoughGoldMediator
 
 package kabam.rotmg.ui.view
 {

@@ -1,11 +1,14 @@
-﻿//kabam.rotmg.core.commands.InvalidateDataCommand
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.core.commands.InvalidateDataCommand
 
 package kabam.rotmg.core.commands
 {
 import kabam.rotmg.account.core.model.JSInitializedModel;
 import kabam.rotmg.core.model.PlayerModel;
 
-public class InvalidateDataCommand 
+public class InvalidateDataCommand
     {
 
         [Inject]

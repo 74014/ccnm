@@ -1,10 +1,13 @@
-﻿//kabam.rotmg.account.web.view.ProgressBar
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.account.web.view.ProgressBar
 
 package kabam.rotmg.account.web.view
 {
 import flash.display.Sprite;
 
-public class ProgressBar extends Sprite 
+public class ProgressBar extends Sprite
     {
 
         private static const BEVEL:int = 4;

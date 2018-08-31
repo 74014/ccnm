@@ -21,8 +21,8 @@ import kabam.rotmg.classes.model.CharacterSkin;
 import kabam.rotmg.classes.model.ClassesModel;
 import kabam.rotmg.constants.GeneralConstants;
 import kabam.rotmg.core.StaticInjectorContext;
-import kabam.rotmg.pets.data.PetVO;
-import kabam.rotmg.pets.data.PetsModel;
+import io.decagames.rotmg.pets.data.vo.PetVO;
+import io.decagames.rotmg.pets.data.PetsModel;
 
 import org.swiftsuspenders.Injector;
 

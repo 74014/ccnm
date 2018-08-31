@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.dailyQuests.view.popup.DailyQuestRedeemPopupMediator
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.dailyQuests.view.popup.DailyQuestRedeemPopupMediator
 
 package io.decagames.rotmg.dailyQuests.view.popup
 {

@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.ui.buttons.ButtonStates
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.ui.buttons.ButtonStates
 
 package io.decagames.rotmg.ui.buttons
 {

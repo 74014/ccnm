@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.shop.packages.startupPackage.StartupPackage
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.shop.packages.startupPackage.StartupPackage
 
 package io.decagames.rotmg.shop.packages.startupPackage
 {
@@ -11,7 +14,7 @@ import io.decagames.rotmg.ui.texture.TextureParser;
 
 import kabam.rotmg.packages.model.PackageInfo;
 
-public class StartupPackage extends BasePopup
+public class StartupPackage extends BasePopup 
     {
 
         public var closeButton:SliceScalingButton;

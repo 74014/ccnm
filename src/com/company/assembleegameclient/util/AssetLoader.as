@@ -175,6 +175,7 @@ public class AssetLoader
                 }
             }
         }
+
         private function addImages():void{
             AssetLibrary.addImageSet("lofiChar8x8", new EmbeddedAssets.lofiCharEmbed_().bitmapData, 8, 8);
             AssetLibrary.addImageSet("lofiChar16x8", new EmbeddedAssets.lofiCharEmbed_().bitmapData, 16, 8);
@@ -253,6 +254,7 @@ public class AssetLoader
             AssetLibrary.addImageSet("magicWoodsObjects8x8", new EmbeddedAssets.magicWoodsObjects8x8Embed_().bitmapData, 8, 8);
             AssetLibrary.addImageSet("magicWoodsObjects16x16", new EmbeddedAssets.magicWoodsObjects16x16Embed_().bitmapData, 16, 16);
         }
+
         private function addAnimatedCharacters():void{
             AnimatedChars.add("chars8x8rBeach", new EmbeddedAssets.chars8x8rBeachEmbed_().bitmapData, null, 8, 8, 56, 8, AnimatedChar.RIGHT);
             AnimatedChars.add("chars8x8dBeach", new EmbeddedAssets.chars8x8dBeachEmbed_().bitmapData, null, 8, 8, 56, 8, AnimatedChar.DOWN);
@@ -311,6 +313,7 @@ public class AssetLoader
             AnimatedChars.add("secludedThicketChars8x8", new EmbeddedAssets.secludedThicketChars8x8Embed_().bitmapData, null, 8, 8, 56, 8, AnimatedChar.RIGHT);
             AnimatedChars.add("secludedThicketChars16x16", new EmbeddedAssets.secludedThicketChars16x16Embed_().bitmapData, null, 16, 16, 112, 16, AnimatedChar.RIGHT);
         }
+
         private function addSoundEffects():void
         {
             SoundEffectLibrary.load("button_click");
@@ -328,9 +331,9 @@ public class AssetLoader
 
         private function parse3DModels():void
         {
+            var _local_1:String;
             var _local_2:ByteArray;
             var _local_3:String;
-            var _local_1:* = null;
             for (_local_1 in EmbeddedAssets.models_)
             {
                 _local_2 = EmbeddedAssets.models_[_local_1];
@@ -348,7 +351,7 @@ public class AssetLoader
 
         private function parseGroundFiles():void
         {
-            var _local_1:* = undefined;
+            var _local_1:*;
             for each (_local_1 in EmbeddedData.groundFiles)
             {
                 GroundLibrary.parseFromXML(XML(_local_1));
@@ -364,17 +367,17 @@ public class AssetLoader
                 ObjectLibrary.parseFromXML(XML(EmbeddedData.objectFiles[_local_1]));
                 _local_1++;
             }
-            while (_local_1 < EmbeddedData.objectFiles.length)
-            {
-                ObjectLibrary.parseDungeonXML(getQualifiedClassName(EmbeddedData.objectFiles[_local_1]), XML(EmbeddedData.objectFiles[_local_1]));
-                _local_1++;
+            var _local_2:int;
+            while (_local_2 < EmbeddedData.objectFiles.length) {
+                ObjectLibrary.parseDungeonXML(getQualifiedClassName(EmbeddedData.objectFiles[_local_2]), XML(EmbeddedData.objectFiles[_local_2]));
+                _local_2++;
             }
             currentXmlIsTesting = false;
         }
 
         private function parseRegionFiles():void
         {
-            var _local_1:* = undefined;
+            var _local_1:*;
             for each (_local_1 in EmbeddedData.regionFiles)
             {
                 RegionLibrary.parseFromXML(XML(_local_1));
@@ -385,8 +388,6 @@ public class AssetLoader
         {
             return (!(getQualifiedClassName(_arg_1).indexOf("TestingCXML", 33) == -1));
         }
-
-
     }
 }//package com.company.assembleegameclient.util
 

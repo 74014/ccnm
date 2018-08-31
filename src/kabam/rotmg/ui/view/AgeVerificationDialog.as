@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.ui.view.AgeVerificationDialog
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.ui.view.AgeVerificationDialog
 
 package kabam.rotmg.ui.view
 {
@@ -108,30 +111,30 @@ public class AgeVerificationDialog extends Dialog
 
         private function onVerify(_arg_1:Event):void
         {
-            var _local_2:Boolean;
-            var _local_3:uint = this.getPlayerAge();
+            var _local_3:Boolean;
+            var _local_2:uint = this.getPlayerAge();
             var _local_4:* = "";
             if (!this.ageVerificationField.isValidDate())
             {
                 _local_4 = this.BIRTH_DATE_INVALID_ERROR;
-                _local_2 = true;
+                _local_3 = true;
             }
             else
             {
-                if (((_local_3 < this.MINIMUM_AGE) && (!(_local_2))))
+                if (((_local_2 < this.MINIMUM_AGE) && (!(_local_3))))
                 {
                     _local_4 = this.BIRTH_DATE_BELOW_MINIMUM_ERROR;
-                    _local_2 = true;
+                    _local_3 = true;
                 }
                 else
                 {
                     _local_4 = "";
-                    _local_2 = false;
+                    _local_3 = false;
                     this.response.dispatch(true);
                 }
             }
             this.errorLabel.setStringBuilder(new LineBuilder().setParams(_local_4));
-            this.ageVerificationField.setErrorHighlight(_local_2);
+            this.ageVerificationField.setErrorHighlight(_local_3);
             drawButtonsAndBackground();
         }
 

@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.packages.services.PackageModel
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.packages.services.PackageModel
 
 package kabam.rotmg.packages.services
 {
@@ -18,16 +21,16 @@ public class PackageModel
 
         public function getBoxesForGrid():Vector.<PackageInfo>
         {
-            var _local_1:PackageInfo;
-            var _local_2:Vector.<PackageInfo> = new Vector.<PackageInfo>(this.maxSlots);
-            for each (_local_1 in this.models)
+            var _local_2:PackageInfo;
+            var _local_1:Vector.<PackageInfo> = new Vector.<PackageInfo>(this.maxSlots);
+            for each (_local_2 in this.models)
             {
-                if (_local_1.slot != 0)
+                if (_local_2.slot != 0)
                 {
-                    _local_2[(_local_1.slot - 1)] = _local_1;
+                    _local_1[(_local_2.slot - 1)] = _local_2;
                 }
             }
-            return (_local_2);
+            return (_local_1);
         }
 
         public function startupPackage():PackageInfo
@@ -35,7 +38,7 @@ public class PackageModel
             var _local_1:PackageInfo;
             for each (_local_1 in this.models)
             {
-                if (_local_1.popupImage != "")
+                if (((_local_1.showOnLogin) && (!(_local_1.popupImage == ""))))
                 {
                     return (_local_1);
                 }
@@ -77,7 +80,8 @@ public class PackageModel
 
         public function canPurchasePackage(_arg_1:int):Boolean
         {
-            return (this.models[_arg_1]);
+            var _local_2:PackageInfo = this.models[_arg_1];
+            return (!(_local_2 == null));
         }
 
         public function getPriorityPackage():PackageInfo

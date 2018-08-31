@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.application.model.DomainModel
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.application.model.DomainModel
 
 package kabam.rotmg.application.model
 {
@@ -10,8 +13,8 @@ public class DomainModel
 
         private const LOCALHOST:String = "localhost";
         private const PRODUCTION_WHITELIST:Array = ["www.realmofthemadgod.com", "realmofthemadgodhrd.appspot.com", "realmofthemadgod.appspot.com"];
-        private const TESTING_WHITELIST:Array = ["testing.realmofthemadgod.com", "rotmgtesting.appspot.com", "rotmghrdtesting.appspot.com"];
-        private const TESTING2_WHITELIST:Array = ["realmtesting2.appspot.com"];
+        private const TESTING_WHITELIST:Array = ["test.realmofthemadgod.com", "testing.realmofthemadgod.com", "rotmgtesting.appspot.com", "rotmghrdtesting.appspot.com"];
+        private const TESTING2_WHITELIST:Array = ["realmtesting2.appspot.com", "test2.realmofthemadgod.com"];
         private const TRANSLATION_WHITELIST:Array = ["xlate.kabam.com"];
         private const WHITELIST:Array = PRODUCTION_WHITELIST.concat(TESTING_WHITELIST).concat(TRANSLATION_WHITELIST).concat(TESTING2_WHITELIST);
 
@@ -31,7 +34,7 @@ public class DomainModel
 
         public function isLocalDomainValid():Boolean
         {
-            return (true);
+            return ((this.client.isDesktop()) || (this.isLocalDomainInWhiteList()));
         }
 
         public function isLocalDomainProduction():Boolean
@@ -42,14 +45,14 @@ public class DomainModel
 
         private function isLocalDomainInWhiteList():Boolean
         {
-            var _local_1:String;
-            var _local_2:String = this.getLocalDomain();
-            var _local_3:* = (_local_2 == this.LOCALHOST);
-            for each (_local_1 in this.WHITELIST)
+            var _local_3:String;
+            var _local_1:String = this.getLocalDomain();
+            var _local_2:* = (_local_1 == this.LOCALHOST);
+            for each (_local_3 in this.WHITELIST)
             {
-                _local_3 = ((_local_3) || (_local_2 == _local_1));
+                _local_2 = ((_local_2) || (_local_1 == _local_3));
             }
-            return (_local_3);
+            return (_local_2);
         }
 
         private function getLocalDomain():String

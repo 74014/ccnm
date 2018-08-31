@@ -1,20 +1,23 @@
-﻿//kabam.rotmg.account.transfer.commands.CheckKabamAccountCommand
+﻿// Decompiled by AS3 Sorcerer 5.94
+// www.as3sorcerer.com
+
+//kabam.rotmg.account.transfer.commands.CheckKabamAccountCommand
 
 package kabam.rotmg.account.transfer.commands
 {
-import kabam.lib.tasks.BranchingTask;
-import kabam.lib.tasks.DispatchSignalTask;
-import kabam.lib.tasks.Task;
-import kabam.lib.tasks.TaskMonitor;
-import kabam.rotmg.account.core.signals.UpdateAccountInfoSignal;
-import kabam.rotmg.account.transfer.model.TransferAccountData;
-import kabam.rotmg.account.transfer.services.CheckKabamAccountTask;
-import kabam.rotmg.account.transfer.view.TransferAccountView;
-import kabam.rotmg.core.signals.TaskErrorSignal;
-import kabam.rotmg.dialogs.control.CloseDialogsSignal;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.account.transfer.services.CheckKabamAccountTask;
+    import kabam.rotmg.account.transfer.model.TransferAccountData;
+    import kabam.rotmg.account.core.signals.UpdateAccountInfoSignal;
+    import kabam.rotmg.core.signals.TaskErrorSignal;
+    import kabam.lib.tasks.TaskMonitor;
+    import kabam.rotmg.dialogs.control.CloseDialogsSignal;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.lib.tasks.BranchingTask;
+    import kabam.lib.tasks.DispatchSignalTask;
+    import kabam.rotmg.account.transfer.view.TransferAccountView;
+    import kabam.lib.tasks.Task;
 
-public class CheckKabamAccountCommand
+    public class CheckKabamAccountCommand 
     {
 
         [Inject]

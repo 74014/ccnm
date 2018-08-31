@@ -1,14 +1,17 @@
-﻿//kabam.rotmg.account.kongregate.commands.KongregateHandleAlreadyRegisteredCommand
+﻿// Decompiled by AS3 Sorcerer 5.94
+// www.as3sorcerer.com
+
+//kabam.rotmg.account.kongregate.commands.KongregateHandleAlreadyRegisteredCommand
 
 package kabam.rotmg.account.kongregate.commands
 {
-import kabam.lib.tasks.BranchingTask;
-import kabam.lib.tasks.DispatchSignalTask;
-import kabam.lib.tasks.TaskMonitor;
-import kabam.rotmg.account.core.services.LoginTask;
-import kabam.rotmg.ui.signals.RefreshScreenAfterLoginSignal;
+    import kabam.rotmg.account.core.services.LoginTask;
+    import kabam.lib.tasks.TaskMonitor;
+    import kabam.rotmg.ui.signals.RefreshScreenAfterLoginSignal;
+    import kabam.lib.tasks.BranchingTask;
+    import kabam.lib.tasks.DispatchSignalTask;
 
-public class KongregateHandleAlreadyRegisteredCommand
+    public class KongregateHandleAlreadyRegisteredCommand 
     {
 
         [Inject]

@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.mysterybox.components.MysteryBoxRollModal
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.mysterybox.components.MysteryBoxRollModal
 
 package kabam.rotmg.mysterybox.components
 {
@@ -23,6 +26,7 @@ import flash.text.TextFieldAutoSize;
 import flash.text.TextFormatAlign;
 import flash.utils.Timer;
 
+import io.decagames.rotmg.pets.utils.PetsViewAssetFactory;
 import io.decagames.rotmg.shop.ShopConfiguration;
 import io.decagames.rotmg.shop.ShopPopupView;
 
@@ -36,14 +40,13 @@ import kabam.rotmg.fortune.components.ItemWithTooltip;
 import kabam.rotmg.game.model.GameModel;
 import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
 import kabam.rotmg.mysterybox.services.GetMysteryBoxesTask;
-import kabam.rotmg.pets.util.PetsViewAssetFactory;
 import kabam.rotmg.pets.view.components.DialogCloseButton;
 import kabam.rotmg.pets.view.components.PopupWindowBackground;
-import kabam.rotmg.pets.view.dialogs.evolving.Spinner;
 import kabam.rotmg.text.view.TextFieldDisplayConcrete;
 import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 import kabam.rotmg.text.view.stringBuilder.StaticStringBuilder;
 import kabam.rotmg.ui.view.NotEnoughGoldDialog;
+import kabam.rotmg.ui.view.components.Spinner;
 import kabam.rotmg.util.components.LegacyBuyButton;
 import kabam.rotmg.util.components.UIAssetsHelper;
 
@@ -96,10 +99,8 @@ public class MysteryBoxRollModal extends Sprite
         private var goldBackgroundMask:DisplayObject = new EmbeddedAssets.EvolveBackground();
         private var rewardsList:Array;
 
-        public function MysteryBoxRollModal(_arg_1:MysteryBoxInfo, _arg_2:int)
+        public function MysteryBoxRollModal(_arg_1:MysteryBoxInfo, _arg_2:int):void
         {
-            var _local_4:uint;
-            super();
             this.mbi = _arg_1;
             this.closeButton.disableLegacyCloseBehavior();
             this.closeButton.addEventListener(MouseEvent.CLICK, this.onCloseClick);
@@ -130,6 +131,7 @@ public class MysteryBoxRollModal extends Sprite
             var _local_3:Injector = StaticInjectorContext.getInjector();
             this.client = _local_3.getInstance(AppEngineClient);
             this.account = _local_3.getInstance(Account);
+            var _local_4:uint;
             while (_local_4 < this.mbi._rollsWithContents.length)
             {
                 this.indexInRolls.push(0);
@@ -148,7 +150,7 @@ public class MysteryBoxRollModal extends Sprite
         }
 
 
-        private function configureRollByQuantity(_arg_1:*):*
+        private function configureRollByQuantity(_arg_1:int):void
         {
             var _local_2:int;
             var _local_3:int;
@@ -206,8 +208,7 @@ public class MysteryBoxRollModal extends Sprite
 
         public function getText(_arg_1:String, _arg_2:int, _arg_3:int, _arg_4:Boolean=false):TextFieldDisplayConcrete
         {
-            var _local_5:TextFieldDisplayConcrete;
-            _local_5 = new TextFieldDisplayConcrete().setSize(16).setColor(0xFFFFFF).setTextWidth((WIDTH - (TEXT_MARGIN * 2)));
+            var _local_5:TextFieldDisplayConcrete = new TextFieldDisplayConcrete().setSize(16).setColor(0xFFFFFF).setTextWidth((WIDTH - (TEXT_MARGIN * 2)));
             _local_5.setBold(true);
             if (_arg_4)
             {
@@ -297,13 +298,13 @@ public class MysteryBoxRollModal extends Sprite
 
         private function playRollAnimation():void
         {
-            var _local_1:Bitmap;
-            var _local_2:int;
-            while (_local_2 < this.mbi._rollsWithContents.length)
+            var _local_2:Bitmap;
+            var _local_1:int;
+            while (_local_1 < this.mbi._rollsWithContents.length)
             {
-                _local_1 = new Bitmap(ObjectLibrary.getRedrawnTextureFromType(this.mbi._rollsWithContentsUnique[this.indexInRolls[_local_2]], this.iconSize, true));
-                this.itemBitmaps.push(_local_1);
-                _local_2++;
+                _local_2 = new Bitmap(ObjectLibrary.getRedrawnTextureFromType(this.mbi._rollsWithContentsUnique[this.indexInRolls[_local_1]], this.iconSize, true));
+                this.itemBitmaps.push(_local_2);
+                _local_1++;
             }
             this.displayItems(this.itemBitmaps);
             this.swapImageTimer.addEventListener(TimerEvent.TIMER, this.swapItemImage);
@@ -331,7 +332,7 @@ public class MysteryBoxRollModal extends Sprite
             this.prepareNextRoll();
         }
 
-        private function prepareNextRoll():*
+        private function prepareNextRoll():void
         {
             this.titleText = this.getText(this.mbi.title, TEXT_MARGIN, 6, true).setSize(18);
             this.titleText.setColor(0xFFDE00);
@@ -346,8 +347,8 @@ public class MysteryBoxRollModal extends Sprite
 
         private function swapItemImage(_arg_1:TimerEvent):void
         {
-            var _local_2:uint;
             this.swapImageTimer.stop();
+            var _local_2:uint;
             while (_local_2 < this.indexInRolls.length)
             {
                 if (this.indexInRolls[_local_2] < (this.mbi._rollsWithContentsUnique.length - 1))
@@ -386,6 +387,7 @@ public class MysteryBoxRollModal extends Sprite
                     _arg_1[1].y = (_arg_1[1].y + (HEIGHT / 3));
                     _arg_1[2].x = (_arg_1[2].x + ((WIDTH / 2) + 60));
                     _arg_1[2].y = (_arg_1[2].y + (HEIGHT / 3));
+                    break;
             }
             for each (_local_2 in _arg_1)
             {
@@ -535,10 +537,8 @@ public class MysteryBoxRollModal extends Sprite
         {
             var _local_1:int;
             var _local_2:int;
-            var _local_3:OpenDialogSignal;
-            var _local_4:PlayerModel;
-            var _local_6:int;
-            var _local_7:int;
+            var _local_7:OpenDialogSignal;
+            var _local_8:PlayerModel;
             if (((this.mbi.isOnSale()) && (this.mbi.saleAmount > 0)))
             {
                 _local_1 = int(this.mbi.saleCurrency);
@@ -549,38 +549,40 @@ public class MysteryBoxRollModal extends Sprite
                 _local_1 = int(this.mbi.priceCurrency);
                 _local_2 = (int(this.mbi.priceAmount) * this.quantity_);
             }
-            var _local_5:Boolean = true;
-            var _local_8:Player = StaticInjectorContext.getInjector().getInstance(GameModel).player;
-            if (_local_8 != null)
+            var _local_3:Boolean = true;
+            var _local_4:int;
+            var _local_5:int;
+            var _local_6:Player = StaticInjectorContext.getInjector().getInstance(GameModel).player;
+            if (_local_6 != null)
             {
-                _local_7 = _local_8.credits_;
-                _local_6 = _local_8.fame_;
+                _local_5 = _local_6.credits_;
+                _local_4 = _local_6.fame_;
             }
             else
             {
-                _local_4 = StaticInjectorContext.getInjector().getInstance(PlayerModel);
-                if (_local_4 != null)
+                _local_8 = StaticInjectorContext.getInjector().getInstance(PlayerModel);
+                if (_local_8 != null)
                 {
-                    _local_7 = _local_4.getCredits();
-                    _local_6 = _local_4.getFame();
+                    _local_5 = _local_8.getCredits();
+                    _local_4 = _local_8.getFame();
                 }
             }
-            if (((_local_1 == Currency.GOLD) && (_local_7 < _local_2)))
+            if (((_local_1 == Currency.GOLD) && (_local_5 < _local_2)))
             {
-                _local_3 = StaticInjectorContext.getInjector().getInstance(OpenDialogSignal);
-                _local_3.dispatch(new NotEnoughGoldDialog());
-                _local_5 = false;
+                _local_7 = StaticInjectorContext.getInjector().getInstance(OpenDialogSignal);
+                _local_7.dispatch(new NotEnoughGoldDialog());
+                _local_3 = false;
             }
             else
             {
-                if (((_local_1 == Currency.FAME) && (_local_6 < _local_2)))
+                if (((_local_1 == Currency.FAME) && (_local_4 < _local_2)))
                 {
-                    _local_3 = StaticInjectorContext.getInjector().getInstance(OpenDialogSignal);
-                    _local_3.dispatch(new NotEnoughFameDialog());
-                    _local_5 = false;
+                    _local_7 = StaticInjectorContext.getInjector().getInstance(OpenDialogSignal);
+                    _local_7.dispatch(new NotEnoughFameDialog());
+                    _local_3 = false;
                 }
             }
-            return (_local_5);
+            return (_local_3);
         }
 
         public function onCloseClick(_arg_1:MouseEvent):void
@@ -625,9 +627,9 @@ public class MysteryBoxRollModal extends Sprite
 
         private function showReward():void
         {
-            var _local_1:String;
-            var _local_2:uint;
-            var _local_3:TextFieldDisplayConcrete;
+            var _local_4:String;
+            var _local_5:uint;
+            var _local_6:TextFieldDisplayConcrete;
             this.swapImageTimer.removeEventListener(TimerEvent.TIMER, this.swapItemImage);
             this.swapImageTimer.stop();
             this.state = this.IDLE_STATE;
@@ -637,42 +639,42 @@ public class MysteryBoxRollModal extends Sprite
                 this.nextRollTimer.start();
             }
             this.closeButton.visible = true;
-            var _local_4:String = this.rewardsList.shift();
-            var _local_5:Array = _local_4.split(",");
+            var _local_1:String = this.rewardsList.shift();
+            var _local_2:Array = _local_1.split(",");
             removeChild(this.infoText);
             this.titleText.setStringBuilder(new LineBuilder().setParams(this.youWonString));
             this.titleText.setColor(0xFFDE00);
-            var _local_6:int = 40;
-            for each (_local_1 in _local_5)
+            var _local_3:int = 40;
+            for each (_local_4 in _local_2)
             {
-                _local_3 = this.getText(ObjectLibrary.typeToDisplayId_[_local_1], TEXT_MARGIN, _local_6).setSize(16).setColor(0);
-                _local_3.filters = [];
-                _local_3.setSize(18);
-                _local_3.x = 20;
-                addChild(_local_3);
-                this.descTexts.push(_local_3);
-                _local_6 = (_local_6 + 25);
+                _local_6 = this.getText(ObjectLibrary.typeToDisplayId_[_local_4], TEXT_MARGIN, _local_3).setSize(16).setColor(0);
+                _local_6.filters = [];
+                _local_6.setSize(18);
+                _local_6.x = 20;
+                addChild(_local_6);
+                this.descTexts.push(_local_6);
+                _local_3 = (_local_3 + 25);
             }
-            _local_2 = 0;
-            while (_local_2 < _local_5.length)
+            _local_5 = 0;
+            while (_local_5 < _local_2.length)
             {
-                if (_local_2 < this.itemBitmaps.length)
+                if (_local_5 < this.itemBitmaps.length)
                 {
-                    this.itemBitmaps[_local_2].bitmapData = new Bitmap(ObjectLibrary.getRedrawnTextureFromType(int(_local_5[_local_2]), this.iconSize, true)).bitmapData;
+                    this.itemBitmaps[_local_5].bitmapData = new Bitmap(ObjectLibrary.getRedrawnTextureFromType(int(_local_2[_local_5]), this.iconSize, true)).bitmapData;
                 }
-                _local_2++;
+                _local_5++;
             }
-            _local_2 = 0;
-            while (_local_2 < this.itemBitmaps.length)
+            _local_5 = 0;
+            while (_local_5 < this.itemBitmaps.length)
             {
-                this.doEaseInAnimation(this.itemBitmaps[_local_2], {
+                this.doEaseInAnimation(this.itemBitmaps[_local_5], {
                     "scaleX":1.25,
                     "scaleY":1.25
                 }, {
                     "scaleX":1,
                     "scaleY":1
                 });
-                _local_2++;
+                _local_5++;
             }
             this.boxButton.alpha = 0;
             addChild(this.boxButton);
@@ -688,35 +690,35 @@ public class MysteryBoxRollModal extends Sprite
 
         private function doEaseInAnimation(_arg_1:DisplayObject, _arg_2:Object=null, _arg_3:Object=null):void
         {
-            var _local_4:GTween = new GTween(_arg_1, (0.5 * 1), _arg_2, {"ease":Sine.easeOut});
-            _local_4.nextTween = new GTween(_arg_1, (0.5 * 1), _arg_3, {"ease":Sine.easeIn});
+            var _local_4:GTween = new GTween(_arg_1, 0.5, _arg_2, {"ease":Sine.easeOut});
+            _local_4.nextTween = new GTween(_arg_1, 0.5, _arg_3, {"ease":Sine.easeIn});
             _local_4.nextTween.paused = true;
         }
 
         private function shelveReward():void
         {
-            var _local_1:ItemWithTooltip;
-            var _local_2:int;
+            var _local_2:ItemWithTooltip;
             var _local_3:int;
             var _local_4:int;
             var _local_5:int;
             var _local_6:int;
             var _local_7:int;
-            var _local_8:Array = this.lastReward.split(",");
-            if (_local_8.length > 0)
+            var _local_8:int;
+            var _local_1:Array = this.lastReward.split(",");
+            if (_local_1.length > 0)
             {
-                _local_1 = new ItemWithTooltip(int(_local_8[0]), 64);
-                _local_2 = int(((HEIGHT / 6) - 10));
-                _local_3 = (WIDTH - 65);
-                _local_1.x = (5 + (_local_3 * int((this.rollCount / 5))));
-                _local_1.y = (80 + (_local_2 * (this.rollCount % 5)));
-                _local_4 = (((WIDTH / 2) - 40) + (this.itemBitmaps[0].width * 0.5));
-                _local_5 = int(((HEIGHT / 3) + (this.itemBitmaps[0].height * 0.5)));
-                _local_6 = (_local_1.x + (_local_1.height * 0.5));
-                _local_7 = int(((100 + (_local_2 * (this.rollCount % 5))) + (0.5 * ((HEIGHT / 6) - 20))));
-                this.particleModalMap.doLightning(_local_4, _local_5, _local_6, _local_7, 115, 15787660, 0.2);
-                addChild(_local_1);
-                this.rewardsArray.push(_local_1);
+                _local_2 = new ItemWithTooltip(int(_local_1[0]), 64);
+                _local_3 = int(((HEIGHT / 6) - 10));
+                _local_4 = (WIDTH - 65);
+                _local_2.x = (5 + (_local_4 * int((this.rollCount / 5))));
+                _local_2.y = (80 + (_local_3 * (this.rollCount % 5)));
+                _local_5 = (((WIDTH / 2) - 40) + (this.itemBitmaps[0].width * 0.5));
+                _local_6 = int(((HEIGHT / 3) + (this.itemBitmaps[0].height * 0.5)));
+                _local_7 = (_local_2.x + (_local_2.height * 0.5));
+                _local_8 = int(((100 + (_local_3 * (this.rollCount % 5))) + (0.5 * ((HEIGHT / 6) - 20))));
+                this.particleModalMap.doLightning(_local_5, _local_6, _local_7, _local_8, 115, 15787660, 0.2);
+                addChild(_local_2);
+                this.rewardsArray.push(_local_2);
             }
         }
 
@@ -777,6 +779,7 @@ public class MysteryBoxRollModal extends Sprite
                         break;
                     case 10:
                         this.configureRollByQuantity(5);
+                        break;
                 }
             }
             else
@@ -790,6 +793,7 @@ public class MysteryBoxRollModal extends Sprite
                             return;
                         case 5:
                             this.configureRollByQuantity(10);
+                            return;
                     }
                 }
             }

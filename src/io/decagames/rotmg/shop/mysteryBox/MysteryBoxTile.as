@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.shop.mysteryBox.MysteryBoxTile
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.shop.mysteryBox.MysteryBoxTile
 
 package io.decagames.rotmg.shop.mysteryBox
 {
@@ -10,14 +13,13 @@ import io.decagames.rotmg.ui.gird.UIGrid;
 
 import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
 
-public class MysteryBoxTile extends GenericBoxTile 
+public class MysteryBoxTile extends GenericBoxTile
     {
 
         private var displayedItemsGrid:UIGrid;
         private var maxResultHeight:int = 75;
         private var maxResultWidth:int;
         private var resultElementWidth:int;
-        private var resultGridMargin:* = 0;
         private var gridConfig:Point;
 
         public function MysteryBoxTile(_arg_1:MysteryBoxInfo)

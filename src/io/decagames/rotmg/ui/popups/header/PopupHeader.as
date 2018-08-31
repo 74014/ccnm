@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.ui.popups.header.PopupHeader
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.ui.popups.header.PopupHeader
 
 package io.decagames.rotmg.ui.popups.header
 {
@@ -9,7 +12,7 @@ import io.decagames.rotmg.ui.labels.UILabel;
 import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
 import io.decagames.rotmg.ui.texture.TextureParser;
 
-public class PopupHeader extends Sprite 
+public class PopupHeader extends Sprite
     {
 
         public static const LEFT_BUTTON:String = "left_button";
@@ -65,9 +68,12 @@ public class PopupHeader extends Sprite
                 this._titleLabel.text = _arg_1;
                 addChild(this._titleLabel);
                 this._titleLabel.x = (this.titleBackgroundBitmap.x + ((this.titleBackgroundBitmap.width - this._titleLabel.textWidth) / 2));
-                if (this.headerType == TYPE_FULL){
+                if (this.headerType == TYPE_FULL)
+                {
                     this._titleLabel.y = ((this.titleBackgroundBitmap.height - (this._titleLabel.height / 2)) - 3);
-                } else {
+                }
+                else
+                {
                     this._titleLabel.y = (this.titleBackgroundBitmap.y + ((this.titleBackgroundBitmap.height - this._titleLabel.height) / 2));
                 }
             }
@@ -126,9 +132,9 @@ public class PopupHeader extends Sprite
         {
             var _local_2:Sprite;
             this._coinsField = new CoinsField(_arg_1);
-            this._coinsField.y = 39;
             this._coinsField.x = 44;
             addChild(this._coinsField);
+            this.alignCurrency();
             for each (_local_2 in this.buttonsContainers)
             {
                 addChild(_local_2);
@@ -139,10 +145,33 @@ public class PopupHeader extends Sprite
         public function showFame(_arg_1:int):FameField
         {
             this._fameField = new FameField(_arg_1);
-            this._fameField.y = 63;
             this._fameField.x = 44;
             addChild(this._fameField);
+            this.alignCurrency();
             return (this._fameField);
+        }
+
+        private function alignCurrency():void
+        {
+            if (((this._coinsField) && (this._fameField)))
+            {
+                this._coinsField.y = 39;
+                this._fameField.y = 63;
+            }
+            else
+            {
+                if (this._coinsField)
+                {
+                    this._coinsField.y = 51;
+                }
+                else
+                {
+                    if (this._fameField)
+                    {
+                        this._fameField.y = 51;
+                    }
+                }
+            }
         }
 
         public function dispose():void

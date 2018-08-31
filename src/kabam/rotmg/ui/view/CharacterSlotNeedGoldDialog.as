@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.ui.view.CharacterSlotNeedGoldDialog
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.ui.view.CharacterSlotNeedGoldDialog
 
 package kabam.rotmg.ui.view
 {
@@ -11,8 +14,10 @@ import kabam.rotmg.text.model.TextKey;
 
 import org.osflash.signals.Signal;
 
-public class CharacterSlotNeedGoldDialog extends Sprite
+public class CharacterSlotNeedGoldDialog extends Sprite 
     {
+
+        private static const ANALYTICS_PAGE:String = "/charSlotNeedGold";
 
         public const buyGold:Signal = new Signal();
         public const cancel:Signal = new Signal();
@@ -32,7 +37,7 @@ public class CharacterSlotNeedGoldDialog extends Sprite
 
         private function makeDialog():void
         {
-            this.dialog = new Dialog(TextKey.NOT_ENOUGH_GOLD, "", TextKey.FRAME_CANCEL, TextKey.BUY_GOLD);
+            this.dialog = new Dialog(TextKey.NOT_ENOUGH_GOLD, "", TextKey.FRAME_CANCEL, TextKey.BUY_GOLD, ANALYTICS_PAGE);
             this.dialog.setTextParams(TextKey.CHARACTERSLOTNEEDGOLDDIALOG_PRICE, {"price":this.price});
             addChild(this.dialog);
         }

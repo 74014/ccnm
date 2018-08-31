@@ -1,17 +1,18 @@
-﻿//kabam.rotmg.startup.StartupConfig
+﻿// Decompiled by AS3 Sorcerer 5.94
+// www.as3sorcerer.com
+
+//kabam.rotmg.startup.StartupConfig
 
 package kabam.rotmg.startup
 {
-import kabam.rotmg.startup.control.StartupCommand;
-import kabam.rotmg.startup.control.StartupSequence;
-import kabam.rotmg.startup.control.StartupSignal;
+    import robotlegs.bender.framework.api.IConfig;
+    import org.swiftsuspenders.Injector;
+    import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
+    import kabam.rotmg.startup.control.StartupSequence;
+    import kabam.rotmg.startup.control.StartupSignal;
+    import kabam.rotmg.startup.control.StartupCommand;
 
-import org.swiftsuspenders.Injector;
-
-import robotlegs.bender.extensions.signalCommandMap.api.ISignalCommandMap;
-import robotlegs.bender.framework.api.IConfig;
-
-public class StartupConfig implements IConfig
+    public class StartupConfig implements IConfig 
     {
 
         [Inject]

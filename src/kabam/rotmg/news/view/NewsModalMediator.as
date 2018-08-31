@@ -1,7 +1,11 @@
-﻿//kabam.rotmg.news.view.NewsModalMediator
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.news.view.NewsModalMediator
 
 package kabam.rotmg.news.view
 {
+import kabam.rotmg.dialogs.control.FlushPopupStartupQueueSignal;
 import kabam.rotmg.news.controller.NewsDataUpdatedSignal;
 import kabam.rotmg.news.model.NewsCellVO;
 import kabam.rotmg.news.model.NewsModel;
@@ -20,6 +24,8 @@ public class NewsModalMediator extends Mediator
         public var model:NewsModel;
         [Inject]
         public var getNews:GetAppEngineNewsTask;
+        [Inject]
+        public var flushStartupQueue:FlushPopupStartupQueueSignal;
 
 
         override public function initialize():void

@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.friends.view.FriendTabView
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.friends.view.FriendTabView
 
 package kabam.rotmg.friends.view
 {
@@ -22,7 +25,7 @@ public class FriendTabView extends Sprite
     {
 
         public const tabSelected:Signal = new Signal(String);
-        private const TAB_WIDTH:int = 100;
+        private const TAB_WIDTH:int = 120;
         private const TAB_HEIGHT:int = 30;
         private const tabSprite:Sprite = new Sprite();
         private const background:Sprite = new Sprite();
@@ -44,16 +47,6 @@ public class FriendTabView extends Sprite
             addChild(this.containerSprite);
         }
 
-        private function addTextTab(_arg_1:int, _arg_2:BaseSimpleText):TabTextView
-        {
-            var _local_3:TabTextView;
-            var _local_4:Sprite = new TabBackground(this.TAB_WIDTH, this.TAB_HEIGHT);
-            _local_3 = new TabTextView(_arg_1, _local_4, _arg_2);
-            _local_3.x = (_arg_1 * (_arg_2.width + 4));
-            _local_3.y = 4;
-            return (_local_3);
-        }
-
         public function destroy():void
         {
             while (numChildren > 0)
@@ -68,7 +61,7 @@ public class FriendTabView extends Sprite
         public function addTab(_arg_1:BaseSimpleText, _arg_2:Sprite):void
         {
             var _local_3:int = this.tabs.length;
-            var _local_4:TabView = this.addTextTab(_local_3, _arg_1);
+            var _local_4:TabView = this.addTextTab(_local_3, (_arg_1 as BaseSimpleText));
             this.tabs.push(_local_4);
             this.tabSprite.addChild(_local_4);
             _arg_2.y = (this.TAB_HEIGHT + 5);
@@ -136,6 +129,16 @@ public class FriendTabView extends Sprite
                     this.tabSelected.dispatch(this.contents[_arg_1.index].name);
                 }
             }
+        }
+
+        private function addTextTab(_arg_1:int, _arg_2:BaseSimpleText):TabTextView
+        {
+            var _local_4:TabTextView;
+            var _local_3:Sprite = new TabBackground(this.TAB_WIDTH, this.TAB_HEIGHT);
+            _local_4 = new TabTextView(_arg_1, _local_3, _arg_2);
+            _local_4.x = (_arg_1 * (_arg_2.width + 12));
+            _local_4.y = 4;
+            return (_local_4);
         }
 
         private function showContent(_arg_1:int):void

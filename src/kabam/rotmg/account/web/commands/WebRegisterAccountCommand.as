@@ -1,20 +1,23 @@
-﻿//kabam.rotmg.account.web.commands.WebRegisterAccountCommand
+﻿// Decompiled by AS3 Sorcerer 5.94
+// www.as3sorcerer.com
+
+//kabam.rotmg.account.web.commands.WebRegisterAccountCommand
 
 package kabam.rotmg.account.web.commands
 {
-import kabam.lib.tasks.BranchingTask;
-import kabam.lib.tasks.DispatchSignalTask;
-import kabam.lib.tasks.Task;
-import kabam.lib.tasks.TaskMonitor;
-import kabam.lib.tasks.TaskSequence;
-import kabam.rotmg.account.core.services.RegisterAccountTask;
-import kabam.rotmg.account.core.signals.UpdateAccountInfoSignal;
-import kabam.rotmg.account.web.view.WebAccountDetailDialog;
-import kabam.rotmg.core.signals.TaskErrorSignal;
-import kabam.rotmg.dialogs.control.OpenDialogSignal;
-import kabam.rotmg.ui.signals.EnterGameSignal;
+    import kabam.rotmg.account.core.services.RegisterAccountTask;
+    import kabam.lib.tasks.TaskMonitor;
+    import kabam.rotmg.core.signals.TaskErrorSignal;
+    import kabam.rotmg.account.core.signals.UpdateAccountInfoSignal;
+    import kabam.rotmg.dialogs.control.OpenDialogSignal;
+    import kabam.rotmg.ui.signals.EnterGameSignal;
+    import kabam.lib.tasks.BranchingTask;
+    import kabam.lib.tasks.TaskSequence;
+    import kabam.lib.tasks.DispatchSignalTask;
+    import kabam.rotmg.account.web.view.WebAccountDetailDialog;
+    import kabam.lib.tasks.Task;
 
-public class WebRegisterAccountCommand
+    public class WebRegisterAccountCommand 
     {
 
         [Inject]

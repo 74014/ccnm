@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.shop.mysteryBox.rollModal.MysteryBoxRollModal
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.shop.mysteryBox.rollModal.MysteryBoxRollModal
 
 package io.decagames.rotmg.shop.mysteryBox.rollModal
 {
@@ -28,7 +31,7 @@ import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
 
 import org.osflash.signals.Signal;
 
-public class MysteryBoxRollModal extends ModalPopup 
+public class MysteryBoxRollModal extends ModalPopup
     {
 
         private const iconSize:Number = 80;
@@ -229,7 +232,7 @@ public class MysteryBoxRollModal extends ModalPopup
                 "scaleY":scale
             }, {"ease":Sine.easeIn});
             tween1.delay = delay;
-            tween1.onComplete = function ():*
+            tween1.onComplete = function ():void
             {
                 element.alpha = 0;
                 resultGridElement.alpha = 1;
@@ -239,7 +242,7 @@ public class MysteryBoxRollModal extends ModalPopup
                     finishedShowingResult.dispatch();
                 }
             };
-            timeout = setTimeout(function ():*
+            timeout = setTimeout(function ():void
             {
                 particleModalMap.doLightning(((rollGrid.x + element.x) + (element.width / 2)), ((rollGrid.y + element.y) + (element.height / 2)), ((resultGrid.x + resultGridElement.x) + (resultGridElement.width / 2)), ((resultGrid.y + resultGridElement.y) + (resultGridElement.height / 2)), 115, 15787660, movingDuration);
                 clearTimeout(timeout);
@@ -257,7 +260,7 @@ public class MysteryBoxRollModal extends ModalPopup
                 "y":this.rollGrid.y
             }, {"ease":Sine.easeIn});
             resetTween.beginning();
-            resetTween.onComplete = function ():*
+            resetTween.onComplete = function ():void
             {
                 var _local_1:UIItemContainer;
                 var _local_2:int;

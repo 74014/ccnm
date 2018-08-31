@@ -57,6 +57,7 @@ public class PotionSlotView extends Sprite
         private var buyOuterGraphicsData:Vector.<IGraphicsData> = new <IGraphicsData>[midGrayFill, outerPath, GraphicsUtil.END_FILL];
         private var buyInnerGraphicsData:Vector.<IGraphicsData> = new <IGraphicsData>[darkGrayFill, innerPath, GraphicsUtil.END_FILL];
         private var text:TextFieldDisplayConcrete;
+        private var subText:TextFieldDisplayConcrete;
         private var costIcon:Bitmap;
         private var potionIconDraggableSprite:Sprite;
         private var potionIcon:Bitmap;
@@ -76,9 +77,11 @@ public class PotionSlotView extends Sprite
             this.grayscaleMatrix = new ColorMatrixFilter(MoreColorUtil.greyscaleFilterMatrix);
             _local_3 = AssetLibrary.getImageFromSet("lofiObj3", 225);
             _local_3 = TextureRedrawer.redraw(_local_3, 30, false, 0);
-            this.text = new TextFieldDisplayConcrete().setSize(13).setColor(0xFFFFFF).setTextWidth(BUTTON_WIDTH).setTextHeight(BUTTON_HEIGHT);
+            this.text = new TextFieldDisplayConcrete().setSize(18).setColor(0xFFFFFF).setTextWidth(BUTTON_WIDTH).setTextHeight(BUTTON_HEIGHT);
             this.text.filters = [READABILITY_SHADOW_1];
-            this.text.y = 4;
+            this.subText = new TextFieldDisplayConcrete().setSize(12).setColor(0xB6B6B6).setTextWidth(BUTTON_WIDTH).setTextHeight(BUTTON_HEIGHT);
+            this.subText.filters = [READABILITY_SHADOW_1];
+            this.subText.y = 8;
             this.costIcon = new Bitmap(_local_3);
             this.costIcon.x = 52;
             this.costIcon.y = -6;
@@ -92,6 +95,7 @@ public class PotionSlotView extends Sprite
             addChild(this.bg);
             addChild(this.costIcon);
             addChild(this.text);
+            addChild(this.subText);
             this.potionIconDraggableSprite = new Sprite();
             this.doubleClickTimer = new Timer(DOUBLE_CLICK_PAUSE, 1);
             this.doubleClickTimer.addEventListener(TimerEvent.TIMER_COMPLETE, this.onDoubleClickTimerComplete);
@@ -106,9 +110,9 @@ public class PotionSlotView extends Sprite
 
         public function setData(_arg_1:int, _arg_2:int, _arg_3:Boolean, _arg_4:int=-1):void
         {
-            var _local_5:int;
-            var _local_6:BitmapData;
-            var _local_7:Bitmap;
+            var _local_6:int;
+            var _local_7:BitmapData;
+            var _local_8:Bitmap;
             if (_arg_4 != -1)
             {
                 this.objectType = _arg_4;
@@ -116,48 +120,59 @@ public class PotionSlotView extends Sprite
                 {
                     removeChild(this.potionIcon);
                 }
-                _local_6 = ObjectLibrary.getRedrawnTextureFromType(_arg_4, 55, false);
-                this.potionIcon = new Bitmap(_local_6);
+                _local_7 = ObjectLibrary.getRedrawnTextureFromType(_arg_4, 55, false);
+                this.potionIcon = new Bitmap(_local_7);
                 this.potionIcon.y = -11;
                 addChild(this.potionIcon);
-                _local_6 = ObjectLibrary.getRedrawnTextureFromType(_arg_4, 80, true);
-                _local_7 = new Bitmap(_local_6);
-                _local_7.x = (_local_7.x - 30);
-                _local_7.y = (_local_7.y - 30);
-                this.potionIconDraggableSprite.addChild(_local_7);
+                _local_7 = ObjectLibrary.getRedrawnTextureFromType(_arg_4, 80, true);
+                _local_8 = new Bitmap(_local_7);
+                _local_8.x = (_local_8.x - 30);
+                _local_8.y = (_local_8.y - 30);
+                this.potionIconDraggableSprite.addChild(_local_8);
             }
-            var _local_8:* = (_arg_1 > 0);
-            if (_local_8)
+            var _local_5:* = (_arg_1 > 0);
+            if (_local_5)
             {
-                this.setTextString((String(_arg_1) + "/6"));
-                _local_5 = CENTER_ICON_X;
+                this.setTextString(String(_arg_1));
+                this.subText.setStringBuilder(new StaticStringBuilder("/6"));
+                this.subText.x = 67;
+                _local_6 = CENTER_ICON_X;
                 this.bg.graphics.clear();
                 this.bg.graphics.drawGraphicsData(this.useGraphicsData);
-                this.text.x = (BUTTON_WIDTH / 2);
+                this.text.x = 55;
+                this.text.y = 2;
+                this.text.setBold(true);
+                this.text.setSize(18);
             }
             else
             {
                 this.setTextString(String(_arg_2));
-                _local_5 = LEFT_ICON_X;
+                this.subText.setStringBuilder(new StaticStringBuilder(""));
+                _local_6 = LEFT_ICON_X;
                 this.bg.graphics.clear();
                 this.bg.graphics.drawGraphicsData(this.buyOuterGraphicsData);
                 this.bg.graphics.drawGraphicsData(this.buyInnerGraphicsData);
-                this.text.x = ((this.costIcon.x - this.text.width) + 6);
+                this.text.x = ((this.costIcon.x - this.text.width) + 10);
+                this.text.y = 4;
+                this.text.setBold(false);
+                this.text.setSize(14);
             }
             if (this.potionIcon)
             {
-                this.potionIcon.x = _local_5;
+                this.potionIcon.x = _local_6;
             }
-            if (!_local_8)
+            if ((!(_local_5)))
             {
                 if (Parameters.data_.contextualPotionBuy)
                 {
+                    this.text.setBold(false);
                     this.text.setColor(0xFFFFFF);
                     this.costIcon.filters = [];
                     this.costIcon.visible = true;
                 }
                 else
                 {
+                    this.text.setBold(false);
                     this.text.setColor(0xAAAAAA);
                     this.costIcon.filters = [this.grayscaleMatrix];
                     this.costIcon.visible = true;
@@ -165,7 +180,24 @@ public class PotionSlotView extends Sprite
             }
             else
             {
-                this.text.setColor(0xFFFFFF);
+                if (_arg_1 <= 1)
+                {
+                    this.text.setColor(16589603);
+                }
+                else
+                {
+                    if (_arg_1 <= 4)
+                    {
+                        this.text.setColor(16611363);
+                    }
+                    else
+                    {
+                        if (_arg_1 >= 4)
+                        {
+                            this.text.setColor(3007543);
+                        }
+                    }
+                }
                 this.costIcon.filters = [];
                 this.costIcon.visible = false;
             }
@@ -194,7 +226,7 @@ public class PotionSlotView extends Sprite
             }
             else
             {
-                if (!this.pendingSecondClick)
+                if ((!(this.pendingSecondClick)))
                 {
                     this.setPendingDoubleClick(true);
                 }
@@ -208,7 +240,7 @@ public class PotionSlotView extends Sprite
 
         private function onMouseDown(_arg_1:MouseEvent):void
         {
-            if (!this.costIcon.visible)
+            if ((!(this.costIcon.visible)))
             {
                 this.beginDragCheck(_arg_1);
             }

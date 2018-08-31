@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.mysterybox.services.MysteryBoxModel
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.mysterybox.services.MysteryBoxModel
 
 package kabam.rotmg.mysterybox.services
 {
@@ -10,7 +13,7 @@ public class MysteryBoxModel
         private var models:Object;
         private var initialized:Boolean = false;
         private var _isNew:Boolean = false;
-        private var maxSlots:int = 12;
+        private var maxSlots:int = 18;
 
 
         public function getBoxesOrderByWeight():Object
@@ -20,16 +23,16 @@ public class MysteryBoxModel
 
         public function getBoxesForGrid():Vector.<MysteryBoxInfo>
         {
-            var _local_1:MysteryBoxInfo;
-            var _local_2:Vector.<MysteryBoxInfo> = new Vector.<MysteryBoxInfo>(this.maxSlots);
-            for each (_local_1 in this.models)
+            var _local_2:MysteryBoxInfo;
+            var _local_1:Vector.<MysteryBoxInfo> = new Vector.<MysteryBoxInfo>(this.maxSlots);
+            for each (_local_2 in this.models)
             {
-                if (_local_1.slot != 0)
+                if (_local_2.slot != 0)
                 {
-                    _local_2[(_local_1.slot - 1)] = _local_1;
+                    _local_1[(_local_2.slot - 1)] = _local_2;
                 }
             }
-            return (_local_2);
+            return (_local_1);
         }
 
         public function setMysetryBoxes(_arg_1:Array):void

@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.utils.colors.GreyScale
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.utils.colors.GreyScale
 
 package io.decagames.rotmg.utils.colors
 {

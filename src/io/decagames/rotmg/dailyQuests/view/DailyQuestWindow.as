@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.dailyQuests.view.DailyQuestWindow
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.dailyQuests.view.DailyQuestWindow
 
 package io.decagames.rotmg.dailyQuests.view
 {
@@ -12,7 +15,7 @@ import io.decagames.rotmg.ui.defaults.DefaultLabelFormat;
 import io.decagames.rotmg.ui.labels.UILabel;
 import io.decagames.rotmg.ui.popups.UIPopup;
 
-public class DailyQuestWindow extends UIPopup
+public class DailyQuestWindow extends UIPopup 
     {
 
         public static const MODAL_WIDTH:int = 600;
@@ -88,11 +91,15 @@ public class DailyQuestWindow extends UIPopup
             addChild(this.questList);
         }
 
-        public function showFade(_arg_1:int=0x151515, _arg_2:Boolean=false):void{
-            if (_arg_2){
+        public function showFade(_arg_1:int=0x151515, _arg_2:Boolean=false):void
+        {
+            if (_arg_2)
+            {
                 this.particleLayer = new ParticleModalMap(1);
                 addChild(this.particleLayer);
-            } else {
+            }
+            else
+            {
                 this.fade = new Sprite();
                 this.fade.graphics.clear();
                 this.fade.graphics.beginFill(_arg_1, 0.8);
@@ -123,7 +130,8 @@ public class DailyQuestWindow extends UIPopup
             return (this._infoButton);
         }
 
-        public function get contentContainer():Sprite{
+        public function get contentContainer():Sprite
+        {
             return (this._contentContainer);
         }
 

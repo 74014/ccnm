@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.shop.NotEnoughResources
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.shop.NotEnoughResources
 
 package io.decagames.rotmg.shop
 {

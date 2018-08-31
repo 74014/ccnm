@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.ui.gird.UIGrid
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.ui.gird.UIGrid
 
 package io.decagames.rotmg.ui.gird
 {
@@ -77,14 +80,17 @@ public class UIGrid extends Sprite
             }
         }
 
-        private function addDecorToRow(_arg_1:int, _arg_2:int, _arg_3:int):void{
+        private function addDecorToRow(_arg_1:int, _arg_2:int, _arg_3:int):void
+        {
             var _local_5:SliceScalingBitmap;
             _arg_3--;
-            if (_arg_3 == 0){
+            if (_arg_3 == 0)
+            {
                 _arg_3 = 1;
             }
             var _local_4:int;
-            while (_local_4 < _arg_3) {
+            while (_local_4 < _arg_3)
+            {
                 _local_5 = TextureParser.instance.getSliceScalingBitmap("UI", this._decorBitmap);
                 _local_5.x = Math.round((((_local_4 * (this.gridMargin / 2)) + ((_local_4 + 1) * (this.elementWidth + (this.gridMargin / 2)))) - (_local_5.width / 2)));
                 _local_5.y = Math.round((((_arg_1 + _arg_2) - (_local_5.height / 2)) + (this.gridMargin / 2)));
@@ -121,35 +127,44 @@ public class UIGrid extends Sprite
             var _local_5:int = int(Math.ceil((this.elements.length / this.numberOfColumns)));
             var _local_6:int = 1;
             var _local_7:int;
-            for each (_local_8 in this.elements) {
+            for each (_local_8 in this.elements)
+            {
                 _local_8.resize(this.elementWidth);
-                if (_local_8.height > _local_4){
+                if (_local_8.height > _local_4)
+                {
                     _local_4 = _local_8.height;
                 }
                 _local_8.x = _local_2;
                 _local_8.y = _local_3;
-                if (++_local_1 > this.numberOfColumns){
-                    if (this._decorBitmap != ""){
+                if (++_local_1 > this.numberOfColumns)
+                {
+                    if (this._decorBitmap != "")
+                    {
                         _local_7 = _local_6;
                         this.addDecorToRow(_local_3, _local_4, (_local_1 - 1));
                     }
                     _local_6++;
                     _local_2 = 0;
-                    if (((_local_6 == _local_5) && (this._centerLastRow))){
+                    if (((_local_6 == _local_5) && (this._centerLastRow)))
+                    {
                         _local_9 = ((_local_6 * this.numberOfColumns) - this.elements.length);
                         _local_2 = int(Math.round((((_local_9 * this.elementWidth) + ((_local_9 - 1) * this.gridMargin)) / 2)));
                     }
                     _local_3 = (_local_3 + (_local_4 + this.gridMargin));
                     _local_4 = 0;
                     _local_1 = 1;
-                } else {
+                }
+                else
+                {
                     _local_2 = (_local_2 + (this.elementWidth + this.gridMargin));
                 }
-                if (((!(this._decorBitmap == "")) && (!(_local_7 == _local_6)))){
+                if (((!(this._decorBitmap == "")) && (!(_local_7 == _local_6))))
+                {
                     this.addDecorToRow(_local_3, _local_4, (_local_1 - 1));
                 }
             }
-            if (this.scrollHeight != -1){
+            if (this.scrollHeight != -1)
+            {
                 this.gridMask.graphics.clear();
                 this.gridMask.graphics.beginFill(0xFF0000);
                 this.gridMask.graphics.drawRect(0, 0, this.gridWidth, this.scrollHeight);
@@ -194,11 +209,13 @@ public class UIGrid extends Sprite
             this._centerLastRow = _arg_1;
         }
 
-        public function get decorBitmap():String{
+        public function get decorBitmap():String
+        {
             return (this._decorBitmap);
         }
 
-        public function set decorBitmap(_arg_1:String):void{
+        public function set decorBitmap(_arg_1:String):void
+        {
             this._decorBitmap = _arg_1;
         }
 

@@ -10,7 +10,7 @@ import flash.events.Event;
 import flash.events.MouseEvent;
 
 import kabam.rotmg.fortune.components.ItemWithTooltip;
-import kabam.rotmg.pets.util.PetsViewAssetFactory;
+import io.decagames.rotmg.pets.utils.PetsViewAssetFactory;
 import kabam.rotmg.pets.view.components.DialogCloseButton;
 import kabam.rotmg.pets.view.components.PopupWindowBackground;
 import kabam.rotmg.text.model.TextKey;
@@ -30,7 +30,7 @@ public class ConfirmBuyModal extends Sprite
         public static const TEXT_MARGIN:int = 20;
         public static var free:Boolean = true;
 
-        private const closeButton:DialogCloseButton = PetsViewAssetFactory.returnCloseButton(ConfirmBuyModal.WIDTH);
+        private const closeButton:DialogCloseButton = io.decagames.rotmg.pets.utils.PetsViewAssetFactory.returnCloseButton(ConfirmBuyModal.WIDTH);
         private const buyButton:LegacyBuyButton = new LegacyBuyButton(TextKey.SELLABLEOBJECTPANEL_BUY, 16, 0, Currency.INVALID);
 
         private var buyButtonClicked:NativeSignal;

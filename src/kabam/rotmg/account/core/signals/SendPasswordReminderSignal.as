@@ -1,10 +1,13 @@
-﻿//kabam.rotmg.account.core.signals.SendPasswordReminderSignal
+﻿// Decompiled by AS3 Sorcerer 5.94
+// www.as3sorcerer.com
+
+//kabam.rotmg.account.core.signals.SendPasswordReminderSignal
 
 package kabam.rotmg.account.core.signals
 {
-import org.osflash.signals.Signal;
+    import org.osflash.signals.Signal;
 
-public class SendPasswordReminderSignal extends Signal
+    public class SendPasswordReminderSignal extends Signal 
     {
 
         public function SendPasswordReminderSignal()

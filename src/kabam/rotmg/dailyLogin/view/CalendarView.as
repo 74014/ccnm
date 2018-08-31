@@ -1,13 +1,15 @@
-﻿//kabam.rotmg.dailyLogin.view.CalendarView
+﻿// Decompiled by AS3 Sorcerer 5.94
+// www.as3sorcerer.com
+
+//kabam.rotmg.dailyLogin.view.CalendarView
 
 package kabam.rotmg.dailyLogin.view
 {
-import flash.display.Sprite;
+    import flash.display.Sprite;
+    import kabam.rotmg.dailyLogin.model.CalendarDayModel;
+    import kabam.rotmg.dailyLogin.config.CalendarSettings;
 
-import kabam.rotmg.dailyLogin.config.CalendarSettings;
-import kabam.rotmg.dailyLogin.model.CalendarDayModel;
-
-public class CalendarView extends Sprite
+    public class CalendarView extends Sprite 
     {
 
 
@@ -28,19 +30,19 @@ public class CalendarView extends Sprite
                 if (_local_9 > 0)
                 {
                     _local_7.x = (_local_7.x + (_local_9 * CalendarSettings.BOX_MARGIN));
-                }
+                };
                 _local_7.y = (_local_4 * CalendarSettings.BOX_HEIGHT);
                 if (_local_4 > 0)
                 {
                     _local_7.y = (_local_7.y + (_local_4 * CalendarSettings.BOX_MARGIN));
-                }
+                };
                 _local_9++;
                 if ((++_local_8 % CalendarSettings.NUMBER_OF_COLUMNS) == 0)
                 {
                     _local_9 = 0;
                     _local_4++;
-                }
-            }
+                };
+            };
             _local_6 = ((CalendarSettings.BOX_WIDTH * CalendarSettings.NUMBER_OF_COLUMNS) + ((CalendarSettings.NUMBER_OF_COLUMNS - 1) * CalendarSettings.BOX_MARGIN));
             this.x = ((this.parent.width - _local_6) / 2);
             this.y = (CalendarSettings.DAILY_LOGIN_TABS_PADDING + CalendarSettings.TABS_HEIGHT);

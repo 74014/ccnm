@@ -19,7 +19,7 @@ import robotlegs.bender.framework.api.ILogger;
 public class RemoteTexture
     {
 
-        private static const URL_PATTERN:String = "http://{DOMAIN}/picture/get";
+        private static const URL_PATTERN:String = "https://{DOMAIN}/picture/get";
         private static const ERROR_PATTERN:String = "Remote Texture Error: {ERROR} (id:{ID}, instance:{INSTANCE})";
         private static const START_TIME:int = int(new Date().getTime());
 
@@ -39,7 +39,7 @@ public class RemoteTexture
 
         public function run():void
         {
-            var _local_1:String = ((this.instance_ == "testing") ? "rotmghrdtesting.appspot.com" : "realmofthemadgodhrd.appspot.com");
+            var _local_1:String = (((this.instance_)=="testing") ? "test.realmofthemadgod.com" : "realmofthemadgod.com");
             var _local_2:String = URL_PATTERN.replace("{DOMAIN}", _local_1);
             var _local_3:Object = {};
             _local_3.id = this.id_;

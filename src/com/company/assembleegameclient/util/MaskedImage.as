@@ -1,4 +1,7 @@
-﻿//com.company.assembleegameclient.util.MaskedImage
+﻿// Decompiled by AS3 Sorcerer 5.92
+// www.as3sorcerer.com
+
+//com.company.assembleegameclient.util.MaskedImage
 
 package com.company.assembleegameclient.util
 {

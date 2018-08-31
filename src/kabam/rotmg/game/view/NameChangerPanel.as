@@ -86,16 +86,20 @@ public class NameChangerPanel extends Panel
             return (_local_1);
         }
 
-        private function handleAlreadyHasName(_arg_1:String):void
-        {
+        private function handleAlreadyHasName(_arg_1:String):void{
             this.title_.setStringBuilder(this.makeNameText(_arg_1));
             this.title_.y = 0;
             addChild(this.title_);
             var _local_2:LegacyBuyButton = new LegacyBuyButton(TextKey.NAME_CHANGER_CHANGE, 16, Parameters.NAME_CHANGE_PRICE, Currency.GOLD);
             _local_2.readyForPlacement.addOnce(this.positionButton);
             this.button_ = _local_2;
+            var _local_3:* = (Parameters.NAME_CHANGE_PRICE <= gs_.map.player_.credits_);
+            if (!_local_3){
+                (this.button_ as LegacyBuyButton).setEnabled(_local_3);
+            } else {
+                this.addListeners();
+            }
             addChild(this.button_);
-            this.addListeners();
         }
 
         private function positionButton():void
@@ -127,23 +131,22 @@ public class NameChangerPanel extends Panel
             this.button_.addEventListener(MouseEvent.CLICK, this.onButtonClick);
         }
 
-        private function handleInsufficientRank(_arg_1:int):void
-        {
+        private function handleInsufficientRank(_arg_1:int):void{
             var _local_2:Sprite;
-            var _local_3:Sprite;
-            var _local_4:TextFieldDisplayConcrete;
+            var _local_3:TextFieldDisplayConcrete;
+            var _local_4:Sprite;
             this.title_.setStringBuilder(new LineBuilder().setParams(TextKey.NAME_CHANGER_TEXT));
             addChild(this.title_);
             _local_2 = new Sprite();
-            _local_4 = new TextFieldDisplayConcrete().setSize(16).setColor(0xFFFFFF);
-            _local_4.setBold(true);
-            _local_4.setStringBuilder(new LineBuilder().setParams(TextKey.NAME_CHANGER_REQUIRE_RANK));
-            _local_4.filters = [new DropShadowFilter(0, 0, 0)];
-            _local_2.addChild(_local_4);
-            _local_3 = new RankText(_arg_1, false, false);
-            _local_3.x = (_local_4.width + 4);
-            _local_3.y = ((_local_4.height / 2) - (_local_3.height / 2));
+            _local_3 = new TextFieldDisplayConcrete().setSize(16).setColor(0xFFFFFF);
+            _local_3.setBold(true);
+            _local_3.setStringBuilder(new LineBuilder().setParams(TextKey.NAME_CHANGER_REQUIRE_RANK));
+            _local_3.filters = [new DropShadowFilter(0, 0, 0)];
             _local_2.addChild(_local_3);
+            _local_4 = new RankText(_arg_1, false, false);
+            _local_4.x = (_local_3.width + 4);
+            _local_4.y = ((_local_3.height / 2) - (_local_4.height / 2));
+            _local_2.addChild(_local_4);
             _local_2.x = ((WIDTH / 2) - (_local_2.width / 2));
             _local_2.y = ((HEIGHT - (_local_2.height / 2)) - 20);
             addChild(_local_2);

@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.shop.mysteryBox.rollModal.MysteryBoxRollModalMediator
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.shop.mysteryBox.rollModal.MysteryBoxRollModalMediator
 
 package io.decagames.rotmg.shop.mysteryBox.rollModal
 {
@@ -29,7 +32,7 @@ import kabam.rotmg.text.view.stringBuilder.LineBuilder;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class MysteryBoxRollModalMediator extends Mediator 
+public class MysteryBoxRollModalMediator extends Mediator
     {
 
         [Inject]

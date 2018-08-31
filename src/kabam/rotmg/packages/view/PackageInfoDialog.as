@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.packages.view.PackageInfoDialog
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.packages.view.PackageInfoDialog
 
 package kabam.rotmg.packages.view
 {
@@ -18,7 +21,7 @@ import kabam.rotmg.util.graphics.ButtonLayoutHelper;
 import org.osflash.signals.Signal;
 import org.osflash.signals.natives.NativeMappedSignal;
 
-public class PackageInfoDialog extends Sprite
+public class PackageInfoDialog extends Sprite 
     {
 
         private static const TITLE_Y:int = 8;

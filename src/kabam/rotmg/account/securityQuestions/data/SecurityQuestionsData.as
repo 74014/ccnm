@@ -1,8 +1,12 @@
-﻿
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
 //kabam.rotmg.account.securityQuestions.data.SecurityQuestionsData
 
-package kabam.rotmg.account.securityQuestions.data{
-    public class SecurityQuestionsData {
+package kabam.rotmg.account.securityQuestions.data
+{
+    public class SecurityQuestionsData 
+    {
 
         public var answers:Array = [];
 

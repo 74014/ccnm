@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.account.core.model.JSInitializedModel
+﻿// Decompiled by AS3 Sorcerer 5.94
+// www.as3sorcerer.com
+
+//kabam.rotmg.account.core.model.JSInitializedModel
 
 package kabam.rotmg.account.core.model
 {

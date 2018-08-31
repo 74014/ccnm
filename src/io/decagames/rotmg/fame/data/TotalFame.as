@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.fame.data.TotalFame
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.fame.data.TotalFame
 
 package io.decagames.rotmg.fame.data
 {
@@ -6,7 +9,7 @@ import flash.utils.Dictionary;
 
 import io.decagames.rotmg.fame.data.bonus.FameBonus;
 
-public class TotalFame 
+public class TotalFame
     {
 
         private var _bonuses:Vector.<FameBonus> = new Vector.<FameBonus>();

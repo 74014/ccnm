@@ -10,6 +10,7 @@ import com.company.assembleegameclient.parameters.Parameters;
 import com.company.assembleegameclient.ui.tooltip.PortraitToolTip;
 import com.company.assembleegameclient.ui.tooltip.QuestToolTip;
 import com.company.assembleegameclient.ui.tooltip.ToolTip;
+import com.greensock.TweenMax;
 
 import flash.events.MouseEvent;
 
@@ -17,6 +18,7 @@ public class QuestArrow extends GameObjectArrow
     {
 
         public var map_:Map;
+        private var questArrowTween:TweenMax;
 
         public function QuestArrow(_arg_1:Map)
         {
@@ -26,6 +28,11 @@ public class QuestArrow extends GameObjectArrow
 
         public function refreshToolTip():void
         {
+            if (TweenMax.isTweening(this))
+            {
+                TweenMax.killTweensOf(this);
+                this.questArrowTween.pause(0);
+            }
             setToolTip(this.getToolTip(go_, 0));
         }
 
@@ -73,6 +80,16 @@ public class QuestArrow extends GameObjectArrow
             {
                 setGameObject(_local_5);
                 setToolTip(this.getToolTip(_local_5, _arg_1));
+                if (!this.questArrowTween){
+                    this.questArrowTween = TweenMax.to(this, 0.5, {
+                        "scaleX":2,
+                        "scaleY":2,
+                        "yoyo":true,
+                        "repeat":1
+                    });
+                } else {
+                    this.questArrowTween.play(0);
+                }
             }
             else
             {

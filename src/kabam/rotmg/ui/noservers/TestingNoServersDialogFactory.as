@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.ui.noservers.TestingNoServersDialogFactory
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.ui.noservers.TestingNoServersDialogFactory
 
 package kabam.rotmg.ui.noservers
 {
@@ -9,11 +12,12 @@ public class TestingNoServersDialogFactory implements NoServersDialogFactory
 
         private static const BODY:String = 'There are currently no testing servers available. Please play on <font color="#7777EE"><a href="http://www.realmofthemadgod.com/">www.realmofthemadgod.com</a></font>.';
         private static const TITLE:String = "No Testing Servers";
+        private static const TRACKING:String = "/noTestingServers";
 
 
         public function makeDialog():Dialog
         {
-            return (new Dialog(TITLE, BODY, null, null));
+            return (new Dialog(TITLE, BODY, null, null, TRACKING));
         }
 
 

@@ -107,7 +107,7 @@ public class TitleView extends Sprite
         this.copyrightText.y = MIDDLE_OF_BOTTOM_BAND;
         addChild(this.copyrightText);
         this.mineText = this.makeMyText().setAutoSize(TextFieldAutoSize.LEFT).setVerticalAlign(TextFieldDisplayConcrete.MIDDLE);
-        this.mineText.setStringBuilder(new LineBuilder().setParams("Updated by 74014"));
+        this.mineText.setStringBuilder(new LineBuilder().setParams("Updated by Berilovania & 74014"));
         this.mineText.x = 85;
         this.mineText.y = MIDDLE_OF_BOTTOM_BAND;
         addChild(this.mineText);

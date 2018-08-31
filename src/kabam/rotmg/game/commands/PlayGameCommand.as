@@ -15,7 +15,7 @@ import kabam.rotmg.account.core.services.GetCharListTask;
 import kabam.rotmg.core.model.PlayerModel;
 import kabam.rotmg.core.signals.SetScreenSignal;
 import kabam.rotmg.game.model.GameInitData;
-import kabam.rotmg.pets.data.PetsModel;
+import io.decagames.rotmg.pets.data.PetsModel;
 import kabam.rotmg.servers.api.Server;
 import kabam.rotmg.servers.api.ServerModel;
 

@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.packages.services.BuyPackageTask
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.packages.services.BuyPackageTask
 
 package kabam.rotmg.packages.services
 {
@@ -12,7 +15,7 @@ import kabam.rotmg.packages.control.BuyPackageSuccessfulSignal;
 import kabam.rotmg.packages.model.PackageInfo;
 import kabam.rotmg.text.model.TextKey;
 
-public class BuyPackageTask extends BaseTask
+public class BuyPackageTask extends BaseTask 
     {
 
         private static const ERROR_MESSAGES_THAT_REFRESH:Array = ["Package is not Available", "Package is not Available Right Now", "Invalid PackageId"];

@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.packages.view.PackageButton
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.packages.view.PackageButton
 
 package kabam.rotmg.packages.view
 {
@@ -17,7 +20,7 @@ import kabam.rotmg.ui.UIUtils;
 
 import org.osflash.signals.Signal;
 
-public class PackageButton extends BasePackageButton
+public class PackageButton extends BasePackageButton 
     {
 
         private const SHOW_DURATION:String = "showDuration";
@@ -26,10 +29,10 @@ public class PackageButton extends BasePackageButton
         public var clicked:Signal = new Signal();
         private var _state:String = "showDuration";
         private var _icon:DisplayObject;
-        private var durationText:TextFieldDisplayConcrete = makeText();
-        private var quantityText:TextFieldDisplayConcrete = makeText();
-        private var quantityStringBuilder:StaticStringBuilder = new StaticStringBuilder("");
-        private var durationStringBuilder:LineBuilder = new LineBuilder();
+        internal var durationText:TextFieldDisplayConcrete = makeText();
+        internal var quantityText:TextFieldDisplayConcrete = makeText();
+        internal var quantityStringBuilder:StaticStringBuilder = new StaticStringBuilder("");
+        internal var durationStringBuilder:LineBuilder = new LineBuilder();
 
 
         private static function makeText():TextFieldDisplayConcrete
@@ -84,18 +87,18 @@ public class PackageButton extends BasePackageButton
 
         public function setDuration(_arg_1:int):void
         {
-            var _local_2:String;
-            var _local_3:int = int(Math.ceil((_arg_1 / TimeUtil.DAY_IN_MS)));
-            if (_local_3 > 1)
+            var _local_3:String;
+            var _local_2:int = int(Math.ceil((_arg_1 / TimeUtil.DAY_IN_MS)));
+            if (_local_2 > 1)
             {
-                _local_2 = TextKey.PACKAGE_BUTTON_DAYS;
+                _local_3 = TextKey.PACKAGE_BUTTON_DAYS;
             }
             else
             {
-                _local_2 = TextKey.PACKAGE_BUTTON_DAY;
+                _local_3 = TextKey.PACKAGE_BUTTON_DAY;
             }
             this.durationText.textChanged.addOnce(this.layout);
-            this.durationStringBuilder.setParams(_local_2, {"number":_local_3});
+            this.durationStringBuilder.setParams(_local_3, {"number":_local_2});
             this.durationText.setStringBuilder(this.durationStringBuilder);
         }
 

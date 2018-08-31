@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.dailyQuests.view.list.DailyQuestsListMediator
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.dailyQuests.view.list.DailyQuestsListMediator
 
 package io.decagames.rotmg.dailyQuests.view.list
 {
@@ -39,21 +42,25 @@ public class DailyQuestsListMediator extends Mediator
                     _local_5.isSelected = true;
                 }
                 _local_2 = false;
-                if (_local_4.category == 3){
+                if (_local_4.category == 3)
+                {
                     this.hasEvent = true;
                     this.view.addEventToList(_local_5);
-                } else {
+                }
+                else
+                {
                     this.view.addQuestToList(_local_5);
                 }
             }
         }
 
-        private function onAddedHandler():void{
-            if (this.hasEvent){
+        private function onAddedHandler():void
+        {
+            if (this.hasEvent)
+            {
                 this.view.addIndicator(this.hasEvent);
             }
         }
-
 
         override public function destroy():void
         {

@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.shop.mysteryBox.contentPopup.MysteryBoxContentPopupMediator
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.shop.mysteryBox.contentPopup.MysteryBoxContentPopupMediator
 
 package io.decagames.rotmg.shop.mysteryBox.contentPopup
 {
@@ -13,7 +16,7 @@ import io.decagames.rotmg.ui.texture.TextureParser;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class MysteryBoxContentPopupMediator extends Mediator 
+public class MysteryBoxContentPopupMediator extends Mediator
     {
 
         [Inject]

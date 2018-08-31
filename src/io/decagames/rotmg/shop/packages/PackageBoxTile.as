@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.shop.packages.PackageBoxTile
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.shop.packages.PackageBoxTile
 
 package io.decagames.rotmg.shop.packages
 {
@@ -11,7 +14,7 @@ import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
 
 import kabam.rotmg.packages.model.PackageInfo;
 
-public class PackageBoxTile extends GenericBoxTile 
+public class PackageBoxTile extends GenericBoxTile
     {
 
         private var backgroundContainer:Sprite = new Sprite();

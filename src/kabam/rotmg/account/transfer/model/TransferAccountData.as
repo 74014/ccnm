@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.account.transfer.model.TransferAccountData
+﻿// Decompiled by AS3 Sorcerer 5.94
+// www.as3sorcerer.com
+
+//kabam.rotmg.account.transfer.model.TransferAccountData
 
 package kabam.rotmg.account.transfer.model
 {

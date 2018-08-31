@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.account.web.view.FormField
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.account.web.view.FormField
 
 package kabam.rotmg.account.web.view
 {
@@ -9,7 +12,7 @@ import flash.display.JointStyle;
 import flash.display.LineScaleMode;
 import flash.display.Sprite;
 
-public class FormField extends Sprite 
+public class FormField extends Sprite
     {
 
         protected static const BACKGROUND_COLOR:uint = 0x333333;

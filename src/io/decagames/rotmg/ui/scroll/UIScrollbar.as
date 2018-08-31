@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.ui.scroll.UIScrollbar
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.ui.scroll.UIScrollbar
 
 package io.decagames.rotmg.ui.scroll
 {
@@ -8,10 +11,11 @@ import flash.display.Sprite;
 import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
 import io.decagames.rotmg.ui.texture.TextureParser;
 
-public class UIScrollbar extends Sprite 
+public class UIScrollbar extends Sprite
     {
 
         public static const SCROLL_SLIDER_MINIMUM_HEIGHT:int = 39;
+        public static const SCROLL_SLIDER_WIDTH:int = 17;
         public static const SCROLL_SLIDER_SCALE_FACTOR:Number = 0.5;
 
         private var _slider:Sprite;
@@ -27,7 +31,7 @@ public class UIScrollbar extends Sprite
         public function UIScrollbar(_arg_1:int)
         {
             this.contentHeight = _arg_1;
-            this.background = TextureParser.instance.getSliceScalingBitmap("UI", "scrollbar_background", 17);
+            this.background = TextureParser.instance.getSliceScalingBitmap("UI", "scrollbar_background", SCROLL_SLIDER_WIDTH);
             this.background.height = _arg_1;
             addChild(this.background);
             this._slider = new Sprite();
@@ -78,7 +82,8 @@ public class UIScrollbar extends Sprite
             {
                 this._slider.y = _local_2;
             }
-            if (_local_2 > 0){
+            if (_local_2 > 0)
+            {
                 this._content.y = (this.initalPosition + -(Math.round((((this._content.height - this.contentHeight) * this._slider.y) / _local_2))));
             }
         }

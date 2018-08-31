@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.ui.tabs.TabContentBackground
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.ui.tabs.TabContentBackground
 
 package io.decagames.rotmg.ui.tabs
 {
@@ -9,7 +12,7 @@ import flash.geom.Rectangle;
 import io.decagames.rotmg.ui.sliceScaling.SliceScalingBitmap;
 import io.decagames.rotmg.ui.texture.TextureParser;
 
-public class TabContentBackground extends SliceScalingBitmap 
+public class TabContentBackground extends SliceScalingBitmap
     {
 
         private var decorBitmapData:BitmapData;

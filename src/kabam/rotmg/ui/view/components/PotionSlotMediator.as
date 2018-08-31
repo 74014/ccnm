@@ -15,8 +15,6 @@ import kabam.rotmg.game.model.PotionInventoryModel;
 import kabam.rotmg.game.model.UseBuyPotionVO;
 import kabam.rotmg.game.signals.UseBuyPotionSignal;
 import kabam.rotmg.messaging.impl.GameServerConnection;
-import kabam.rotmg.pets.data.PetSlotsState;
-import kabam.rotmg.pets.view.components.slot.FoodFeedFuseSlot;
 import kabam.rotmg.ui.model.HUDModel;
 import kabam.rotmg.ui.model.PotionModel;
 import kabam.rotmg.ui.signals.UpdateHUDSignal;
@@ -36,8 +34,6 @@ public class PotionSlotMediator extends Mediator
         public var potionInventoryModel:PotionInventoryModel;
         [Inject]
         public var useBuyPotionSignal:UseBuyPotionSignal;
-        [Inject]
-        public var petSlotsState:PetSlotsState;
         private var blockingUpdate:Boolean = false;
 
 
@@ -75,23 +71,17 @@ public class PotionSlotMediator extends Mediator
             }
         }
 
-        private function onDrop(_arg_1:DisplayObject):void
-        {
-            var _local_2:InteractiveItemTile;
-            var _local_3:Player = this.hudModel.gameSprite.map.player_;
-            var _local_4:* = DisplayHierarchy.getParentWithTypeArray(_arg_1, InteractiveItemTile, Map, FoodFeedFuseSlot);
-            if (((_local_4 is Map) || ((Parameters.isGpuRender()) && (_local_4 == null))))
-            {
-                GameServerConnection.instance.invDrop(_local_3, PotionInventoryModel.getPotionSlot(this.view.objectType), this.view.objectType);
-            }
-            else
-            {
-                if ((_local_4 is InteractiveItemTile))
-                {
-                    _local_2 = (_local_4 as InteractiveItemTile);
-                    if (((_local_2.getItemId() == ItemConstants.NO_ITEM) && (!(_local_2.ownerGrid.owner == _local_3))))
-                    {
-                        GameServerConnection.instance.invSwapPotion(_local_3, _local_3, PotionInventoryModel.getPotionSlot(this.view.objectType), this.view.objectType, _local_2.ownerGrid.owner, _local_2.tileId, ItemConstants.NO_ITEM);
+        private function onDrop(_arg_1:DisplayObject):void{
+            var _local_4:InteractiveItemTile;
+            var _local_2:Player = this.hudModel.gameSprite.map.player_;
+            var _local_3:* = DisplayHierarchy.getParentWithTypeArray(_arg_1, InteractiveItemTile, Map);
+            if ((((_local_3 is Map)) || (((Parameters.isGpuRender()) && ((_local_3 == null)))))){
+                GameServerConnection.instance.invDrop(_local_2, PotionInventoryModel.getPotionSlot(this.view.objectType), this.view.objectType);
+            } else {
+                if ((_local_3 is InteractiveItemTile)){
+                    _local_4 = (_local_3 as InteractiveItemTile);
+                    if ((((_local_4.getItemId() == ItemConstants.NO_ITEM)) && (!((_local_4.ownerGrid.owner == _local_2))))){
+                        GameServerConnection.instance.invSwapPotion(_local_2, _local_2, PotionInventoryModel.getPotionSlot(this.view.objectType), this.view.objectType, _local_4.ownerGrid.owner, _local_4.tileId, ItemConstants.NO_ITEM);
                     }
                 }
             }

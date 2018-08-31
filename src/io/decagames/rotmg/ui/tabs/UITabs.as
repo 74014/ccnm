@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.ui.tabs.UITabs
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.ui.tabs.UITabs
 
 package io.decagames.rotmg.ui.tabs
 {
@@ -33,7 +36,8 @@ public class UITabs extends Sprite
             this.addEventListener(Event.ADDED_TO_STAGE, this.onAddedHandler);
             this.content = new Vector.<UITab>(0);
             this.buttons = new Vector.<TabButton>(0);
-            if (!_arg_2){
+            if (!_arg_2)
+            {
                 this.background = new TabContentBackground();
                 this.background.addMargin(0, 3);
                 this.background.width = _arg_1;
@@ -41,7 +45,9 @@ public class UITabs extends Sprite
                 this.background.x = 0;
                 this.background.y = 41;
                 addChild(this.background);
-            } else {
+            }
+            else
+            {
                 this.tabsButtonMargin = 3;
             }
         }
@@ -61,12 +67,13 @@ public class UITabs extends Sprite
         private function createTabButtons():void
         {
             var _local_1:int;
+            var _local_2:int;
             var _local_3:String;
             var _local_4:TabButton;
             var _local_5:UITab;
             var _local_6:TabButton;
-            var _local_2:int = int((((this.tabsWidth - ((this.content.length - 1) * this.tabsXSpace)) - (this.tabsButtonMargin * 2)) / this.content.length));
             _local_1 = 1;
+            _local_2 = int((((this.tabsWidth - ((this.content.length - 1) * this.tabsXSpace)) - (this.tabsButtonMargin * 2)) / this.content.length));
             for each (_local_5 in this.content)
             {
                 if (_local_1 == 1)
@@ -98,52 +105,70 @@ public class UITabs extends Sprite
                 this.buttons.push(_local_6);
                 _local_1++;
             }
-            if (this.background){
+            if (this.background)
+            {
                 this.background.addDecor((_local_4.x - 4), ((_local_4.x + _local_4.width) - 12), this.defaultSelectedIndex, this.buttons.length);
             }
             this.onButtonSelected(_local_4);
             this.buttonsRenderedSignal.dispatch();
         }
 
-        private function onButtonSelected(_arg_1:TabButton):void{
+        private function onButtonSelected(_arg_1:TabButton):void
+        {
             var _local_3:TabButton;
             var _local_2:int = this.buttons.indexOf(_arg_1);
             _arg_1.y = 0;
             this.tabSelectedSignal.dispatch(_arg_1.label.text);
-            for each (_local_3 in this.buttons) {
-                if (_local_3 != _arg_1){
+            for each (_local_3 in this.buttons)
+            {
+                if (_local_3 != _arg_1)
+                {
                     _local_3.selected = false;
                     _local_3.y = 3;
                     this.updateTabButtonGraphicState(_local_3, _local_2);
-                } else {
+                }
+                else
+                {
                     _local_3.selected = true;
                 }
             }
-            if (this.currentContent){
+            if (this.currentContent)
+            {
+                this.currentContent.displaySignal.dispatch(false);
                 this.currentContent.alpha = 0;
                 this.currentContent.mouseChildren = false;
                 this.currentContent.mouseEnabled = false;
             }
             this.currentContent = this.content[_local_2];
-            if (this.background){
+            if (this.background)
+            {
                 this.background.addDecor((_arg_1.x - 5), ((_arg_1.x + _arg_1.width) - 12), _local_2, this.buttons.length);
             }
             addChild(this.currentContent);
+            this.currentContent.displaySignal.dispatch(true);
             this.currentContent.alpha = 1;
             this.currentContent.mouseChildren = true;
             this.currentContent.mouseEnabled = true;
         }
 
-        private function updateTabButtonGraphicState(_arg_1:TabButton, _arg_2:int):void{
+        private function updateTabButtonGraphicState(_arg_1:TabButton, _arg_2:int):void
+        {
             var _local_3:int = this.buttons.indexOf(_arg_1);
-            if (Math.abs((_local_3 - _arg_2)) <= 1){
-                if (this.borderlessMode){
+            if (Math.abs((_local_3 - _arg_2)) <= 1)
+            {
+                if (this.borderlessMode)
+                {
                     _arg_1.changeBitmap("tab_button_borderless_idle", new Point(0, ((this.borderlessMode) ? 0 : TabButton.SELECTED_MARGIN)));
                     _arg_1.bitmap.alpha = 0;
-                } else {
-                    if (_local_3 > _arg_2){
+                }
+                else
+                {
+                    if (_local_3 > _arg_2)
+                    {
                         _arg_1.changeBitmap("tab_button_right_idle", new Point(0, ((this.borderlessMode) ? 0 : TabButton.SELECTED_MARGIN)));
-                    } else {
+                    }
+                    else
+                    {
                         _arg_1.changeBitmap("tab_button_left_idle", new Point(0, ((this.borderlessMode) ? 0 : TabButton.SELECTED_MARGIN)));
                     }
                 }
@@ -180,7 +205,8 @@ public class UITabs extends Sprite
         {
             var _local_1:TabButton;
             var _local_2:UITab;
-            if (this.background){
+            if (this.background)
+            {
                 this.background.dispose();
             }
             for each (_local_1 in this.buttons)

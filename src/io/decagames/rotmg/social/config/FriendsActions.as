@@ -1,8 +1,12 @@
-﻿
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
 //io.decagames.rotmg.social.config.FriendsActions
 
-package io.decagames.rotmg.social.config{
-    public class FriendsActions {
+package io.decagames.rotmg.social.config
+{
+    public class FriendsActions 
+    {
 
         public static const FRIEND_LIST:String = "/getList";
         public static const INVITE_LIST:String = "/getRequests";
@@ -18,7 +22,8 @@ package io.decagames.rotmg.social.config{
         public static const JUMP:String = "JumpServer";
 
 
-        public static function getURL(_arg_1:String):String{
+        public static function getURL(_arg_1:String):String
+        {
             return ("/friends" + _arg_1);
         }
 

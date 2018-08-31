@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.account.kabam.model.KabamParameters
+﻿// Decompiled by AS3 Sorcerer 5.94
+// www.as3sorcerer.com
+
+//kabam.rotmg.account.kabam.model.KabamParameters
 
 package kabam.rotmg.account.kabam.model
 {

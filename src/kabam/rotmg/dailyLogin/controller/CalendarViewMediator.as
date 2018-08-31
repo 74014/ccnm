@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.dailyLogin.controller.CalendarViewMediator
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.dailyLogin.controller.CalendarViewMediator
 
 package kabam.rotmg.dailyLogin.controller
 {
@@ -49,7 +52,7 @@ public class CalendarViewMediator extends Mediator
             if (_arg_1.gold > 0)
             {
                 _local_2 = "gold";
-                this.addTextLine.dispatch(ChatMessage.make(Parameters.SERVER_CHAT_NAME, (((_arg_1.gold + "x ") + _local_2) + " was claimed."), -1, -1, "", false));
+                this.addTextLine.dispatch(ChatMessage.make(Parameters.SERVER_CHAT_NAME, (((((_arg_1.gold > 0) ? _arg_1.gold : _arg_1.quantity) + "x ") + _local_2) + " was claimed."), -1, -1, "", false));
                 if (this.hudModel.gameSprite.map.player_ != null)
                 {
                     this.hudModel.gameSprite.map.player_.credits_ = (this.hudModel.gameSprite.map.player_.credits_ + _arg_1.gold);
@@ -58,7 +61,7 @@ public class CalendarViewMediator extends Mediator
             else
             {
                 _local_2 = LineBuilder.getLocalizedStringFromKey(ObjectLibrary.typeToDisplayId_[_arg_1.itemId]);
-                this.addTextLine.dispatch(ChatMessage.make(Parameters.SERVER_CHAT_NAME, (((_arg_1.quantity + "x ") + _local_2) + " was claimed and will be sent to the gift chests in your vault."), -1, -1, "", false));
+                this.addTextLine.dispatch(ChatMessage.make(Parameters.SERVER_CHAT_NAME, (((((_arg_1.gold > 0) ? _arg_1.gold : _arg_1.quantity) + "x ") + _local_2) + " was claimed and will be sent to the gift chests in your vault."), -1, -1, "", false));
             }
         }
 

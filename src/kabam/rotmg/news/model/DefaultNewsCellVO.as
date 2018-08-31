@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.news.model.DefaultNewsCellVO
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.news.model.DefaultNewsCellVO
 
 package kabam.rotmg.news.model
 {
@@ -8,8 +11,8 @@ package kabam.rotmg.news.model
         public function DefaultNewsCellVO(_arg_1:int)
         {
             imageURL = "";
-            linkDetail = "https://www.reddit.com/r/RotMG/search?sort=new&restrict_sr=on&q=flair%3AOfficial%2BDeca";
-            headline = ((_arg_1 == 0) ? "Official Deca Posts on Reddit" : "Deca on Reddit");
+            linkDetail = ((_arg_1 == 0) ? "https://www.reddit.com/r/RotMG/search?sort=new&restrict_sr=on&q=flair%3AOfficial%2BDeca" : "https://goo.gl/DXwAbW");
+            headline = ((_arg_1 == 0) ? "Official Deca Posts on Reddit" : "Join us on Facebook!");
             startDate = (new Date().getTime() - 0x3B9ACA00);
             endDate = (new Date().getTime() + 0x3B9ACA00);
             networks = ["kabam.com", "kongregate", "steam", "rotmg"];

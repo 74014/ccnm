@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.characterMetrics.tracker.CharactersMetricsTracker
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.characterMetrics.tracker.CharactersMetricsTracker
 
 package io.decagames.rotmg.characterMetrics.tracker
 {
@@ -9,7 +12,7 @@ import flash.utils.IDataInput;
 
 import io.decagames.rotmg.characterMetrics.data.CharacterMetricsData;
 
-public class CharactersMetricsTracker 
+public class CharactersMetricsTracker
     {
 
         public static const STATS_SIZE:int = 5;
@@ -23,7 +26,8 @@ public class CharactersMetricsTracker
             var _local_3:RegExp = /-/g;
             var _local_4:RegExp = /_/g;
             var _local_5:int = (4 - (_arg_2.length % 4));
-            while (_local_5--) {
+            while (_local_5--)
+            {
                 _arg_2 = (_arg_2 + "=");
             }
             _arg_2 = _arg_2.replace(_local_3, "+").replace(_local_4, "/");

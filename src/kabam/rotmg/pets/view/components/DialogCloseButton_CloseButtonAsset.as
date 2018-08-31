@@ -1,4 +1,4 @@
-package kabam.rotmg.pets.view.components
+﻿package kabam.rotmg.pets.view.components
 {
 import mx.core.*;
 
@@ -7,8 +7,6 @@ import mx.core.*;
 	{
 		public function DialogCloseButton_CloseButtonAsset()
 		{
-			super();
-
 		}
 	}
 }

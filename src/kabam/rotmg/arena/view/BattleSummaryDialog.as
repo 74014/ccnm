@@ -15,7 +15,7 @@ import kabam.rotmg.util.components.DialogBackground;
 
 import org.osflash.signals.Signal;
 
-public class BattleSummaryDialog extends Sprite 
+public class BattleSummaryDialog extends Sprite
     {
 
         public const close:Signal = new Signal();

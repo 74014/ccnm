@@ -357,15 +357,6 @@ public class CharacterSelectionAndNewsScreen extends Sprite
             }
         }
 
-        public function showBeginnersOfferButton():void
-        {
-            this.beginnersPackageButton = new BeginnersPackageButton();
-            this.beginnersPackageButton.x = 14;
-            this.beginnersPackageButton.y = 40;
-            addChild(this.beginnersPackageButton);
-            this.removeIfAble(this.packageButton);
-        }
-
         public function showPackageButton():void
         {
             this.packageButton = new PackageButton();

@@ -6,7 +6,7 @@ import kabam.rotmg.assets.services.CharacterFactory;
 import kabam.rotmg.classes.model.CharacterSkin;
 import kabam.rotmg.classes.model.ClassesModel;
 import kabam.rotmg.game.model.GameModel;
-import kabam.rotmg.pets.data.PetsModel;
+import io.decagames.rotmg.pets.data.PetsModel;
 
 import org.osflash.signals.Signal;
 

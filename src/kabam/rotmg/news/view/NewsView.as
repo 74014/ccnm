@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.news.view.NewsView
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.news.view.NewsView
 
 package kabam.rotmg.news.view
 {
@@ -39,7 +42,7 @@ public class NewsView extends Sprite
             this.cellThree.y = (this.LARGE_CELL_HEIGHT + this.SPACER);
         }
 
-        public function update(_arg_1:Vector.<NewsCellVO>):void
+        internal function update(_arg_1:Vector.<NewsCellVO>):void
         {
             this.cellOne.init(_arg_1[0]);
             this.cellTwo.init(_arg_1[1]);

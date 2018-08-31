@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.account.web.view.WebAccountInfoMediator
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.account.web.view.WebAccountInfoMediator
 
 package kabam.rotmg.account.web.view
 {
@@ -72,7 +75,7 @@ public class WebAccountInfoMediator extends Mediator
             this.view.setInfo("", false);
         }
 
-        private function onResetComplete(_arg_1:Boolean, _arg_2:String):void
+        private function onResetComplete(_arg_1:Boolean, _arg_2:*):void
         {
             var _local_3:AccountData;
             if (_arg_1)

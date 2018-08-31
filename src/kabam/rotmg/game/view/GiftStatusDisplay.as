@@ -30,6 +30,7 @@ public class GiftStatusDisplay extends Sprite implements TooltipAble
         public static const NOTIFICATION_BACKGROUND_HEIGHT:Number = 25;
         public static const NOTIFICATION_BACKGROUND_ALPHA:Number = 0.4;
         public static const NOTIFICATION_BACKGROUND_COLOR:Number = 0;
+        private var _isOpen:Boolean;
 
         public var hoverTooltipDelegate:HoverTooltipDelegate = new HoverTooltipDelegate();
         private var bitmap:Bitmap;
@@ -81,6 +82,7 @@ public class GiftStatusDisplay extends Sprite implements TooltipAble
 
         public function drawAsOpen():void
         {
+            this._isOpen = true;
             addChild(this.background);
             addChild(this.text);
             addChild(this.bitmap);
@@ -100,6 +102,12 @@ public class GiftStatusDisplay extends Sprite implements TooltipAble
             {
                 removeChild(this.bitmap);
             }
+            this._isOpen = false;
+        }
+
+        public function get isOpen():Boolean
+        {
+            return (this._isOpen);
         }
 
 

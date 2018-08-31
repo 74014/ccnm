@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.mysterybox.components.MysteryBoxSelectEntry
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.mysterybox.components.MysteryBoxSelectEntry
 
 package kabam.rotmg.mysterybox.components
 {
@@ -52,7 +55,7 @@ public class MysteryBoxSelectEntry extends Sprite
         private var _quantity:int;
         private var title:TextFieldDisplayConcrete;
 
-        public function MysteryBoxSelectEntry(_arg_1:MysteryBoxInfo)
+        public function MysteryBoxSelectEntry(_arg_1:MysteryBoxInfo):void
         {
             var _local_2:DisplayObject;
             super();
@@ -136,7 +139,7 @@ public class MysteryBoxSelectEntry extends Sprite
             addEventListener(Event.ENTER_FRAME, this.onEnterFrame);
         }
 
-        private function updateTextPosition():*
+        private function updateTextPosition():void
         {
             this.title.y = Math.round(((this.redbar.height - (this.title.getTextHeight() + ((this.title.textField.numLines == 1) ? 8 : 10))) / 2));
             if ((((this.mbi.isNew()) || (this.mbi.isOnSale())) && (this.title.textField.numLines == 2)))
@@ -145,7 +148,7 @@ public class MysteryBoxSelectEntry extends Sprite
             }
         }
 
-        public function updateContent():*
+        public function updateContent():void
         {
             if (this.left)
             {
@@ -153,7 +156,7 @@ public class MysteryBoxSelectEntry extends Sprite
             }
         }
 
-        private function addUnitsLeftText():*
+        private function addUnitsLeftText():void
         {
             var _local_1:uint;
             var _local_2:int;
@@ -180,7 +183,7 @@ public class MysteryBoxSelectEntry extends Sprite
             }
         }
 
-        private function markAsSold():*
+        private function markAsSold():void
         {
             this.buyButton.setPrice(0, Currency.INVALID);
             this.buyButton.setText(LineBuilder.getLocalizedStringFromKey("MysteryBoxError.soldOutButton"));
@@ -208,7 +211,7 @@ public class MysteryBoxSelectEntry extends Sprite
             this.removeInfoImageChild();
         }
 
-        private function onClick(_arg_1:MouseEvent):*
+        private function onClick(_arg_1:MouseEvent):void
         {
             switch (_arg_1.currentTarget)
             {
@@ -237,6 +240,7 @@ public class MysteryBoxSelectEntry extends Sprite
                             this._quantity = (this._quantity - 4);
                         }
                     }
+                    break;
             }
             this.mbi.quantity = this._quantity;
             if (this.mbi.isOnSale())
@@ -354,18 +358,18 @@ public class MysteryBoxSelectEntry extends Sprite
 
         private function addInfoImageChild():void
         {
-            var _local_1:Array;
-            var _local_2:ColorMatrixFilter;
+            var _local_3:Array;
+            var _local_4:ColorMatrixFilter;
             if (this.infoImage == null)
             {
                 return;
             }
-            var _local_3:int = 8;
-            this.infoImage.width = (291 - _local_3);
-            this.infoImage.height = ((598 - (_local_3 * 2)) - 2);
-            var _local_4:Point = this.globalToLocal(new Point(((MysteryBoxSelectModal.getRightBorderX() + 1) + 14), (2 + _local_3)));
-            this.infoImage.x = _local_4.x;
-            this.infoImage.y = _local_4.y;
+            var _local_1:int = 8;
+            this.infoImage.width = (291 - _local_1);
+            this.infoImage.height = ((598 - (_local_1 * 2)) - 2);
+            var _local_2:Point = this.globalToLocal(new Point(((MysteryBoxSelectModal.getRightBorderX() + 1) + 14), (2 + _local_1)));
+            this.infoImage.x = _local_2.x;
+            this.infoImage.y = _local_2.y;
             if (((this.hoverState) && (!(this.descriptionShowing))))
             {
                 this.descriptionShowing = true;
@@ -375,9 +379,9 @@ public class MysteryBoxSelectEntry extends Sprite
                 this.infoImageBorder.x = this.infoImage.x;
                 this.infoImage.y--;
                 addChild(this.infoImageBorder);
-                _local_1 = [3.0742, -1.8282, -0.246, 0, 50, -0.9258, 2.1718, -0.246, 0, 50, -0.9258, -1.8282, 3.754, 0, 50, 0, 0, 0, 1, 0];
-                _local_2 = new ColorMatrixFilter(_local_1);
-                this.redbar.filters = [_local_2];
+                _local_3 = [3.0742, -1.8282, -0.246, 0, 50, -0.9258, 2.1718, -0.246, 0, 50, -0.9258, -1.8282, 3.754, 0, 50, 0, 0, 0, 1, 0];
+                _local_4 = new ColorMatrixFilter(_local_3);
+                this.redbar.filters = [_local_4];
             }
         }
 
@@ -399,6 +403,7 @@ public class MysteryBoxSelectEntry extends Sprite
             var _local_4:Dialog;
             var _local_5:MysteryBoxRollModal;
             var _local_6:Boolean;
+            var _local_7:OpenDialogSignal;
             if (((!(this.mbi.unitsLeft == -1)) && (this._quantity > this.mbi.unitsLeft)))
             {
                 _local_2 = StaticInjectorContext.getInjector().getInstance(OpenDialogSignal);
@@ -425,8 +430,8 @@ public class MysteryBoxSelectEntry extends Sprite
                 if (_local_6)
                 {
                     _local_5.parentSelectModal = MysteryBoxSelectModal(parent.parent);
-                    _local_2 = StaticInjectorContext.getInjector().getInstance(OpenDialogSignal);
-                    _local_2.dispatch(_local_5);
+                    _local_7 = StaticInjectorContext.getInjector().getInstance(OpenDialogSignal);
+                    _local_7.dispatch(_local_5);
                 }
             }
         }

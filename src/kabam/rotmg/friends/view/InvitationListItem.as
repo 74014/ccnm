@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.friends.view.InvitationListItem
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.friends.view.InvitationListItem
 
 package kabam.rotmg.friends.view
 {
@@ -85,7 +88,6 @@ public class InvitationListItem extends FListItem
 
         override public function destroy():void
         {
-            this.removeEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromState);
             while (numChildren > 0)
             {
                 this.removeChildAt((numChildren - 1));
@@ -98,32 +100,27 @@ public class InvitationListItem extends FListItem
             this._rejectButton = null;
             this._blockButton.removeEventListener(MouseEvent.CLICK, this.onBlockClicked);
             this._blockButton = null;
-            this.graphics.beginFill(2368034);
-            this.graphics.drawRect(0, 0, width, height);
-            this.graphics.endFill();
         }
 
         private function onRemovedFromState(_arg_1:Event):void
         {
+            this.removeEventListener(Event.REMOVED_FROM_STAGE, this.onRemovedFromState);
             this.destroy();
         }
 
         private function onAcceptClicked(_arg_1:MouseEvent):void
         {
             actionSignal.dispatch(FriendsActions.ACCEPT, this._senderName);
-            this.destroy();
         }
 
         private function onRejectClicked(_arg_1:MouseEvent):void
         {
             actionSignal.dispatch(FriendsActions.REJECT, this._senderName);
-            this.destroy();
         }
 
         private function onBlockClicked(_arg_1:MouseEvent):void
         {
             actionSignal.dispatch(FriendsActions.BLOCK, this._senderName);
-            this.destroy();
         }
 
 

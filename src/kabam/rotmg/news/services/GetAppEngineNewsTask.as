@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.news.services.GetAppEngineNewsTask
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.news.services.GetAppEngineNewsTask
 
 package kabam.rotmg.news.services
 {
@@ -68,14 +71,14 @@ public class GetAppEngineNewsTask extends BaseTask implements GetNewsTask
 
         private function onNewsRequestDone(_arg_1:String):void
         {
-            var _local_2:Object;
-            var _local_3:Vector.<NewsCellVO> = new Vector.<NewsCellVO>();
-            var _local_4:Object = JSON.parse(_arg_1);
-            for each (_local_2 in _local_4)
+            var _local_4:Object;
+            var _local_2:Vector.<NewsCellVO> = new Vector.<NewsCellVO>();
+            var _local_3:Object = JSON.parse(_arg_1);
+            for each (_local_4 in _local_3)
             {
-                _local_3.push(this.returnNewsCellVO(_local_2));
+                _local_2.push(this.returnNewsCellVO(_local_4));
             }
-            this.model.updateNews(_local_3);
+            this.model.updateNews(_local_2);
         }
 
         private function returnNewsCellVO(_arg_1:Object):NewsCellVO

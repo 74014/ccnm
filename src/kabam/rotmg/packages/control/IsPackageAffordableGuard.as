@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.packages.control.IsPackageAffordableGuard
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.packages.control.IsPackageAffordableGuard
 
 package kabam.rotmg.packages.control
 {
@@ -8,7 +11,7 @@ import kabam.rotmg.packages.model.PackageInfo;
 
 import robotlegs.bender.framework.api.IGuard;
 
-public class IsPackageAffordableGuard implements IGuard
+public class IsPackageAffordableGuard implements IGuard 
     {
 
         [Inject]

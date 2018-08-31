@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.core.service.PurchaseCharacterClassTask
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.core.service.PurchaseCharacterClassTask
 
 package kabam.rotmg.core.service
 {
@@ -13,7 +16,7 @@ import kabam.rotmg.core.model.PlayerModel;
 
 import robotlegs.bender.framework.api.ILogger;
 
-public class PurchaseCharacterClassTask extends BaseTask 
+public class PurchaseCharacterClassTask extends BaseTask
     {
 
         [Inject]

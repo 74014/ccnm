@@ -7,8 +7,6 @@ import mx.core.*;
 	{
 		public function BeginnersPackageOfferDialog_hifiBeginnerOfferEmbed()
 		{
-			super();
-
 		}
 	}
 }

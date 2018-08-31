@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.ui.popups.signals.ShowPopupSignal
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.ui.popups.signals.ShowPopupSignal
 
 package io.decagames.rotmg.ui.popups.signals
 {

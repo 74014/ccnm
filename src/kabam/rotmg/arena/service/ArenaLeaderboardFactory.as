@@ -10,7 +10,7 @@ import kabam.rotmg.assets.services.CharacterFactory;
 import kabam.rotmg.classes.model.CharacterClass;
 import kabam.rotmg.classes.model.CharacterSkin;
 import kabam.rotmg.classes.model.ClassesModel;
-import kabam.rotmg.pets.data.PetVO;
+import io.decagames.rotmg.pets.data.vo.PetVO;
 
 public class ArenaLeaderboardFactory 
     {

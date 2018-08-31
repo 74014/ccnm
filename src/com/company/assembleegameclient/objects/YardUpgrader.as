@@ -7,7 +7,7 @@ import com.company.assembleegameclient.ui.panels.Panel;
 import com.company.assembleegameclient.ui.tooltip.TextToolTip;
 import com.company.assembleegameclient.ui.tooltip.ToolTip;
 
-import kabam.rotmg.pets.view.components.YardUpgraderPanel;
+import io.decagames.rotmg.pets.panels.YardUpgraderPanel;
 import kabam.rotmg.text.model.TextKey;
 
 public class YardUpgrader extends GameObject implements IInteractiveObject

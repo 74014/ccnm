@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.dailyQuests.messages.data.QuestData
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.dailyQuests.messages.data.QuestData
 
 package io.decagames.rotmg.dailyQuests.messages.data
 {
@@ -14,6 +17,7 @@ public class QuestData
         public var rewards:Vector.<int> = new Vector.<int>();
         public var completed:Boolean;
         public var itemOfChoice:Boolean;
+        public var repeatable:Boolean;
         public var category:int;
 
 
@@ -39,6 +43,7 @@ public class QuestData
             }
             this.completed = _arg_1.readBoolean();
             this.itemOfChoice = _arg_1.readBoolean();
+            this.repeatable = _arg_1.readBoolean();
         }
 
 

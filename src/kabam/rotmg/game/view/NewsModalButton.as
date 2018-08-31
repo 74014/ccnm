@@ -2,6 +2,7 @@
 
 package kabam.rotmg.game.view
 {
+import com.company.assembleegameclient.game.events.DisplayAreaChangedSignal;
 import com.company.assembleegameclient.sound.SoundEffectLibrary;
 import com.company.assembleegameclient.util.TextureRedrawer;
 import com.company.util.AssetLibrary;
@@ -62,18 +63,16 @@ public class NewsModalButton extends Sprite
             SoundEffectLibrary.play("button_click");
         }
 
-        public function drawAsOpen():void
-        {
+        public function drawAsOpen():void{
             var _local_1:NewsModel = StaticInjectorContext.getInjector().getInstance(NewsModel);
-            if (_local_1.hasUpdates())
-            {
+            if (_local_1.hasUpdates()){
                 showsHasUpdate = true;
+                StaticInjectorContext.getInjector().getInstance(DisplayAreaChangedSignal).dispatch();
                 addChild(this.background);
                 addChild(this.text);
-            }
-            else
-            {
+            } else {
                 showsHasUpdate = false;
+                StaticInjectorContext.getInjector().getInstance(DisplayAreaChangedSignal).dispatch();
                 addChild(this.background2);
             }
             addChild(this.bitmap);

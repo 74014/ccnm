@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.packages.view.BusyIndicator
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.packages.view.BusyIndicator
 
 package kabam.rotmg.packages.view
 {
@@ -8,7 +11,7 @@ import flash.events.Event;
 import flash.events.TimerEvent;
 import flash.utils.Timer;
 
-public class BusyIndicator extends Sprite 
+public class BusyIndicator extends Sprite
     {
 
         private const pinwheel:Sprite = makePinWheel();

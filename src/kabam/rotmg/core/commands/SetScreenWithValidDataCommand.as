@@ -1,10 +1,15 @@
-﻿//kabam.rotmg.core.commands.SetScreenWithValidDataCommand
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.core.commands.SetScreenWithValidDataCommand
 
 package kabam.rotmg.core.commands
 {
 import com.company.assembleegameclient.screens.LoadingScreen;
 
 import flash.display.Sprite;
+
+import io.decagames.rotmg.pets.tasks.GetOwnedPetSkinsTask;
 
 import kabam.lib.tasks.DispatchSignalTask;
 import kabam.lib.tasks.TaskMonitor;
@@ -14,7 +19,7 @@ import kabam.rotmg.core.model.PlayerModel;
 import kabam.rotmg.core.signals.SetScreenSignal;
 import kabam.rotmg.dailyLogin.tasks.FetchPlayerCalendarTask;
 
-public class SetScreenWithValidDataCommand 
+public class SetScreenWithValidDataCommand
     {
 
         [Inject]
@@ -29,6 +34,8 @@ public class SetScreenWithValidDataCommand
         public var task:GetCharListTask;
         [Inject]
         public var calendarTask:FetchPlayerCalendarTask;
+        [Inject]
+        public var petSkinsTask:GetOwnedPetSkinsTask;
 
 
         public function execute():void
@@ -49,6 +56,7 @@ public class SetScreenWithValidDataCommand
             var _local_1:TaskSequence = new TaskSequence();
             _local_1.add(this.task);
             _local_1.add(this.calendarTask);
+            _local_1.add(this.petSkinsTask);
             _local_1.add(new DispatchSignalTask(this.setScreen, this.view));
             this.monitor.add(_local_1);
             _local_1.start();

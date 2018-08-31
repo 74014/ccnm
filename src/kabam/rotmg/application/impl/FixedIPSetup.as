@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.application.impl.FixedIPSetup
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.application.impl.FixedIPSetup
 
 package kabam.rotmg.application.impl
 {
@@ -9,9 +12,10 @@ import kabam.rotmg.application.api.ApplicationSetup;
 public class FixedIPSetup implements ApplicationSetup
     {
 
-        private const SERVER:String = "rotmgtesting.appspot.com";
+        private const SERVER:String = "test.realmofthemadgod.com";
         private const UNENCRYPTED:String = ("http://" + SERVER);
         private const ENCRYPTED:String = ("https://" + SERVER);
+        private const ANALYTICS:String = "UA-99999999-1";
         private const BUILD_LABEL:String = "<font color='#9900FF'>{IP}</font> #{VERSION}";
 
         private var ipAddress:String;
@@ -28,7 +32,13 @@ public class FixedIPSetup implements ApplicationSetup
             return ((_arg_1) ? this.UNENCRYPTED : this.ENCRYPTED);
         }
 
-        public function isServerLocal():Boolean{
+        public function getAnalyticsCode():String
+        {
+            return (this.ANALYTICS);
+        }
+
+        public function isServerLocal():Boolean
+        {
             return (false);
         }
 
@@ -73,7 +83,8 @@ public class FixedIPSetup implements ApplicationSetup
             return (false);
         }
 
-        public function getServerDomain():String{
+        public function getServerDomain():String
+        {
             return (this.SERVER);
         }
 

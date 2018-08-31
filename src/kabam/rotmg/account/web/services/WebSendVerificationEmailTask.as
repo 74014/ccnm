@@ -1,13 +1,16 @@
-﻿//kabam.rotmg.account.web.services.WebSendVerificationEmailTask
+﻿// Decompiled by AS3 Sorcerer 5.94
+// www.as3sorcerer.com
+
+//kabam.rotmg.account.web.services.WebSendVerificationEmailTask
 
 package kabam.rotmg.account.web.services
 {
-import kabam.lib.tasks.BaseTask;
-import kabam.rotmg.account.core.Account;
-import kabam.rotmg.account.core.services.SendConfirmEmailAddressTask;
-import kabam.rotmg.appengine.api.AppEngineClient;
+    import kabam.lib.tasks.BaseTask;
+    import kabam.rotmg.account.core.services.SendConfirmEmailAddressTask;
+    import kabam.rotmg.account.core.Account;
+    import kabam.rotmg.appengine.api.AppEngineClient;
 
-public class WebSendVerificationEmailTask extends BaseTask implements SendConfirmEmailAddressTask
+    public class WebSendVerificationEmailTask extends BaseTask implements SendConfirmEmailAddressTask 
     {
 
         [Inject]

@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.packages.view.PackageButtonMediator
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.packages.view.PackageButtonMediator
 
 package kabam.rotmg.packages.view
 {
@@ -9,7 +12,7 @@ import kabam.rotmg.packages.services.PackageModel;
 
 import robotlegs.bender.bundles.mvcs.Mediator;
 
-public class PackageButtonMediator extends Mediator
+public class PackageButtonMediator extends Mediator 
     {
 
         [Inject]
@@ -43,7 +46,7 @@ public class PackageButtonMediator extends Mediator
         override public function destroy():void
         {
             this.view.clicked.remove(this.onClicked);
-            if (!this.dataSet)
+            if (this.dataSet)
             {
             }
         }

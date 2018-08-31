@@ -1,4 +1,7 @@
-﻿//kabam.rotmg.friends.view.FriendListContainer
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//kabam.rotmg.friends.view.FriendListContainer
 
 package kabam.rotmg.friends.view
 {
@@ -45,7 +48,7 @@ public class FriendListContainer extends Sprite
         {
             _arg_1.y = this._currentY;
             this._itemContainer.addChild(_arg_1);
-            this._currentY = (this._currentY + (45 + this.GAP_Y));
+            this._currentY = (this._currentY + (_arg_1.height + this.GAP_Y));
             this.updateScrollbar((this._currentY > this._height));
         }
 

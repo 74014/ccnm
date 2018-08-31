@@ -1,4 +1,7 @@
-﻿//io.decagames.rotmg.shop.mysteryBox.contentPopup.MysteryBoxContentPopup
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
+//io.decagames.rotmg.shop.mysteryBox.contentPopup.MysteryBoxContentPopup
 
 package io.decagames.rotmg.shop.mysteryBox.contentPopup
 {
@@ -8,16 +11,17 @@ import io.decagames.rotmg.ui.popups.modal.ModalPopup;
 
 import kabam.rotmg.mysterybox.model.MysteryBoxInfo;
 
-public class MysteryBoxContentPopup extends ModalPopup 
+public class MysteryBoxContentPopup extends ModalPopup
     {
 
         private var _info:MysteryBoxInfo;
 
         public function MysteryBoxContentPopup(_arg_1:MysteryBoxInfo)
         {
+            var _local_2:UILabel;
             this._info = _arg_1;
             super(280, 0, _arg_1.title, DefaultLabelFormat.defaultSmallPopupTitle);
-            var _local_2:UILabel = new UILabel();
+            _local_2 = new UILabel();
             DefaultLabelFormat.mysteryBoxContentInfo(_local_2);
             _local_2.multiline = true;
             switch (_arg_1.rolls)

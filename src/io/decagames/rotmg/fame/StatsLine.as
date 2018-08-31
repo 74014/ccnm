@@ -1,7 +1,10 @@
-﻿
+﻿// Decompiled by AS3 Sorcerer 5.48
+// www.as3sorcerer.com
+
 //io.decagames.rotmg.fame.StatsLine
 
-package io.decagames.rotmg.fame{
+package io.decagames.rotmg.fame
+{
 import com.company.assembleegameclient.util.TextureRedrawer;
 import com.company.util.AssetLibrary;
 import com.company.util.GraphicsUtil;
@@ -19,7 +22,8 @@ import io.decagames.rotmg.utils.colors.Tint;
 
 import kabam.rotmg.text.model.FontModel;
 
-public class StatsLine extends Sprite {
+public class StatsLine extends Sprite
+    {
 
         public static const TYPE_BONUS:int = 0;
         public static const TYPE_STAT:int = 1;
@@ -31,13 +35,14 @@ public class StatsLine extends Sprite {
         protected var lineHeight:int;
         private var _tooltipText:String;
         private var _lineType:int;
-        private var isLocked:*;
+        private var isLocked:Boolean;
         protected var fameValue:UILabel = new UILabel();
         protected var label:UILabel;
         protected var lock:Bitmap;
         private var _labelText:String;
 
-        public function StatsLine(_arg_1:String, _arg_2:String, _arg_3:String, _arg_4:int, _arg_5:Boolean=false){
+        public function StatsLine(_arg_1:String, _arg_2:String, _arg_3:String, _arg_4:int, _arg_5:Boolean=false)
+        {
             var _local_8:int;
             super();
             var _local_6:TextFormat = new TextFormat();
@@ -49,14 +54,18 @@ public class StatsLine extends Sprite {
             this.isLocked = _arg_5;
             this._lineType = _arg_4;
             this._labelText = _arg_1;
-            if (_arg_4 == TYPE_TITLE){
+            if (_arg_4 == TYPE_TITLE)
+            {
                 _local_6.size = 15;
                 _local_6.color = 0xFFFFFF;
             }
             var _local_7:TextFormat = new TextFormat();
-            if (_arg_4 == TYPE_BONUS){
+            if (_arg_4 == TYPE_BONUS)
+            {
                 _local_7.color = 0xFFC800;
-            } else {
+            }
+            else
+            {
                 _local_7.color = 5544494;
             }
             _local_7.font = FontModel.DEFAULT_FONT_NAME;
@@ -67,21 +76,28 @@ public class StatsLine extends Sprite {
             this.label.defaultTextFormat = _local_6;
             addChild(this.label);
             this.label.text = _arg_1;
-            if (!_arg_5){
+            if (!_arg_5)
+            {
                 this.fameValue = new UILabel();
                 this.fameValue.defaultTextFormat = _local_7;
-                if (((_arg_2 == "0") || (_arg_2 == "0.00%"))){
+                if (((_arg_2 == "0") || (_arg_2 == "0.00%")))
+                {
                     this.fameValue.defaultTextFormat = _local_6;
                 }
-                if (_arg_4 == TYPE_BONUS){
+                if (_arg_4 == TYPE_BONUS)
+                {
                     this.fameValue.text = ("+" + _arg_2);
-                } else {
+                }
+                else
+                {
                     this.fameValue.text = _arg_2;
                 }
                 this.fameValue.x = ((this.lineWidth - 4) - this.fameValue.textWidth);
                 addChild(this.fameValue);
                 this.fameValue.y = 2;
-            } else {
+            }
+            else
+            {
                 _local_8 = 36;
                 this.lock = new Bitmap(TextureRedrawer.resize(AssetLibrary.getImageFromSet("lofiInterface2", 5), null, _local_8, true, 0, 0));
                 Tint.add(this.lock, 9971490, 1);
@@ -93,34 +109,41 @@ public class StatsLine extends Sprite {
             this._tooltipText = _arg_3;
         }
 
-        protected function setLabelsPosition():void{
+        protected function setLabelsPosition():void
+        {
             this.label.y = 2;
             this.label.x = 2;
             this.lineHeight = 20;
         }
 
-        public function clean():void{
-            if (this.lock){
+        public function clean():void
+        {
+            if (this.lock)
+            {
                 removeChild(this.lock);
                 this.lock.bitmapData.dispose();
             }
         }
 
-        public function drawBrightBackground():void{
+        public function drawBrightBackground():void
+        {
             var _local_1:Vector.<IGraphicsData> = new <IGraphicsData>[this.backgroundFill_, this.path_, GraphicsUtil.END_FILL];
             GraphicsUtil.drawCutEdgeRect(0, 0, this.lineWidth, this.lineHeight, 5, [1, 1, 1, 1], this.path_);
             graphics.drawGraphicsData(_local_1);
         }
 
-        public function get tooltipText():String{
+        public function get tooltipText():String
+        {
             return (this._tooltipText);
         }
 
-        public function get lineType():int{
+        public function get lineType():int
+        {
             return (this._lineType);
         }
 
-        public function get labelText():String{
+        public function get labelText():String
+        {
             return (this._labelText);
         }
 
