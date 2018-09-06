@@ -203,6 +203,7 @@ package kabam.rotmg.assets{
             "Crate":new crateEmbed_(),
             "ThreeSideCube":new threeSideCubeEmbed_(),
             "Squatty3Side":new squatty3Side_(),
+            "Cube":new cubeEmbed_(),
             "Big Cube":new bigcubeEmbed_(),
             "Ico":new icosahedronEmbed_(),
             "Octa":new octahedronEmbed_(),
