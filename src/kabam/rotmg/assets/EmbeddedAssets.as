@@ -185,10 +185,6 @@ package kabam.rotmg.assets{
         public static var magicWoodsChars16x16Embed_:Class = EmbeddedAssets_magicWoodsChars16x16Embed_;
         public static var magicWoodsObjects8x8Embed_:Class = EmbeddedAssets_magicWoodsObjects8x8Embed_;
         public static var magicWoodsObjects16x16Embed_:Class = EmbeddedAssets_magicWoodsObjects16x16Embed_;
-        public static var secludedThicketChars8x8Embed_:Class = EmbeddedAssets_secludedThicketChars8x8Embed_;
-        public static var secludedThicketChars16x16Embed_:Class = EmbeddedAssets_secludedThicketChars16x16Embed_;
-        public static var secludedThicketObjects8x8Embed_:Class = EmbeddedAssets_secludedThicketObjects8x8Embed_;
-        public static var secludedThicketObjects16x16Embed_:Class = EmbeddedAssets_secludedThicketObjects16x16Embed_;
         public static var cnidarianReefObjects8x8Embed_:Class = EmbeddedAssets_cnidarianReefObjects8x8Embed_;
         public static var cnidarianReefObjects16x16Embed_:Class = EmbeddedAssets_cnidarianReefObjects16x16Embed_;
         public static var models_:Object = {

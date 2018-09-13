@@ -1706,7 +1706,7 @@
       <Item/>
       <AnimatedTexture>
          <File>playerskins</File>
-         <Index>130</Index>
+         <Index>401</Index>
       </AnimatedTexture>
       <SlotType>10</SlotType>
       <Description>Our biggest thanks to our Community Dungeon Creators!\n\nSprite Credits: Beige</Description>
@@ -6717,6 +6717,49 @@
       <SlotType>10</SlotType>
       <Description>Despite his flashy looks he rarely says anything.\n\nSprite Credits: Squzavvvv</Description>
       <Activate skinType="9738">UnlockSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>8</BagType>
+      <feedPower>2000</feedPower>
+   </Object>
+   <Object type="0x73a1" id="Samurai - Artist Extraordinaire Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>400</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>Our biggest thanks to our Community Artists!\n\nSprite Credits: Beige</Description>
+      <Activate skinType="29600">UnlockSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>8</BagType>
+   </Object>
+   <Object type="0x73a3" id="Samurai - Dungeon Mastermind Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>401</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>Our biggest thanks to our Community Dungeon Creators!\n\nSprite Credits: Beige</Description>
+      <Activate skinType="29602">UnlockSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>8</BagType>
+   </Object>
+   <Object type="0x73a5" id="Shogun Samurai Skin">
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>playerskins</File>
+         <Index>402</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>Customize your Samurai with the Shogun Skin.\n\nSprite Credits: HadesIV</Description>
+      <Activate skinType="29604">UnlockSkin</Activate>
       <Consumable/>
       <Soulbound/>
       <BagType>8</BagType>

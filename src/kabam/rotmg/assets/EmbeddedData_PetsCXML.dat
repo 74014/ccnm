@@ -12174,4 +12174,44 @@
       <BagType>8</BagType>
       <feedPower>2000</feedPower>
    </Object>
+   <Object id="Maneki-neko" type="0x5b1b">
+      <Pet/>
+      <Class>Pet</Class>
+      <Texture>
+         <File>lofiObj2</File>
+         <Index>0x32</Index>
+      </Texture>
+      <Family>Feline</Family>
+      <Rarity>Rare</Rarity>
+      <DefaultSkin>Maneki-neko Pet Skin</DefaultSkin>
+      <Size>80</Size>
+      <NoHatchOrFuse/>
+   </Object>
+   <Object type="0x5b1c" id="Maneki-neko Pet Skin">
+      <PetSkin/>
+      <DisplayId>Maneki-neko</DisplayId>
+      <Class>PetSkin</Class>
+      <Family>Feline</Family>
+      <Rarity>Rare</Rarity>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>244</Index>
+      </AnimatedTexture>
+   </Object>
+   <Object type="0x5b1d" id="Maneki-neko Pet Stone">
+      <DisplayId>Maneki-neko Pet Skin</DisplayId>
+      <Class>Equipment</Class>
+      <Item/>
+      <AnimatedTexture>
+         <File>chars8x8rPets1</File>
+         <Index>244</Index>
+      </AnimatedTexture>
+      <SlotType>10</SlotType>
+      <Description>I bring you good fortune, adventurer!\n\nUnlocks Maneki-neko Skin of the Feline family. The skin will be added to your Pet Wardrobe in the Pet Yard and can be used to change the appearance of your pet!</Description>
+      <Activate skinType="23324">UnlockPetSkin</Activate>
+      <Consumable/>
+      <Soulbound/>
+      <BagType>8</BagType>
+      <feedPower>2000</feedPower>
+   </Object>
 </Objects>
