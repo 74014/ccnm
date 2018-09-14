@@ -14,7 +14,7 @@ public class Parameters
 {
 
     public static const BUILD_VERSION:String = "X29.0";
-    public static const MINOR_VERSION:String = "0";
+    public static const MINOR_VERSION:String = "1";
     public static const ENABLE_ENCRYPTION:Boolean = true;
     public static const PORT:int = 2050;
     public static const ALLOW_SCREENSHOT_MODE:Boolean = true;
