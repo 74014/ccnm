@@ -18,7 +18,6 @@ import kabam.rotmg.messaging.impl.data.SlotObjectData;
 
 public class GameServerConnection
 {
-
     public static const FAILURE:int = 0;
     public static const CREATE_SUCCESS:int = 44;
     public static const CREATE:int = 52;

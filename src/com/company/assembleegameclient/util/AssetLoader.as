@@ -251,6 +251,11 @@ public class AssetLoader
             AssetLibrary.addImageSet("cnidarianReefObjects16x16", new EmbeddedAssets.cnidarianReefObjects16x16Embed_().bitmapData, 16, 16);
             AssetLibrary.addImageSet("magicWoodsObjects8x8", new EmbeddedAssets.magicWoodsObjects8x8Embed_().bitmapData, 8, 8);
             AssetLibrary.addImageSet("magicWoodsObjects16x16", new EmbeddedAssets.magicWoodsObjects16x16Embed_().bitmapData, 16, 16);
+            AssetLibrary.addImageSet("secludedThicketObjects8x8", new EmbeddedAssets.secludedThicketObjects8x8Embed_().bitmapData, 8, 8);
+            AssetLibrary.addImageSet("secludedThicketObjects16x16", new EmbeddedAssets.secludedThicketObjects16x16Embed_().bitmapData, 16, 16);
+            AssetLibrary.addImageSet("lofiGravestone8x8", new EmbeddedAssets.lofiGravestoneEmbed_().bitmapData, 8, 8);
+            AssetLibrary.addImageSet("lofiGravestone16x8", new EmbeddedAssets.lofiGravestoneEmbed_().bitmapData, 16, 8);
+            AssetLibrary.addImageSet("lofiGravestone16x16", new EmbeddedAssets.lofiGravestoneEmbed_().bitmapData, 16, 16);
         }
         private function addAnimatedCharacters():void{
             AnimatedChars.add("chars8x8rBeach", new EmbeddedAssets.chars8x8rBeachEmbed_().bitmapData, null, 8, 8, 56, 8, AnimatedChar.RIGHT);
@@ -307,6 +312,8 @@ public class AssetLoader
             AnimatedChars.add("lostHallsChars8x8", new EmbeddedAssets.lostHallsChars8x8Embed_().bitmapData, null, 8, 8, 56, 8, AnimatedChar.RIGHT);
             AnimatedChars.add("magicWoodsChars8x8", new EmbeddedAssets.magicWoodsChars8x8Embed_().bitmapData, null, 8, 8, 56, 8, AnimatedChar.RIGHT);
             AnimatedChars.add("magicWoodsChars16x16", new EmbeddedAssets.magicWoodsChars16x16Embed_().bitmapData, null, 16, 16, 112, 16, AnimatedChar.RIGHT);
+            AnimatedChars.add("secludedThicketChars8x8", new EmbeddedAssets.secludedThicketChars8x8Embed_().bitmapData, null, 8, 8, 56, 8, AnimatedChar.RIGHT);
+            AnimatedChars.add("secludedThicketChars16x16", new EmbeddedAssets.secludedThicketChars16x16Embed_().bitmapData, null, 16, 16, 112, 16, AnimatedChar.RIGHT);
         }
 
         private function addSoundEffects():void

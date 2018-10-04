@@ -52,6 +52,7 @@ package kabam.rotmg.assets{
         public static var chars16x16dEncountersEmbed_:Class = EmbeddedAssets_chars16x16dEncountersEmbed_;
         public static var chars16x16dEncounters2Embed_:Class = EmbeddedAssets_chars16x16dEncounters2Embed_;
         public static var chars16x16rEncountersEmbed_:Class = EmbeddedAssets_chars16x16rEncountersEmbed_;
+        public static var lofiGravestoneEmbed_:Class = EmbeddedAssets_lofiGravestoneEmbed_;
         public static var playersEmbed_:Class = EmbeddedAssets_playersEmbed_;
         public static var playersMaskEmbed_:Class = EmbeddedAssets_playersMaskEmbed_;
         public static var playersSkinsEmbed_:Class = EmbeddedAssets_playersSkinsEmbed_;
@@ -187,6 +188,10 @@ package kabam.rotmg.assets{
         public static var magicWoodsObjects16x16Embed_:Class = EmbeddedAssets_magicWoodsObjects16x16Embed_;
         public static var cnidarianReefObjects8x8Embed_:Class = EmbeddedAssets_cnidarianReefObjects8x8Embed_;
         public static var cnidarianReefObjects16x16Embed_:Class = EmbeddedAssets_cnidarianReefObjects16x16Embed_;
+        public static var secludedThicketChars8x8Embed_:Class = EmbeddedAssets_secludedThicketChars8x8Embed_;
+        public static var secludedThicketChars16x16Embed_:Class = EmbeddedAssets_secludedThicketChars16x16Embed_;
+        public static var secludedThicketObjects8x8Embed_:Class = EmbeddedAssets_secludedThicketObjects8x8Embed_;
+        public static var secludedThicketObjects16x16Embed_:Class = EmbeddedAssets_secludedThicketObjects16x16Embed_;
         public static var models_:Object = {
             "Monster Tank1":new monsterTank1Embed_(),
             "Monster Tank2":new monsterTank2Embed_(),
